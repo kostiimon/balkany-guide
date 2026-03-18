@@ -529,7 +529,9 @@
   .sidebar-overlay {
     display: block;
     position: fixed;
-    inset: 0;
+    inset-block-start: 56px;
+    inset-block-end: 0;
+    inset-inline: 0;
     background: rgba(0,0,0,.55);
     z-index: 149;
     opacity: 0;
@@ -540,10 +542,11 @@
 
   .sidebar {
     position: fixed;
-    inset-block: 0;
+    inset-block-start: 56px;
+    inset-block-end: 0;
     inset-inline-start: -240px;
     inline-size: 240px;
-    block-size: 100dvh;
+    block-size: calc(100dvh - 56px);
     z-index: 150;
     transition: inset-inline-start 250ms cubic-bezier(.16,1,.3,1);
     &.open { inset-inline-start: 0; }
