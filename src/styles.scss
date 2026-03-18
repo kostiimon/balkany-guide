@@ -420,6 +420,19 @@
   .ctry-header { padding: 20px; h2 { font-size: var(--text-lg); font-weight: 800; color: var(--white); margin-block-end: 4px; } p { font-size: var(--text-sm); color: rgba(255,255,255,.55); line-height: 1.65; } }
   .ctry-body { padding: 0 20px 20px; }
 
+  .city-page-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 32px;
+    border-radius: var(--rl);
+    margin-block-end: 24px;
+    .cph-flag { font-size: 2.8rem; line-height: 1; }
+    .cph-country { font-size: .7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.55); margin-block-end: 4px; }
+    .cph-name { font-size: 1.8rem; font-weight: 800; color: #fff; line-height: 1; margin-block-end: 6px; font-family: 'DM Serif Display', serif; }
+    .cph-dates { font-size: .78rem; color: rgba(255,255,255,.65); letter-spacing: .5px; }
+  }
+
   .city-block { margin-block-start: 20px; }
   .city-name {
     font-size: var(--text-sm);

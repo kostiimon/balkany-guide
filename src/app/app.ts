@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 export type TabId =
   | 'overview' | 'itinerary' | 'transport' | 'mapa'
   | 'accommodation' | 'costs' | 'briefs'
-  | 'country-al' | 'country-mk' | 'country-ko' | 'country-me'
+  | 'city-tirana' | 'city-sarande'
+  | 'city-ohrid' | 'city-skopje'
+  | 'city-prishtina' | 'city-prizren' | 'city-pec'
+  | 'city-kotor' | 'city-podgorica'
   | 'history' | 'practical';
 
 export interface NavItem { id: TabId; label: string; }
@@ -23,25 +26,33 @@ export class App {
   readonly sidebarOpen   = signal(false);
 
   readonly navItems: NavItem[] = [
-    { id: 'overview',       label: '🗺️ Trasa' },
-    { id: 'itinerary',      label: '📅 14 dni' },
-    { id: 'transport',      label: '🚌 Transport' },
-    { id: 'mapa',           label: '📍 Mapa' },
-    { id: 'accommodation',  label: '🛏️ Noclegi' },
-    { id: 'costs',          label: '💶 Koszty' },
-    { id: 'briefs',         label: '📖 Lokalizacje' },
-    { id: 'country-al',     label: '🇦🇱 Albania' },
-    { id: 'country-mk',     label: '🇲🇰 Macedonia' },
-    { id: 'country-ko',     label: '🇽🇰 Kosowo' },
-    { id: 'country-me',     label: '🇲🇪 Czarnogóra' },
-    { id: 'history',        label: '📜 Historia' },
-    { id: 'practical',      label: '🔧 Praktycznie' },
+    { id: 'overview',        label: '🗺️ Trasa' },
+    { id: 'itinerary',       label: '📅 14 dni' },
+    { id: 'transport',       label: '🚌 Transport' },
+    { id: 'mapa',            label: '📍 Mapa' },
+    { id: 'accommodation',   label: '🛏️ Noclegi' },
+    { id: 'costs',           label: '💶 Koszty' },
+    { id: 'briefs',          label: '📖 Lokalizacje' },
+    { id: 'city-tirana',     label: '🏙️ Tirana' },
+    { id: 'city-sarande',    label: '🌊 Sarandë' },
+    { id: 'city-ohrid',      label: '🏞️ Ohrid' },
+    { id: 'city-skopje',     label: '🗿 Skopje' },
+    { id: 'city-prishtina',  label: '🆕 Prisztina' },
+    { id: 'city-prizren',    label: '🌉 Prizren' },
+    { id: 'city-pec',        label: '🏔️ Peć' },
+    { id: 'city-kotor',      label: '🏰 Kotor' },
+    { id: 'city-podgorica',  label: '👑 Podgorica' },
+    { id: 'history',         label: '📜 Historia' },
+    { id: 'practical',       label: '🔧 Praktycznie' },
   ];
 
   readonly navGroups = [
-    { label: 'Podróż', items: this.navItems.slice(0, 7) },
-    { label: 'Kraje',  items: this.navItems.slice(7, 11) },
-    { label: 'Info',   items: this.navItems.slice(11) },
+    { label: 'Podróż',        items: this.navItems.slice(0, 7)   },
+    { label: '🇦🇱 Albania',   items: this.navItems.slice(7, 9)   },
+    { label: '🇲🇰 Macedonia', items: this.navItems.slice(9, 11)  },
+    { label: '🇽🇰 Kosowo',    items: this.navItems.slice(11, 14) },
+    { label: '🇲🇪 Czarnogóra',items: this.navItems.slice(14, 16) },
+    { label: 'Info',           items: this.navItems.slice(16)     },
   ];
 
   constructor() {
