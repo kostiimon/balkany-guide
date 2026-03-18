@@ -411,41 +411,459 @@
 <!-- ══════════ TAB: MAPA ══════════ -->
 @if (isTab('mapa')) {
 <div class="tab">
-  <div class="box box-gold" style="margin-bottom:18px;">
-    <p>Kliknij miasto — otwiera Google Maps. <strong>●</strong> baza noclegowa &nbsp;·&nbsp; <strong>◌</strong> day trip / stop</p>
+
+  <!-- ══ ROUTE OVERVIEW MAP ══ -->
+  <div class="route-overview">
+    <div class="ro-header">
+      <div class="ro-title">Pełna trasa · Bałkany 2026</div>
+      <div class="ro-meta">9 baz noclegowych · 4 kraje · 08–22 kwietnia</div>
+    </div>
+    <div class="ro-map" id="route-map"></div>
+    <div class="ro-legend">
+      <span class="rol al">🇦🇱 Albania</span>
+      <span class="rol mk">🇲🇰 Macedonia</span>
+      <span class="rol ko">🇽🇰 Kosowo</span>
+      <span class="rol me">🇲🇪 Czarnogóra</span>
+    </div>
   </div>
 
+  <!-- ══ ALBANIA ══ -->
   <p class="sec-title">🇦🇱 Albania · 08–12.04</p>
-  <div class="map-grid">
-    <a href="https://maps.google.com/?cid=3177847618938171579" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏙️</span><div><div class="mc-name">● Tirana</div><div class="mc-sub">baza · 2 noce · 08–10.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">BunkArt 2, Piramida, Bllok. Nocne: Komiteti, Radio Bar.</p></div></a>
-    <a href="https://maps.google.com/?cid=4167286421895159354" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏰</span><div><div class="mc-name">◌ Krujë</div><div class="mc-sub">day trip · 09.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Zamek Skanderbega, bazar osmański XVII w. Furgon z Tirany 1.5€.</p></div></a>
-    <a href="https://maps.google.com/?cid=14807063829777921105" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🌊</span><div><div class="mc-name">◌ Vlorë</div><div class="mc-sub">lunch stop · 10.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Proklamacja niepodległości 1912. Lunch przed Riwierą.</p></div></a>
-    <a href="https://maps.google.com/?cid=15480383189559679248" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🌅</span><div><div class="mc-name">● Sarandë</div><div class="mc-sub">baza · 2 noce · 10–12.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Morze Jońskie, Korfu 3km. Synagoga IV w., plaże.</p></div></a>
-    <a href="https://maps.google.com/?cid=5445269485590657089" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏛️</span><div><div class="mc-name">◌ Butrint · UNESCO</div><div class="mc-sub">day trip z Sarandë · 11.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">2700 lat historii: teatr grecki III w. p.n.e., bazylika V w., mury weneckie.</p></div></a>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m1')">
+      <div class="dmc-num al">1</div>
+      <div class="dmc-date">08.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Tirana</div>
+        <div class="dmc-pills">
+          <span>🏛️ Skanderbeg</span><span>🔺 BunkArt 2</span><span>🍷 Bllok</span><span>🌙 Komiteti</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">baza · 2 noce</span>
+      <span class="day-chev" [class.open]="isDayOpen('m1')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m1')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m1')) {
+            <iframe src="https://maps.google.com/maps?q=41.3275,19.8187&z=15&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🏛️</span><span><strong>Plac Skanderbega</strong> — pomnik bohatera, meczet Et'hem Beja (freski!)</span></div>
+          <div class="dmc-attr"><span>🔺</span><span><strong>BunkArt 2</strong> — bunkier pod placem, historia Sigurimi (2€)</span></div>
+          <div class="dmc-attr"><span>🔺</span><span><strong>Piramida Tirany</strong> — mauzoleum Hodży, dziś centrum kulturalne</span></div>
+          <div class="dmc-attr"><span>🍷</span><span><strong>Bllok</strong> — dawna dzielnica nomenklatury, modne bary i galerie</span></div>
+          <div class="dmc-attr"><span>🌙</span><span><strong>Komiteti</strong> · Radio Bar (dach) · Folie (fabryka)</span></div>
+        </div>
+      </div>
+    </div></div>
   </div>
 
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m2')">
+      <div class="dmc-num al">2</div>
+      <div class="dmc-date">09.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Krujë</div>
+        <div class="dmc-pills">
+          <span>🏰 Zamek Skanderbega</span><span>🕌 Bazar XVII w.</span><span>🚐 furgon 1.5€</span>
+        </div>
+      </div>
+      <span class="dmc-badge trip">day trip</span>
+      <span class="day-chev" [class.open]="isDayOpen('m2')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m2')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m2')) {
+            <iframe src="https://maps.google.com/maps?q=41.5089,19.7936&z=15&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🏰</span><span><strong>Zamek Krujë</strong> — oblężony trzykrotnie przez Osmanów, nigdy nie zdobyty za życia Skanderbega</span></div>
+          <div class="dmc-attr"><span>🏛️</span><span><strong>Muzeum Skanderbega</strong> — zaprojektowane przez córkę Hodży w kształcie twierdzy (3€)</span></div>
+          <div class="dmc-attr"><span>🕌</span><span><strong>Stary Bazar osmański</strong> — XVII w., oryginalne stragany, dywany, srebrna biżuteria</span></div>
+          <div class="dmc-attr"><span>🚐</span><span>Furgon z Tirany co ~30min rano (1.5€), powrót ~13:00</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m3')">
+      <div class="dmc-num al">3</div>
+      <div class="dmc-date">10.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Riwiera Albańska → Sarandë</div>
+        <div class="dmc-pills">
+          <span>🌊 Llogarë 1000m</span><span>🏖️ Himarë</span><span>🌅 Korfu 3km</span>
+        </div>
+      </div>
+      <span class="dmc-badge transit">tranzyt</span>
+      <span class="day-chev" [class.open]="isDayOpen('m3')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m3')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m3')) {
+            <iframe src="https://maps.google.com/maps?q=39.8756,20.0050&z=13&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🚐</span><span><strong>09:00</strong> Tirana → Vlorë przez Fier (~2.5h, ~4€) · Lunch przy zatoce</span></div>
+          <div class="dmc-attr"><span>🌊</span><span><strong>Riwiera z okna busa</strong> — przełęcz Llogarë (1000m!), Himarë, Dhermi, Palasë. <em>Nie śpij.</em></span></div>
+          <div class="dmc-attr"><span>🌅</span><span><strong>~17:30</strong> Sarandë — promenada, Korfu 3km na horyzoncie</span></div>
+          <div class="dmc-attr"><span>✡️</span><span>Synagoga z IV w. przy promenadzie — mozaika menory (wstęp wolny)</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m4')">
+      <div class="dmc-num al">4</div>
+      <div class="dmc-date">11.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Butrint · UNESCO</div>
+        <div class="dmc-pills">
+          <span>🏛️ Teatr III w. p.n.e.</span><span>⛪ Bazylika V w.</span><span>🏰 Mury weneckie</span>
+        </div>
+      </div>
+      <span class="dmc-badge trip">day trip</span>
+      <span class="day-chev" [class.open]="isDayOpen('m4')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m4')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m4')) {
+            <iframe src="https://maps.google.com/maps?q=39.7442,20.0175&z=15&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🏛️</span><span><strong>Teatr grecki III w. p.n.e.</strong> — jeden z najlepiej zachowanych w Europie</span></div>
+          <div class="dmc-attr"><span>⛪</span><span><strong>Bazylika V w.</strong> z oryginalnymi mozaikami podłogowymi</span></div>
+          <div class="dmc-attr"><span>💧</span><span><strong>Baptisterium VI w.</strong> — największe w regionie, mozaiki z motywami zwierząt</span></div>
+          <div class="dmc-attr"><span>🏰</span><span><strong>Mury weneckie XV w.</strong> — prom przez kanał w cenie biletu (1000 ALL)</span></div>
+          <div class="dmc-attr"><span>🚌</span><span>Bus z Sarandë, kilka kursów rano (~1€, 10km)</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- ══ MACEDONIA ══ -->
   <p class="sec-title">🇲🇰 Macedonia Płn. · 12–15.04</p>
-  <div class="map-grid">
-    <a href="https://maps.google.com/?cid=14153965240597596627" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏞️</span><div><div class="mc-name">● Ohrid · UNESCO</div><div class="mc-sub">baza · 2 noce · 12–14.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Jezioro 3mln lat, teatr III w. p.n.e., Śv. Naum. Nocne: Chinar Bar.</p></div></a>
-    <a href="https://maps.google.com/?cid=18043596862803331400" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏺</span><div><div class="mc-name">◌ Bitola</div><div class="mc-sub">day trip · 14.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Heraklea Lincestis Filip II, mozaiki, Sirok Sokak.</p></div></a>
-    <a href="https://maps.google.com/?cid=8593336274344577621" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">🗿</span><div><div class="mc-name">● Skopje</div><div class="mc-sub">baza · 1 noc · 14–15.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Projekt 2014, Stary Bazar XV w., Muzeum Holocaustu. Nocne: Menada, Pivnica An.</p></div></a>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m5')">
+      <div class="dmc-num mk">5–7</div>
+      <div class="dmc-date">12–14.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Ohrid · UNESCO</div>
+        <div class="dmc-pills">
+          <span>⛪ Śv. Jovan Kaneo</span><span>🏛️ Teatr III w.</span><span>🚢 Śv. Naum</span><span>🌅 Zachód słońca</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">baza · 2 noce</span>
+      <span class="day-chev" [class.open]="isDayOpen('m5')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m5')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m5')) {
+            <iframe src="https://maps.google.com/maps?q=41.1172,20.8016&z=14&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>⛪</span><span><strong>Śv. Jovan Kaneo</strong> — kościół na klifie nad jeziorem, najlepszy widok o zachodzie</span></div>
+          <div class="dmc-attr"><span>🏛️</span><span><strong>Teatr antyczny III w. p.n.e.</strong> — z widokiem na jezioro, latem koncerty</span></div>
+          <div class="dmc-attr"><span>🚢</span><span><strong>Śv. Naum</strong> — klasztor 30km od Ohrid, rejs łódką przez jezioro (3mln lat!)</span></div>
+          <div class="dmc-attr"><span>🏰</span><span><strong>Twierdza Samuela</strong> — car Bułgarii, bitwa 1014 — 15 000 oślepionych jeńców</span></div>
+          <div class="dmc-attr"><span>🌙</span><span>Chinar Bar nad jeziorem · Lokalna muzyka chalgia wieczorami</span></div>
+        </div>
+      </div>
+    </div></div>
   </div>
 
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m6')">
+      <div class="dmc-num mk">7</div>
+      <div class="dmc-date">14.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Bitola + Skopje wieczór</div>
+        <div class="dmc-pills">
+          <span>🏺 Heraklea</span><span>🐟 Mozaiki</span><span>🏙️ Skopje nocą</span>
+        </div>
+      </div>
+      <span class="dmc-badge trip">day trip + tranzyt</span>
+      <span class="day-chev" [class.open]="isDayOpen('m6')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m6')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m6')) {
+            <iframe src="https://maps.google.com/maps?q=41.0297,21.3355&z=15&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🏺</span><span><strong>Heraklea Lincestis</strong> — założona przez Filipa II Macedońskiego (~359 p.n.e.), ruiny teatru i termy</span></div>
+          <div class="dmc-attr"><span>🐟</span><span><strong>Mozaiki</strong> — wyjątkowe sceny myśliwskie i rybackie z IV–VI w., zachowane in situ</span></div>
+          <div class="dmc-attr"><span>🛍️</span><span><strong>Sirok Sokak</strong> — deptak Bitoli, kawiarnie pod akacjami, najpiękniejszy bulwar w Macedonii</span></div>
+          <div class="dmc-attr"><span>🚌</span><span>Bus Bitola→Skopje ~3h, wieczorny przyjazd do Skopje</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m7')">
+      <div class="dmc-num mk">8</div>
+      <div class="dmc-date">14–15.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Skopje</div>
+        <div class="dmc-pills">
+          <span>🗿 Projekt 2014</span><span>🕌 Stary Bazar</span><span>✡️ Muzeum Holocaustu</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">baza · 1 noc</span>
+      <span class="day-chev" [class.open]="isDayOpen('m7')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m7')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m7')) {
+            <iframe src="https://maps.google.com/maps?q=41.9965,21.4314&z=14&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🗿</span><span><strong>Projekt Skopje 2014</strong> — 200mln€ nacjonalistycznej architektury, obowiązkowe do zobaczenia by zrozumieć kraj</span></div>
+          <div class="dmc-attr"><span>🕌</span><span><strong>Stary Bazar Czarszija</strong> — XV w., osmański, 1500 sklepów, meczet Mustafa Paszy</span></div>
+          <div class="dmc-attr"><span>✡️</span><span><strong>Muzeum Holocaustu</strong> — 7000 macedońskich Żydów deportowanych do Treblinki (wstęp wolny)</span></div>
+          <div class="dmc-attr"><span>🌙</span><span>Menada · Pivnica An (lokalne piwa) · Noćna scena w Debar Maalo</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- ══ KOSOWO ══ -->
   <p class="sec-title">🇽🇰 Kosowo · 15–19.04</p>
-  <div class="map-grid">
-    <a href="https://maps.google.com/?cid=13917053850317731354" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🆕</span><div><div class="mc-name">● Prisztina</div><div class="mc-sub">baza · 1 noc · 15–16.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">NEWBORN, Clinton, Gračanica. Nocne: Dit' e Nat' (24h), Soma.</p></div></a>
-    <a href="https://maps.google.com/?cid=1598272877694381885" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🌉</span><div><div class="mc-name">● Prizren</div><div class="mc-sub">baza · 2 noce · 16–18.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Bazar, Liga 1878, Bistrica. Nocne: Tash Bar, Kafana Lidhja.</p></div></a>
-    <a href="https://maps.google.com/?cid=3283852936187132497" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏔️</span><div><div class="mc-name">● Peć (Peja)</div><div class="mc-sub">baza · 1 noc · 18–19.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Kanion Rugova pieszo z Patriarchatu. Piwo Peja — najlepsze na trasie.</p></div></a>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m8')">
+      <div class="dmc-num ko">9</div>
+      <div class="dmc-date">15–16.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Prisztina</div>
+        <div class="dmc-pills">
+          <span>🆕 NEWBORN</span><span>🇺🇸 Bill Clinton</span><span>⛪ Gračanica</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">baza · 1 noc</span>
+      <span class="day-chev" [class.open]="isDayOpen('m8')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m8')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m8')) {
+            <iframe src="https://maps.google.com/maps?q=42.6629,21.1655&z=14&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🆕</span><span><strong>NEWBORN monument</strong> — napis z 2008 malowany od nowa co roku przez artystów, symbol wolności</span></div>
+          <div class="dmc-attr"><span>🇺🇸</span><span><strong>Bill Clinton Blvd</strong> — złota statua Clintona, butik z jego podobizną, historia interwencji NATO 1999</span></div>
+          <div class="dmc-attr"><span>⛪</span><span><strong>Gračanica</strong> — klasztor serbski XIV w., freski, 8km od centrum (bus lub taxi)</span></div>
+          <div class="dmc-attr"><span>🌙</span><span>Dit' e Nat' (otwarte 24h) · Soma Book Station · Zona (roooftop)</span></div>
+        </div>
+      </div>
+    </div></div>
   </div>
 
-  <p class="sec-title">🇲🇪 Czarnogóra · 19–22.04</p>
-  <div class="map-grid">
-    <a href="https://maps.google.com/?cid=8280534372461368745" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">⛵</span><div><div class="mc-name">◌ Perast</div><div class="mc-sub">wieczór · 19.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Gospa od Škrpjela — wysepka z gobelinem tkanym własnymi włosami.</p></div></a>
-    <a href="https://maps.google.com/?cid=7213753815455049709" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏰</span><div><div class="mc-name">● Kotor · UNESCO</div><div class="mc-sub">baza · 2 noce · 19–21.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Weneckie mury, 1350 schodów, koty wszędzie. Nocne: Bokun Pub.</p></div></a>
-    <a href="https://maps.google.com/?cid=15325553490007822475" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏖️</span><div><div class="mc-name">◌ Budva</div><div class="mc-sub">day trip · 21.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Stare Miasto V w. p.n.e., mury weneckie, plaże Mogren.</p></div></a>
-    <a href="https://maps.google.com/?cid=7646339673828838486" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">👑</span><div><div class="mc-name">◌ Cetinje</div><div class="mc-sub">day trip · 21.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Dawna stolica. Ambasady mocarstw w 200m od siebie.</p></div></a>
-    <a href="https://maps.google.com/?cid=6113468463769956895" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">✈️</span><div><div class="mc-name">● Podgorica</div><div class="mc-sub">ostatnia noc · 21–22.04 · odlot TGD→KRK 18:00</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Stara Varoš, wieża osmańska. Lotnisko TGD — 10min taksówką z centrum.</p></div></a>
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m9')">
+      <div class="dmc-num ko">10–11</div>
+      <div class="dmc-date">16–18.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Prizren</div>
+        <div class="dmc-pills">
+          <span>🌉 Bazar przy Bistricy</span><span>🏰 Zamek</span><span>🕌 Liga 1878</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">baza · 2 noce</span>
+      <span class="day-chev" [class.open]="isDayOpen('m9')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m9')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m9')) {
+            <iframe src="https://maps.google.com/maps?q=42.2139,20.7397&z=15&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🌉</span><span><strong>Stary Bazar przy Bistricy</strong> — kamienny most XV w., meczet Sinan Paszy, warsztaty złotnicze</span></div>
+          <div class="dmc-attr"><span>🏰</span><span><strong>Twierdza Prizren</strong> — panorama całego miasta z góry, zejście przez osmańskie uliczki</span></div>
+          <div class="dmc-attr"><span>🕌</span><span><strong>Liga Prizrenu 1878</strong> — muzeum w miejscu gdzie Albańczycy zaczęli walczyć o autonomię od Osmanów</span></div>
+          <div class="dmc-attr"><span>⛪</span><span><strong>Kościół Bogurodzicy Lewiszki</strong> — XIV w., freski — uszkodzone w zamieszkach 2004</span></div>
+          <div class="dmc-attr"><span>🌙</span><span>Tash Bar (taras nad rzeką) · Kafana Lidhja · lokalna rakia i byrek</span></div>
+        </div>
+      </div>
+    </div></div>
   </div>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m10')">
+      <div class="dmc-num ko">12–13</div>
+      <div class="dmc-date">18–19.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Peć + Kanion Rugova</div>
+        <div class="dmc-pills">
+          <span>⛪ Patriarchat</span><span>🏔️ Kanion 25km</span><span>🍺 Piwo Peja</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">baza · 1 noc</span>
+      <span class="day-chev" [class.open]="isDayOpen('m10')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m10')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m10')) {
+            <iframe src="https://maps.google.com/maps?q=42.6590,20.2883&z=14&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>⛪</span><span><strong>Patriarchat Pecki</strong> — XIV w., centrum Serbskiej Cerkwi Prawosławnej, unikalne freski</span></div>
+          <div class="dmc-attr"><span>🏔️</span><span><strong>Kanion Rugova</strong> — 25km pieszego szlaku z Patriarchatu w głąb kanionu, wodospady, skałki</span></div>
+          <div class="dmc-attr"><span>🍺</span><span><strong>Browar Peja</strong> — najlepsze piwo na trasie, 1.50€ przy browarze, zwiedzanie (umów wcześniej)</span></div>
+          <div class="dmc-attr"><span>🍽️</span><span>Pstrąg z rzeki Bistrica — restauracje przy wlocie do kanionu (~5€)</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- ══ CZARNOGÓRA ══ -->
+  <p class="sec-title">🇲🇪 Czarnogóra · 19–22.04</p>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m11')">
+      <div class="dmc-num me">13</div>
+      <div class="dmc-date">19.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Transfer → Perast → Kotor</div>
+        <div class="dmc-pills">
+          <span>⛵ Gospa od Škrpjela</span><span>🏰 Wjazd do Kotoru</span>
+        </div>
+      </div>
+      <span class="dmc-badge transit">tranzyt</span>
+      <span class="day-chev" [class.open]="isDayOpen('m11')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m11')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m11')) {
+            <iframe src="https://maps.google.com/maps?q=42.4842,18.7003&z=15&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🚌</span><span><strong>Peć → Podgorica</strong> przez Rozaje (~3.5h, ~10€) · krótki przystanek w Podgoricy</span></div>
+          <div class="dmc-attr"><span>⛵</span><span><strong>Perast</strong> — wysepka Gospa od Škrpjela, łódka 5€, gobelin tkany własnymi włosami</span></div>
+          <div class="dmc-attr"><span>🌅</span><span><strong>Zatoka Kotorska o zachodzie</strong> — fiord w skali Europy Południowej, UNESCO</span></div>
+          <div class="dmc-attr"><span>🏰</span><span>Wieczorny wjazd do Kotoru — zameldowanie i pierwsze piwo przy Bramie Morskiej</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m12')">
+      <div class="dmc-num me">14</div>
+      <div class="dmc-date">19–21.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Kotor · UNESCO</div>
+        <div class="dmc-pills">
+          <span>🏰 Mury weneckie</span><span>🧗 1350 schodów</span><span>🐱 Koty</span><span>🌙 Bokun Pub</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">baza · 2 noce</span>
+      <span class="day-chev" [class.open]="isDayOpen('m12')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m12')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m12')) {
+            <iframe src="https://maps.google.com/maps?q=42.4247,18.7712&z=15&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🏰</span><span><strong>Mury weneckie</strong> — 4.5km, XIV–XVIII w., Brama Morska z sentencją: „Każdy przybywa jako wolny"</span></div>
+          <div class="dmc-attr"><span>🧗</span><span><strong>1350 schodów</strong> — na Twierdzę Św. Jana, panorama zatoki i starego miasta (2€)</span></div>
+          <div class="dmc-attr"><span>⛪</span><span><strong>Katedra Św. Tripuna</strong> — XII w., romański skarb, relikwia patrona marynarzy</span></div>
+          <div class="dmc-attr"><span>🐱</span><span><strong>Koty Kotoru</strong> — oficjalni mieszkańcy, muzeum kotów, kotki na herbie miasta</span></div>
+          <div class="dmc-attr"><span>🌙</span><span>Bokun Pub · Letnja Bašta · Merak wine bar</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m13')">
+      <div class="dmc-num me">14</div>
+      <div class="dmc-date">21.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Budva + Cetinje</div>
+        <div class="dmc-pills">
+          <span>🏖️ Stare Miasto Budvy</span><span>👑 Dawna stolica</span><span>🎭 Ambasady</span>
+        </div>
+      </div>
+      <span class="dmc-badge trip">day trips</span>
+      <span class="day-chev" [class.open]="isDayOpen('m13')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m13')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m13')) {
+            <iframe src="https://maps.google.com/maps?q=42.2867,18.8397&z=14&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🏖️</span><span><strong>Stare Miasto Budvy</strong> — V w. p.n.e., mury weneckie na półwyspie, cytadela, plaże Mogren</span></div>
+          <div class="dmc-attr"><span>👑</span><span><strong>Cetinje</strong> — dawna stolica Czarnogóry, Muzeum Narodowe, klasztor z relikwią ręki Jana Chrzciciela</span></div>
+          <div class="dmc-attr"><span>🎭</span><span>Ambasady mocarstw w odległości 200m od siebie — Austria, Francja, Rosja w miniaturowej „stolicy"</span></div>
+          <div class="dmc-attr"><span>🚌</span><span>Bus Kotor→Budva ~40min (1.50€) · Bus Budva→Cetinje ~1h (2€)</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="dmc">
+    <div class="dmc-hdr" (click)="toggleDay('m14')">
+      <div class="dmc-num me">15</div>
+      <div class="dmc-date">21–22.04</div>
+      <div class="dmc-mid">
+        <div class="dmc-city">Podgorica · odlot TGD→KRK</div>
+        <div class="dmc-pills">
+          <span>🕌 Stara Varoš</span><span>✈️ TGD 18:00</span>
+        </div>
+      </div>
+      <span class="dmc-badge base">ostatnia noc</span>
+      <span class="day-chev" [class.open]="isDayOpen('m14')">▼</span>
+    </div>
+    <div class="collapse-wrap" [class.open]="isDayOpen('m14')"><div class="collapse-inner">
+      <div class="dmc-body">
+        <div class="dmc-iframe-wrap">
+          @if(isDayOpen('m14')) {
+            <iframe src="https://maps.google.com/maps?q=42.4411,19.2636&z=14&output=embed" loading="lazy" frameborder="0" allowfullscreen></iframe>
+          }
+        </div>
+        <div class="dmc-detail">
+          <div class="dmc-attr"><span>🕌</span><span><strong>Stara Varoš</strong> — osmańska dzielnica, wieża zegarowa, most Millennium nad Moračą</span></div>
+          <div class="dmc-attr"><span>🌉</span><span>Most Milenijny i bulwar nad rzeką — poranny spacer przed wylotem</span></div>
+          <div class="dmc-attr"><span>✈️</span><span><strong>TGD → KRK 18:00</strong> — lotnisko 10min taksówką (~5€) lub autobusem miejskim</span></div>
+          <div class="dmc-attr"><span>💡</span><span>Sprawdź odprawę online 24h wcześniej. Kurs: Bolt z centrum 4–6€.</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
 </div>
 }
 

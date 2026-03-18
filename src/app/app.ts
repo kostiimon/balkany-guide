@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export type TabId =
@@ -17,10 +17,10 @@ export interface NavItem { id: TabId; label: string; }
   styleUrl: './app.scss'
 })
 export class App {
-  readonly activeTab    = signal<TabId>('overview');
-  readonly openDays     = signal<Set<string>>(new Set());
+  readonly activeTab     = signal<TabId>('overview');
+  readonly openDays      = signal<Set<string>>(new Set());
   readonly openCountries = signal<Set<string>>(new Set(['al', 'mk', 'ko', 'me']));
-  readonly sidebarOpen  = signal(false);
+  readonly sidebarOpen   = signal(false);
 
   readonly navItems: NavItem[] = [
     { id: 'overview',       label: '🗺️ Trasa' },
@@ -44,10 +44,18 @@ export class App {
     { label: 'Info',   items: this.navItems.slice(11) },
   ];
 
-  showTab(id: TabId)    { this.activeTab.set(id); }
-  isTab(id: TabId)      { return this.activeTab() === id; }
-  toggleSidebar()       { this.sidebarOpen.update(v => !v); }
-  closeSidebar()        { this.sidebarOpen.set(false); }
+  constructor() {
+    effect(() => {
+      if (this.activeTab() === 'mapa') {
+        setTimeout(() => this.initLeafletMap(), 120);
+      }
+    });
+  }
+
+  showTab(id: TabId)  { this.activeTab.set(id); }
+  isTab(id: TabId)    { return this.activeTab() === id; }
+  toggleSidebar()     { this.sidebarOpen.update(v => !v); }
+  closeSidebar()      { this.sidebarOpen.set(false); }
 
   toggleDay(key: string) {
     const s = new Set(this.openDays());
@@ -62,4 +70,54 @@ export class App {
     this.openCountries.set(s);
   }
   isCountryOpen(key: string) { return this.openCountries().has(key); }
+
+  initLeafletMap() {
+    const L = (window as any)['L'];
+    if (!L) return;
+    const el = document.getElementById('route-map');
+    if (!el) return;
+    if ((el as any)._leaflet_id) { el.innerHTML = ''; delete (el as any)._leaflet_id; }
+
+    const map = L.map('route-map', { zoomControl: true }).setView([41.6, 20.3], 7);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> © <a href="https://carto.com">CARTO</a>',
+      subdomains: 'abcd', maxZoom: 19
+    }).addTo(map);
+
+    const stops = [
+      { lat: 41.3275, lng: 19.8187, name: 'Tirana',    dates: '08–10.04', c: 'al', n: 1 },
+      { lat: 39.8756, lng: 20.0050, name: 'Sarandë',   dates: '10–12.04', c: 'al', n: 2 },
+      { lat: 41.1172, lng: 20.8016, name: 'Ohrid',     dates: '12–14.04', c: 'mk', n: 3 },
+      { lat: 41.9965, lng: 21.4314, name: 'Skopje',    dates: '14–15.04', c: 'mk', n: 4 },
+      { lat: 42.6629, lng: 21.1655, name: 'Prisztina', dates: '15–16.04', c: 'ko', n: 5 },
+      { lat: 42.2139, lng: 20.7397, name: 'Prizren',   dates: '16–18.04', c: 'ko', n: 6 },
+      { lat: 42.6590, lng: 20.2883, name: 'Peć',       dates: '18–19.04', c: 'ko', n: 7 },
+      { lat: 42.4247, lng: 18.7712, name: 'Kotor',     dates: '19–21.04', c: 'me', n: 8 },
+      { lat: 42.4411, lng: 19.2636, name: 'Podgorica', dates: '21–22.04', c: 'me', n: 9 },
+    ];
+
+    const colors: Record<string, string> = {
+      al: '#e07070', mk: '#d05050', ko: '#6080d0', me: '#c0a030'
+    };
+
+    L.polyline(stops.map(s => [s.lat, s.lng] as [number, number]), {
+      color: '#e06535', weight: 2.5, opacity: .65, dashArray: '8 5'
+    }).addTo(map);
+
+    stops.forEach(s => {
+      const color = colors[s.c];
+      const icon = L.divIcon({
+        className: '',
+        html: `<div style="background:${color};color:#fff;border-radius:50%;width:28px;height:28px;
+               display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;
+               box-shadow:0 2px 10px rgba(0,0,0,.55);border:2px solid rgba(255,255,255,.22);
+               font-family:'DM Sans',sans-serif">${s.n}</div>`,
+        iconSize: [28, 28], iconAnchor: [14, 14], popupAnchor: [0, -18]
+      });
+      L.marker([s.lat, s.lng], { icon })
+        .bindPopup(`<b>${s.name}</b><br>${s.dates}`, { className: 'dark-popup' })
+        .addTo(map);
+    });
+  }
 }
