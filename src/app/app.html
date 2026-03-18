@@ -1,0 +1,874 @@
+<div class="shell">
+
+<!-- ══ TOPBAR ══ -->
+<header class="topbar">
+  <button class="hamburger" (click)="toggleSidebar()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="tb-brand">
+    <span class="tb-dot">◈</span>
+    <span class="tb-name">Bałkany 2026</span>
+  </div>
+  <div class="tb-meta">08–22 kwietnia · 14 dni · 4 kraje</div>
+  <div class="tb-flags">🇦🇱 🇲🇰 🇽🇰 🇲🇪</div>
+</header>
+
+<!-- ══ BODY ══ -->
+<div class="shell-body">
+
+  <div class="sidebar-overlay" [class.show]="sidebarOpen()" (click)="closeSidebar()"></div>
+
+  <!-- ══ SIDEBAR ══ -->
+  <nav class="sidebar" [class.open]="sidebarOpen()">
+    @for (group of navGroups; track group.label) {
+      <div class="nav-group">
+        <div class="nav-section-label">{{ group.label }}</div>
+        @for (item of group.items; track item.id) {
+          <button class="nav-btn" [class.active]="isTab(item.id)" (click)="showTab(item.id); closeSidebar()">
+            {{ item.label }}
+          </button>
+        }
+      </div>
+    }
+    <div class="sidebar-footer">
+      <div class="sf-flags">🇦🇱 🇲🇰 🇽🇰 🇲🇪</div>
+      <div class="sf-label">kwiecień 2026</div>
+    </div>
+  </nav>
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <main class="main-content">
+
+<!-- ══════════ TAB: TRASA ══════════ -->
+@if (isTab('overview')) {
+<div class="tab">
+  <div class="masthead">
+    <div class="mh-eyebrow">Przewodnik · Kwiecień 2026</div>
+    <div class="mh-title">Bałkany</div>
+    <div class="mh-dates">08 – 22 kwietnia</div>
+    <div class="mh-sub">Albania · Macedonia Płn. · Kosowo · Czarnogóra</div>
+    <div class="mh-badge">✈️ KRK → TIA &nbsp;·&nbsp; TGD → KRK &nbsp;·&nbsp; komunikacja publiczna</div>
+    <div class="mh-flags">🇦🇱 🇲🇰 🇽🇰 🇲🇪</div>
+  </div>
+  <div class="vibe-banner">
+    <div class="vibe-icon">🧭</div>
+    <div class="vibe-content">
+      <h2>Dlaczego ta kolejność?</h2>
+      <p>Wracasz z Podgoricy — trasa płynie naturalnie <strong>południe → północ</strong>. Lądujesz w Tiranie, schodzisz Albanię wzdłuż wybrzeża, wchodzisz do Macedonii przez jezioro Ochrydzkie (łatwe przejście!), przez Kosowo docierasz do Czarnogóry. Eliminuje najtrudniejsze przejście Han i Hotit. Zero cofania się.</p>
+    </div>
+  </div>
+  <div class="route-strip">
+    <div class="rs rs-al"><div class="em">🇦🇱</div><div class="cn">ALBANIA</div><div class="dy">5 dni</div><div class="dt">08–12.04</div></div>
+    <div class="rs rs-tr"><div class="em">🚌</div><div class="cn">transfer</div><div class="dy">Sarandë→Ohrid</div><div class="dt">12.04</div></div>
+    <div class="rs rs-mk"><div class="em">🇲🇰</div><div class="cn">MACEDONIA</div><div class="dy">3 dni</div><div class="dt">12–15.04</div></div>
+    <div class="rs rs-tr"><div class="em">🚌</div><div class="cn">transfer</div><div class="dy">→ Prisztina</div><div class="dt">15.04</div></div>
+    <div class="rs rs-ko"><div class="em">🇽🇰</div><div class="cn">KOSOWO</div><div class="dy">4 dni</div><div class="dt">15–19.04</div></div>
+    <div class="rs rs-tr"><div class="em">🚌</div><div class="cn">transfer</div><div class="dy">Peć→Kotor</div><div class="dt">19.04</div></div>
+    <div class="rs rs-me"><div class="em">🇲🇪</div><div class="cn">CZARNOGÓRA</div><div class="dy">3 dni</div><div class="dt">19–22.04</div></div>
+  </div>
+  <p class="sec-title">Przejścia graniczne</p>
+  <div class="border-card">
+    <div class="bc-title">🛂 Granica 1 · Albania → Macedonia Płn. · 12.04</div>
+    <div class="t-row"><div class="ti">🚐</div><div class="td"><strong>Sarandë → Elbasan</strong> — furgon wczesny ranek (~4–5h)</div><div class="tp">~6€</div></div>
+    <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Elbasan → Ohrid</strong> — bus przez Struga, granica Kjafasan. EuroBus / Senad Tours (~3h)</div><div class="tp">~8€</div></div>
+    <div class="t-row"><div class="ti">🛃</div><div class="td">Granica Kjafasan — wysiądź, stempel, wróć. ~15min.</div><div class="tp">0€</div></div>
+    <div class="box box-green">✓ Dużo łatwiejsze niż Han i Hotit. Popularny backpackerski szlak.</div>
+    <div class="box box-warn"><strong>Kwiecień:</strong> sprawdź czy bezpośredni Sarandë→Ohrid jest aktywny — sezon od ~maja. Fallback: furgon Sarandë→Elbasan + oddzielny bus do Ohrid.</div>
+  </div>
+  <div class="border-card">
+    <div class="bc-title">🛂 Granica 2 · Kosowo → Czarnogóra · 19.04</div>
+    <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Peć → Rozaje → Podgorica</strong> — bus (~3.5–4h, trasa przez dolinę pewna w kwietniu)</div><div class="tp">~10€</div></div>
+    <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Podgorica → Kotor</strong> — bus (~2h), kilka kursów dziennie</div><div class="tp">~6.50€</div></div>
+  </div>
+  <p class="sec-title">Podsumowanie</p>
+  <table>
+    <tr><th>Granica</th><th>Środek</th><th>Dzień</th><th>Poziom</th></tr>
+    <tr><td>AL → MK (Kjafasan)</td><td>Bus + furgon</td><td>12.04</td><td><span class="tag tag-gold">Cały dzień</span></td></tr>
+    <tr><td>MK → KO (Blace)</td><td>Bus Skopje–Prisztina</td><td>15.04</td><td><span class="tag tag-green">Najłatwiejsze</span></td></tr>
+    <tr><td>KO → ME (Kula/Rozaje)</td><td>Bus Peć–Podgorica</td><td>19.04</td><td><span class="tag tag-gold">Sprawdź trasę</span></td></tr>
+  </table>
+  <div class="box box-green" style="margin-top:12px;">🎉 Brak Han i Hotit! Dzięki powrotowi z Podgoricy omijasz najtrudniejsze przejście graniczne na trasie.</div>
+</div>
+}
+
+<!-- ══════════ TAB: 14 DNI ══════════ -->
+@if (isTab('itinerary')) {
+<div class="tab">
+
+  <!-- ALBANIA -->
+  <div class="country-hdr ch-al" [class.open]="isCountryOpen('al')" (click)="toggleCountry('al')">
+    <span>🇦🇱</span><span>Albania — 08–12 kwietnia</span>
+    <span class="meta">Tirana → Vlorë → Sarandë</span>
+    <span class="chev" [class.open]="isCountryOpen('al')">▼</span>
+  </div>
+  <div class="collapse-wrap" [class.open]="isCountryOpen('al')"><div class="collapse-inner">
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d1')">
+        <div class="day-num">1</div><div class="day-date">08.04</div>
+        <div class="day-title">Tirana — pierwsze wrażenie (od 15:30)</div>
+        <div class="day-chev" [class.open]="isDayOpen('d1')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d1')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">✈️</div><div class="sc"><h4>Przylot 15:30</h4><p>Bus 4A z lotniska do centrum (~30min, 0.40€). Zostaw bagaż, wypłać Leki, pierwsza espresso przy Placu Skanderbega (~1€).</p></div></div>
+        <div class="site"><div class="si">🏛️</div><div class="sc"><h4>Plac Skanderbega + Meczet Et'hem Beja</h4><p>Pomnik Skanderbega (1405–1468). Meczet Et'hem Beja (1789–1823) ocalały mimo zakazu religii przez Hodżę — freski na ścianach to rzadkość w islamskiej architekturze.</p></div></div>
+        <div class="site"><div class="si">🔺</div><div class="sc"><h4>Piramida Tirany + BunkArt 2 · 2€</h4><p>Piramida — mauzoleum Hodży z 1988, dziś centrum kulturalne. BunkArt 2 — bunkier pod placem: służby Sigurimi, 170 000 bunkrów w Albanii.</p></div></div>
+        <div class="site"><div class="si">🍷</div><div class="sc"><h4>Bllok — kolacja</h4><p>Do 1991 ściśle strzeżona dzielnica partyjnej nomenklatury. Dziś modne restauracje i bary. Kolacja z <em>tavë kosi</em> i kieliszek raki.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Lotnisko → centrum:</strong> bus 4A co 20min</div><div class="tp">0.40€</div></div>
+          <div class="t-row"><div class="ti">🚶</div><div class="td">Wszystkie atrakcje pieszo — centrum max 2km</div><div class="tp">0€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d2')">
+        <div class="day-num">2</div><div class="day-date">09.04</div>
+        <div class="day-title">Krujë — zamek Skanderbega</div>
+        <div class="day-chev" [class.open]="isDayOpen('d2')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d2')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🏰</div><div class="sc"><h4>Zamek Krujë + Muzeum Skanderbega · 3€</h4><p>Furgon z Tirany rano (32km). Muzeum w kształcie twierdzy zaprojektowanej przez córkę Hodży. Stary Bazar osmański z XVII w.</p><p class="hist">Osmanie oblegali Krujë trzykrotnie i trzykrotnie odpierano ich. Padło dopiero po śmierci Skanderbega (1468).</p></div></div>
+        <div class="site"><div class="si">🌇</div><div class="sc"><h4>Popołudnie w Tiranie</h4><p>Powrót furgon. Muzeum Narodowe (3€) lub spacer po Blloku w ciągu dnia.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚐</div><div class="td"><strong>7:00 — Tirana → Krujë:</strong> furgon co ~30min rano</div><div class="tp">1.5€</div></div>
+          <div class="t-row"><div class="ti">🚐</div><div class="td"><strong>~13:00 — Krujë → Tirana:</strong> furgon powrotny</div><div class="tp">1.5€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d3')">
+        <div class="day-num">3</div><div class="day-date">10.04</div>
+        <div class="day-title">🌊 Tirana → Vlorë (lunch) → Riwiera → Sarandë</div>
+        <div class="day-chev" [class.open]="isDayOpen('d3')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d3')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🏛️</div><div class="sc"><h4>Vlorë — lunch nad zatoką</h4><p>Tu 28 listopada 1912 proklamowano niepodległość Albanii po 450 latach osmańskich. Monument Niepodległości przy promenadzie.</p></div></div>
+        <div class="site"><div class="si">🌊</div><div class="sc"><h4>Riwiera Albańska z okna busa (~2.5h)</h4><p>Przez Llogarę (przełęcz 1000m, dramatyczny zjazd), Himarë, Dhermi, Palasë. Klify, turkusowe zatoczki, wioski uczepione skał. <strong>Nie śpij w tym busie.</strong></p></div></div>
+        <div class="site"><div class="si">🌅</div><div class="sc"><h4>Sarandë — pierwsze morze (~17:30)</h4><p>Zamelduj się, wyjdź na promenadę. Zachód słońca z widokiem na Korfu (3km).</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚐</div><div class="td"><strong>09:00 — Tirana → Vlorë:</strong> furgon przez Fier (~2.5h)</div><div class="tp">~4€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>~14:30 — Vlorë → Sarandë:</strong> bus wzdłuż Riwiery (~2.5h)</div><div class="tp">~4€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d4')">
+        <div class="day-num">4</div><div class="day-date">11.04</div>
+        <div class="day-title">Sarandë — Butrint + leniwy dzień przy morzu</div>
+        <div class="day-chev" [class.open]="isDayOpen('d4')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d4')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🏛️</div><div class="sc"><h4>Butrint — 2700 lat w jednym miejscu · 1000 ALL · UNESCO</h4><p>① Teatr grecki (III w. p.n.e.) ② Świątynia Asklepiosa ③ Bazylika (V w.) z mozaikami ④ Baptisterium (VI w.) ⑤ Mury weneckie (XV w.) ⑥ Prom przez kanał. Minimum 3 godziny.</p><p class="hist">Vergiliusz w Eneidzie: „mała Troja". Pod rządami kolejno: Epir → Macedonia → Rzym → Bizancjum → Wenecja → Osmanie.</p></div></div>
+        <div class="site"><div class="si">✡️</div><div class="sc"><h4>Synagoga z IV w. + promenada</h4><p>Ruiny synagogi z mozaiką menory przy promenadzie — wstęp wolny. Plaża pusta w kwietniu.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Sarandë → Butrint:</strong> bus (kilka kursów, kwiecień — sprawdź)</div><div class="tp">~1€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d5')">
+        <div class="day-num">5</div><div class="day-date">12.04</div>
+        <div class="day-title">🚌 Sarandë → Ohrid (dzień transferowy)</div>
+        <div class="day-chev" [class.open]="isDayOpen('d5')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d5')"><div class="collapse-inner"><div class="day-body">
+        <div class="t-box"><div class="t-title">Plan dnia</div>
+          <div class="t-row"><div class="ti">🌅</div><div class="td"><strong>06:00 — Sarandë → Elbasan:</strong> wczesny furgon (~4–5h)</div><div class="tp">~6€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>~11:00 — Elbasan → Ohrid:</strong> bus przez Struga, granica Kjafasan (~3h)</div><div class="tp">~8€</div></div>
+          <div class="t-row"><div class="ti">🛃</div><div class="td"><strong>Granica Kjafasan:</strong> wysiądź, paszport, wróć. ~15min.</div><div class="tp">0€</div></div>
+          <div class="t-row"><div class="ti">🌇</div><div class="td"><strong>~14:00 — Ohrid!</strong> Spacer na Śv. Jovan Kaneo na zachód słońca.</div><div class="tp">—</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+  </div></div><!-- /albania -->
+
+  <!-- MACEDONIA -->
+  <div class="country-hdr ch-mk" [class.open]="isCountryOpen('mk')" (click)="toggleCountry('mk')">
+    <span>🇲🇰</span><span>Macedonia Płn. — 12–15 kwietnia</span>
+    <span class="meta">Ohrid → Bitola → Skopje</span>
+    <span class="chev" [class.open]="isCountryOpen('mk')">▼</span>
+  </div>
+  <div class="collapse-wrap" [class.open]="isCountryOpen('mk')"><div class="collapse-inner">
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d6')">
+        <div class="day-num">6–7</div><div class="day-date">12–14.04</div>
+        <div class="day-title">Ohrid — Macedońska Jerozolima</div>
+        <div class="day-chev" [class.open]="isDayOpen('d6')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d6')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">⛪</div><div class="sc"><h4>Śv. Jovan Kaneo — wschód i zachód słońca</h4><p>Kościółek z XIII w. na klifie nad jeziorem. Obowiązkowe wieczorem 12.04 i rankiem 14.04.</p></div></div>
+        <div class="site"><div class="si">📚</div><div class="sc"><h4>Klasztor Śv. Naum (rano 14.04)</h4><p>29km od Ohrid, bus lokalny. Tu w 893 Naum założył pierwszą słowiańską szkołę.</p><p class="hist">Stąd piśmienność słowiańska rozlała się na Rosję, Ukrainę i Bałkany.</p></div></div>
+        <div class="site"><div class="si">🏛️</div><div class="sc"><h4>Teatr antyczny + Zamek Cara Samuela</h4><p>Teatr hellenistyczny z III w. p.n.e. Zamek z X w., panorama 360°.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Ohrid → Śv. Naum:</strong> bus lokalny (~40min)</div><div class="tp">~1.5€</div></div>
+          <div class="t-row"><div class="ti">🚶</div><div class="td">Wszystkie atrakcje Ohrid pieszo</div><div class="tp">0€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d8')">
+        <div class="day-num">8</div><div class="day-date">14–15.04</div>
+        <div class="day-title">Bitola + Heraklea → Skopje wieczór</div>
+        <div class="day-chev" [class.open]="isDayOpen('d8')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d8')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🏺</div><div class="sc"><h4>Heraklea Lincestis · 2€</h4><p>Teatr z III w. p.n.e. Via Egnatia biegła tędy od Durrës do Konstantynopola. Dwie mozaiki posadzkowe z IV–VI w.</p><p class="hist">Miasto Filipa II Macedońskiego (IV w. p.n.e.) — ojca Aleksandra Wielkiego.</p></div></div>
+        <div class="site"><div class="si">☕</div><div class="sc"><h4>Sirok Sokak — obiad</h4><p>Deptak z kawiarniami i 19-wiecznymi konsulatami — „miasto konsulów".</p></div></div>
+        <div class="site"><div class="si">🌆</div><div class="sc"><h4>Skopje — wieczór</h4><p>Po przyjeździe: Most Kamienny (XV w.) i oświetlone pomniki Projektu 2014.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Ohrid → Bitola:</strong> bus (~1.5h)</div><div class="tp">~3€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Bitola → Skopje:</strong> bus (~2.5h)</div><div class="tp">~6€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="transfer-block">
+      <div class="transfer-title">🚌 Transfer · 15.04 · Skopje → Prisztina</div>
+      <div class="t-row"><div class="ti">🏛️</div><div class="td"><strong>Rano — Skopje:</strong> Stary Bazar (Čaršija), Twierdza Kale, Muzeum Holocaustu, Projekt 2014</div><div class="tp">—</div></div>
+      <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Wieczór — Skopje → Prisztina:</strong> bus bezpośredni, najłatwiejszy odcinek trasy (~2h)</div><div class="tp">~6€</div></div>
+    </div>
+
+  </div></div><!-- /macedonia -->
+
+  <!-- KOSOWO -->
+  <div class="country-hdr ch-ko" [class.open]="isCountryOpen('ko')" (click)="toggleCountry('ko')">
+    <span>🇽🇰</span><span>Kosowo — 15–19 kwietnia</span>
+    <span class="meta">Prisztina → Prizren → Peć</span>
+    <span class="chev" [class.open]="isCountryOpen('ko')">▼</span>
+  </div>
+  <div class="collapse-wrap" [class.open]="isCountryOpen('ko')"><div class="collapse-inner">
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d9')">
+        <div class="day-num">9</div><div class="day-date">16.04</div>
+        <div class="day-title">Prisztina + Gračanica</div>
+        <div class="day-chev" [class.open]="isDayOpen('d9')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d9')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🆕</div><div class="sc"><h4>Centrum Prisztiny</h4><p>Meczet Cara Sultana (XV w.), Hammam (XV w., dziś galeria). NEWBORN monument (2008), pomnik Clintona. Muzeum Kosowa (2€).</p></div></div>
+        <div class="site"><div class="si">⛪</div><div class="sc"><h4>Monastyr Gračanica · wstęp wolny · UNESCO</h4><p>Bus miejski linia 5 (0.50€). Freski z 1321 — Drzewo Nemanjiciów, Sąd Ostateczny.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">📱</div><div class="td"><strong>Bolt po Prisztinie</strong></div><div class="tp">2–4€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>→ Gračanica:</strong> bus miejski linia 5</div><div class="tp">0.50€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Wieczór — Prisztina → Prizren:</strong> bus (~1.5h)</div><div class="tp">~3€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d10')">
+        <div class="day-num">10</div><div class="day-date">17.04</div>
+        <div class="day-title">Prizren — pełny dzień</div>
+        <div class="day-chev" [class.open]="isDayOpen('d10')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d10')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🌉</div><div class="sc"><h4>Stary Bazar + rzeka Bistrica</h4><p>Kamienny most (XVI w.). Bazar z czynnymi rzemieślnikami srebrnicy. Meczet Sinan Paszy (1615). Muzeum Ligi Prizreńskiej 1878 (2€).</p></div></div>
+        <div class="site"><div class="si">🏰</div><div class="sc"><h4>Twierdza Kalaja — zachód słońca</h4><p>20min marszu pod górę. Ruiny byzantyjsko-serbskie z XIV w. Panorama 360°.</p></div></div>
+        <div class="site"><div class="si">🍽️</div><div class="sc"><h4>Kolacja nad Bistricą</h4><p>Restauracje z tarasami tuż nad wodą. Spróbuj <em>flija</em> — warstwowy naleśnik pieczony pod żarem.</p></div></div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d11')">
+        <div class="day-num">11</div><div class="day-date">18.04</div>
+        <div class="day-title">Prizren wolne rano → Peć</div>
+        <div class="day-chev" [class.open]="isDayOpen('d11')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d11')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">☕</div><div class="sc"><h4>Wolne rano</h4><p>Kawa w osmańskim hanie, lokalny targ, spacer bez planu.</p></div></div>
+        <div class="site"><div class="si">🏔️</div><div class="sc"><h4>Peć — Patriarchat + pierwsze spojrzenie na kanion</h4><p>Przyjazd ~14:00. Patriarchat Peć (XIII–XIV w., UNESCO). Wieczór: wejście do Kanionu Rugova, kolacja z pstrągiem przy rzece.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>~12:00 — Prizren → Peć:</strong> bus przez Gjakovę (~2h)</div><div class="tp">~4€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d12')">
+        <div class="day-num">12</div><div class="day-date">19.04</div>
+        <div class="day-title">Peć — Kanion Rugova → transfer do Kotoru</div>
+        <div class="day-chev" [class.open]="isDayOpen('d12')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d12')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🏔️</div><div class="sc"><h4>Kanion Rugova — spacer rano (7:00–10:00)</h4><p>Jeden z najgłębszych kanionów Europy (25km, ściany do 1000m). Pierwsze 3–5km to łatwa droga z dramatycznymi widokami.</p></div></div>
+        <div class="t-box"><div class="t-title">Transfer do Czarnogóry</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>~11:00 — Peć → Rozaje → Podgorica:</strong> bus (~3.5–4h)</div><div class="tp">~10€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>~16:00 — Podgorica → Kotor:</strong> bus (~2h)</div><div class="tp">~6.50€</div></div>
+          <div class="t-row"><div class="ti">🌇</div><div class="td"><strong>~18:00 — Kotor!</strong> Zamelduj się, wyjdź na mury o zmroku.</div><div class="tp">—</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+  </div></div><!-- /kosowo -->
+
+  <!-- CZARNOGÓRA -->
+  <div class="country-hdr ch-me" [class.open]="isCountryOpen('me')" (click)="toggleCountry('me')">
+    <span>🇲🇪</span><span>Czarnogóra — 19–22 kwietnia</span>
+    <span class="meta">Kotor → Budva → Cetinje → Podgorica ✈️</span>
+    <span class="chev" [class.open]="isCountryOpen('me')">▼</span>
+  </div>
+  <div class="collapse-wrap" [class.open]="isCountryOpen('me')"><div class="collapse-inner">
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d13')">
+        <div class="day-num">13</div><div class="day-date">19–20.04</div>
+        <div class="day-title">Kotor + Perast wieczorem</div>
+        <div class="day-chev" [class.open]="isDayOpen('d13')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d13')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🏰</div><div class="sc"><h4>Stare Miasto Kotor · UNESCO · 3€ mury</h4><p>Brama Morska (1555). Katedra Śv. Trypona (1166). Twierdza San Giovanni — 1350 schodów, widok na całą Zatokę Kotorską.</p><p class="hist">Wenecja rządziła 400 lat. Każdy zostawił ślad: Ilirowie, Rzym, Bizancjum, Serbia, Węgry.</p></div></div>
+        <div class="site"><div class="si">⛵</div><div class="sc"><h4>Perast + Gospa od Škrpjela (wieczór) · 5€ łódka</h4><p>Bus z Kotoru (~30min). Wysepka budowana przez marynarzy przez 200 lat. W środku gobelin tkany przez Jacintę Kunić przez 25 lat — gdy oślepła, tkała dalej własnymi włosami.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>Kotor → Perast:</strong> bus linii Kotor–Herceg Novi (~30min)</div><div class="tp">~1.5€</div></div>
+          <div class="t-row"><div class="ti">⛵</div><div class="td"><strong>Perast → wysepka Gospa:</strong> łódkarze na nabrzeżu</div><div class="tp">~5€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d14')">
+        <div class="day-num">14</div><div class="day-date">21.04</div>
+        <div class="day-title">🌊 Kotor → Budva → Cetinje → Podgorica</div>
+        <div class="day-chev" [class.open]="isDayOpen('d14')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d14')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">🏖️</div><div class="sc"><h4>Budva — Stare Miasto (9:40–12:30)</h4><p>Bus wzdłuż wybrzeża (~40min). Jedna z najstarszych osad Adriatyku — iliryjska kolonia V w. p.n.e. W kwietniu bez tłumów, plaże Mogren puste.</p></div></div>
+        <div class="site"><div class="si">👑</div><div class="sc"><h4>Cetinje — dawna stolica (13:30–16:30)</h4><p>Bus serpentynami w górę (~30min). Ambasady europejskich mocarstw w 200m od siebie.</p><p class="hist">Jedyne bałkańskie państwo nigdy w pełni niepodbite przez Osmanów.</p></div></div>
+        <div class="site"><div class="si">🌆</div><div class="sc"><h4>Podgorica — nocleg (~17:30)</h4><p>Bus w dół (~45min). Stara Varoš z wieżą osmańską.</p></div></div>
+        <div class="t-box"><div class="t-title">Transport — jeden kierunek, zero cofania</div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>09:00 — Kotor → Budva</strong></div><div class="tp">~2.5€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>~13:00 — Budva → Cetinje</strong></div><div class="tp">~2€</div></div>
+          <div class="t-row"><div class="ti">🚌</div><div class="td"><strong>~16:30 — Cetinje → Podgorica</strong></div><div class="tp">~2.5€</div></div>
+        </div>
+      </div></div></div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" (click)="toggleDay('d15')">
+        <div class="day-num">15</div><div class="day-date">22.04</div>
+        <div class="day-title">Podgorica — wolne rano ✈️ 18:00</div>
+        <div class="day-chev" [class.open]="isDayOpen('d15')">▼</div>
+      </div>
+      <div class="collapse-wrap" [class.open]="isDayOpen('d15')"><div class="collapse-inner"><div class="day-body">
+        <div class="site"><div class="si">☕</div><div class="sc"><h4>Wolne rano — Stara Varoš</h4><p>Osmańska Stara Varoš z wieżą zegarową. Opcja: wodospad Cijevna 15km.</p></div></div>
+        <div class="site"><div class="si">✈️</div><div class="sc"><h4>Lotnisko TGD — odlot 18:00</h4><p>Taxi z centrum ~8–10€, ~10min. Bądź minimum 2.5h przed odlotem.</p></div></div>
+        <div class="box box-warn">⚠️ <strong>Plan:</strong> check-out do 12:00. Na lotnisko wyjedź najpóźniej o 15:15.</div>
+      </div></div></div>
+    </div>
+
+  </div></div><!-- /czarnogora -->
+
+</div>
+}
+
+<!-- ══════════ TAB: TRANSPORT ══════════ -->
+@if (isTab('transport')) {
+<div class="tab">
+  <p class="sec-title">Środki transportu na trasie</p>
+  <div class="card" style="padding:20px;margin-bottom:12px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+      <span style="font-size:1.8rem">🚐</span>
+      <div><div style="color:var(--terra);font-weight:800;">Furgon (Albania)</div><div style="color:var(--muted2);font-size:var(--text-sm);">Prywatne minivany — kręgosłup albańskiego transportu</div></div>
+    </div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7;">Odjeżdżają <strong>rano (6:00–13:00)</strong> gdy są pełne. Brak rezerwacji. Pytaj o osobny <strong>dworzec furgonów</strong>. Bagaż na dachu. Ceny: Tirana–Krujë ~1.5€, Tirana–Vlorë ~4€.</p>
+  </div>
+  <div class="card" style="padding:20px;margin-bottom:12px;">
+    <div style="margin-bottom:12px;font-weight:800;color:var(--terra);">🌍 Przejazdy graniczne</div>
+    <table>
+      <tr><th>Trasa</th><th>Środek</th><th>Czas</th><th>Cena</th><th>Poziom</th></tr>
+      <tr><td>AL → MK (Kjafasan)</td><td>Furgon + bus</td><td>~7h</td><td>~14€</td><td><span class="tag tag-gold">Cały dzień</span></td></tr>
+      <tr><td>MK → KO (Blace)</td><td>Bus Skopje–Prisztina</td><td>~2h</td><td>~6€</td><td><span class="tag tag-green">Najłatwiejsze</span></td></tr>
+      <tr><td>KO → ME (Kula)</td><td>Bus Peć–Podgorica</td><td>~3.5h</td><td>~10€</td><td><span class="tag tag-gold">Sprawdź</span></td></tr>
+    </table>
+  </div>
+  <div class="card" style="padding:20px;margin-bottom:12px;">
+    <div style="margin-bottom:12px;font-weight:800;color:var(--terra);">🚶 Zero taxi — jak to działa</div>
+    <table>
+      <tr><th>Miejsce</th><th>Poprzednio</th><th>Teraz</th></tr>
+      <tr><td>Monastyr Dečani</td><td><span class="tag tag-orange">Taxi 15€</span></td><td><span class="tag tag-green">Kanion Rugova pieszo</span></td></tr>
+      <tr><td>Monastyr Ostrog</td><td><span class="tag tag-orange">Taxi 40–50€</span></td><td><span class="tag tag-green">Budva busem 2.50€</span></td></tr>
+      <tr><td>Račak memorial</td><td><span class="tag tag-orange">Taxi 20€</span></td><td><span class="tag tag-green">Bus + pieszo / hitchhike</span></td></tr>
+    </table>
+    <div class="box box-green">✓ Oszczędności: ~75–85€. Hitchhiking w Kosowie i Albanii to kulturowa norma.</div>
+  </div>
+  <p class="sec-title">Aplikacje</p>
+  <div class="prac-grid">
+    <div class="pc"><h4>Bolt</h4><p>Tirana, Prisztina, Skopje, Podgorica. Tańszy niż negocjowane taxi z ulicy.</p></div>
+    <div class="pc"><h4>Google Maps (offline!)</h4><p>Pobierz mapy AL, MK, KO, ME przed wyjazdem — kluczowe przy słabym zasięgu.</p></div>
+    <div class="pc"><h4>GetByBus / FlixBus</h4><p>Trasa Sarandë→Ohrid i inne. Sprawdź dostępność w kwietniu.</p></div>
+    <div class="pc"><h4>Rome2Rio</h4><p>Planowanie przesiadek i porównywanie opcji połączeń.</p></div>
+  </div>
+</div>
+}
+
+<!-- ══════════ TAB: MAPA ══════════ -->
+@if (isTab('mapa')) {
+<div class="tab">
+  <div class="box box-gold" style="margin-bottom:18px;">
+    <p>Kliknij miasto — otwiera Google Maps. <strong>●</strong> baza noclegowa &nbsp;·&nbsp; <strong>◌</strong> day trip / stop</p>
+  </div>
+
+  <p class="sec-title">🇦🇱 Albania · 08–12.04</p>
+  <div class="map-grid">
+    <a href="https://maps.google.com/?cid=3177847618938171579" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏙️</span><div><div class="mc-name">● Tirana</div><div class="mc-sub">baza · 2 noce · 08–10.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">BunkArt 2, Piramida, Bllok. Nocne: Komiteti, Radio Bar.</p></div></a>
+    <a href="https://maps.google.com/?cid=4167286421895159354" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏰</span><div><div class="mc-name">◌ Krujë</div><div class="mc-sub">day trip · 09.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Zamek Skanderbega, bazar osmański XVII w. Furgon z Tirany 1.5€.</p></div></a>
+    <a href="https://maps.google.com/?cid=14807063829777921105" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🌊</span><div><div class="mc-name">◌ Vlorë</div><div class="mc-sub">lunch stop · 10.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Proklamacja niepodległości 1912. Lunch przed Riwierą.</p></div></a>
+    <a href="https://maps.google.com/?cid=15480383189559679248" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🌅</span><div><div class="mc-name">● Sarandë</div><div class="mc-sub">baza · 2 noce · 10–12.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Morze Jońskie, Korfu 3km. Synagoga IV w., plaże.</p></div></a>
+    <a href="https://maps.google.com/?cid=5445269485590657089" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏛️</span><div><div class="mc-name">◌ Butrint · UNESCO</div><div class="mc-sub">day trip z Sarandë · 11.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">2700 lat historii: teatr grecki III w. p.n.e., bazylika V w., mury weneckie.</p></div></a>
+  </div>
+
+  <p class="sec-title">🇲🇰 Macedonia Płn. · 12–15.04</p>
+  <div class="map-grid">
+    <a href="https://maps.google.com/?cid=14153965240597596627" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏞️</span><div><div class="mc-name">● Ohrid · UNESCO</div><div class="mc-sub">baza · 2 noce · 12–14.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Jezioro 3mln lat, teatr III w. p.n.e., Śv. Naum. Nocne: Chinar Bar.</p></div></a>
+    <a href="https://maps.google.com/?cid=18043596862803331400" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏺</span><div><div class="mc-name">◌ Bitola</div><div class="mc-sub">day trip · 14.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Heraklea Lincestis Filip II, mozaiki, Sirok Sokak.</p></div></a>
+    <a href="https://maps.google.com/?cid=8593336274344577621" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">🗿</span><div><div class="mc-name">● Skopje</div><div class="mc-sub">baza · 1 noc · 14–15.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Projekt 2014, Stary Bazar XV w., Muzeum Holocaustu. Nocne: Menada, Pivnica An.</p></div></a>
+  </div>
+
+  <p class="sec-title">🇽🇰 Kosowo · 15–19.04</p>
+  <div class="map-grid">
+    <a href="https://maps.google.com/?cid=13917053850317731354" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🆕</span><div><div class="mc-name">● Prisztina</div><div class="mc-sub">baza · 1 noc · 15–16.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">NEWBORN, Clinton, Gračanica. Nocne: Dit' e Nat' (24h), Soma.</p></div></a>
+    <a href="https://maps.google.com/?cid=1598272877694381885" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🌉</span><div><div class="mc-name">● Prizren</div><div class="mc-sub">baza · 2 noce · 16–18.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Bazar, Liga 1878, Bistrica. Nocne: Tash Bar, Kafana Lidhja.</p></div></a>
+    <a href="https://maps.google.com/?cid=3283852936187132497" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏔️</span><div><div class="mc-name">● Peć (Peja)</div><div class="mc-sub">baza · 1 noc · 18–19.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Kanion Rugova pieszo z Patriarchatu. Piwo Peja — najlepsze na trasie.</p></div></a>
+  </div>
+
+  <p class="sec-title">🇲🇪 Czarnogóra · 19–22.04</p>
+  <div class="map-grid">
+    <a href="https://maps.google.com/?cid=8280534372461368745" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">⛵</span><div><div class="mc-name">◌ Perast</div><div class="mc-sub">wieczór · 19.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Gospa od Škrpjela — wysepka z gobelinem tkanym własnymi włosami.</p></div></a>
+    <a href="https://maps.google.com/?cid=7213753815455049709" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏰</span><div><div class="mc-name">● Kotor · UNESCO</div><div class="mc-sub">baza · 2 noce · 19–21.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Weneckie mury, 1350 schodów, koty wszędzie. Nocne: Bokun Pub.</p></div></a>
+    <a href="https://maps.google.com/?cid=15325553490007822475" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">🏖️</span><div><div class="mc-name">◌ Budva</div><div class="mc-sub">day trip · 21.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Stare Miasto V w. p.n.e., mury weneckie, plaże Mogren.</p></div></a>
+    <a href="https://maps.google.com/?cid=7646339673828838486" target="_blank" class="map-link"><div class="map-card"><div class="mc-head"><span class="mc-icon">👑</span><div><div class="mc-name">◌ Cetinje</div><div class="mc-sub">day trip · 21.04</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Dawna stolica. Ambasady mocarstw w 200m od siebie.</p></div></a>
+    <a href="https://maps.google.com/?cid=6113468463769956895" target="_blank" class="map-link" style="grid-column:1/-1;"><div class="map-card"><div class="mc-head"><span class="mc-icon">✈️</span><div><div class="mc-name">● Podgorica</div><div class="mc-sub">ostatnia noc · 21–22.04 · odlot TGD→KRK 18:00</div></div><span class="mc-arrow">↗</span></div><p class="mc-desc">Stara Varoš, wieża osmańska. Lotnisko TGD — 10min taksówką z centrum.</p></div></a>
+  </div>
+</div>
+}
+
+<!-- ══════════ TAB: NOCLEGI ══════════ -->
+@if (isTab('accommodation')) {
+<div class="tab">
+  <div class="box box-gold" style="margin-bottom:18px;">
+    <h3 style="color:var(--gold2);margin-bottom:6px;">Zasady rezerwacji</h3>
+    <p style="font-size:var(--text-sm);line-height:1.7;">Kwiecień to <strong>poza sezon</strong> — rezerwuj 2–4 tygodnie wcześniej. Wyjątek: <strong>Kotor</strong> (popularny cały rok) i <strong>Peć</strong> (mały wybór). Zawsze rezerwuj <strong>z opcją bezpłatnego anulowania</strong>.</p>
+  </div>
+  <p class="sec-title">Wszystkie noclegi</p>
+  <table>
+    <tr><th>#</th><th>Daty</th><th>Miasto</th><th>Noce</th><th>Typ</th><th>Budget / Mid</th></tr>
+    <tr><td>1–2</td><td>08–10.04</td><td>🇦🇱 Tirana</td><td>2</td><td>Hostel / boutique</td><td>8–15€ / 30–45€</td></tr>
+    <tr><td>3–4</td><td>10–12.04</td><td>🇦🇱 Sarandë</td><td>2</td><td>Apartament z widokiem</td><td>10–15€ / 30–55€</td></tr>
+    <tr><td>5–6</td><td>12–14.04</td><td>🇲🇰 Ohrid</td><td>2</td><td>Guesthouse nad jeziorem</td><td>12–20€ / 35–60€</td></tr>
+    <tr><td>7</td><td>14–15.04</td><td>🇲🇰 Skopje</td><td>1</td><td>Hostel / hotel centrum</td><td>10–15€ / 30–50€</td></tr>
+    <tr><td>8</td><td>15–16.04</td><td>🇽🇰 Prisztina</td><td>1</td><td>Hostel / boutique</td><td>10–18€ / 30–55€</td></tr>
+    <tr><td>9–10</td><td>16–18.04</td><td>🇽🇰 Prizren</td><td>2</td><td>Guesthouse przy Bistricy</td><td>12–20€ / 35–60€</td></tr>
+    <tr><td>11</td><td>18–19.04</td><td>🇽🇰 Peć</td><td>1</td><td>Guesthouse / hostel</td><td>10–15€ / 25–40€</td></tr>
+    <tr><td>12–13</td><td>19–21.04</td><td>🇲🇪 Kotor</td><td>2</td><td>Hostel w murach</td><td>15–22€ / 45–80€</td></tr>
+    <tr><td>14</td><td>21–22.04</td><td>🇲🇪 Podgorica</td><td>1</td><td>Hotel blisko centrum</td><td>20–30€ / 45–70€</td></tr>
+  </table>
+  <p class="sec-title">Jak szukać</p>
+  <div class="acc-grid">
+    <div class="acc-card"><h4>🇦🇱 Tirana · 08–10.04</h4><p><strong>Dzielnica:</strong> Bllok lub centrum<br><strong>Platformy:</strong> Booking.com, Hostelworld<br><strong>Szukaj:</strong> „Bllok", „near Skanderbeg Square"</p><div class="tip">⚡ Duży wybór — rezerwuj 1–2 tygodnie wcześniej</div></div>
+    <div class="acc-card"><h4>🇦🇱 Sarandë · 10–12.04</h4><p><strong>Dzielnica:</strong> promenada lub centrum<br><strong>Platformy:</strong> Booking.com, Airbnb<br><strong>Szukaj:</strong> „sea view", „Ionian view"</p><div class="tip">⚡ Poza sezonem — negocjuj bezpośrednio</div></div>
+    <div class="acc-card"><h4>🇲🇰 Ohrid · 12–14.04</h4><p><strong>Dzielnica:</strong> Stare Miasto lub nad jeziorem<br><strong>Platformy:</strong> Booking.com, Airbnb<br><strong>Szukaj:</strong> „lake view", „near Kaneo"</p><div class="tip">⚡ Zostań blisko Śv. Jovan Kaneo — wschód słońca bez wychodzenia</div></div>
+    <div class="acc-card"><h4>🇽🇰 Prizren · 16–18.04</h4><p><strong>Dzielnica:</strong> Stare Miasto przy Bistricy<br><strong>Platformy:</strong> Booking.com, Airbnb<br><strong>Szukaj:</strong> „near bridge", „Bistrica river"</p><div class="tip">⚡ Nocleg przy moście = klasyczne widoki z rankiem</div></div>
+    <div class="acc-card"><h4>🇽🇰 Peć · 18–19.04</h4><p><strong>Dzielnica:</strong> centrum lub przy Patriarchacie<br><strong>Platformy:</strong> Booking.com<br><strong>Szukaj:</strong> „Peja center", „near Patriarchate"</p><div class="tip">⚡ Mały wybór — rezerwuj minimum tydzień wcześniej!</div></div>
+    <div class="acc-card"><h4>🇲🇪 Kotor · 19–21.04</h4><p><strong>Dzielnica:</strong> Stare Miasto lub przy bramie<br><strong>Platformy:</strong> Booking.com, Hostelworld<br><strong>Szukaj:</strong> „inside walls", „Sea Gate"</p><div class="tip">⚡ Popularny cały rok — <strong>rezerwuj 3–4 tygodnie wcześniej!</strong></div></div>
+  </div>
+  <div class="box box-warn" style="margin-top:16px;"><strong>Priorytety:</strong> Kotor → Peć → Ohrid → reszta. Zawsze zaznaczaj „Bezpłatne anulowanie".</div>
+  <div class="box box-green">💡 <strong>Booking.com</strong> na hotele · <strong>Airbnb</strong> na apartamenty z widokiem · <strong>Bezpośrednio</strong> w małych guesthouse'ach — 20–30% taniej niż Booking.</div>
+</div>
+}
+
+<!-- ══════════ TAB: KOSZTY ══════════ -->
+@if (isTab('costs')) {
+<div class="tab">
+  <p class="sec-title">Koszty transportu</p>
+  <table>
+    <tr><th>Odcinek</th><th>Środek</th><th>Koszt</th></tr>
+    <tr><td>Albania — furgony i busy wewnętrzne</td><td>Furgony</td><td>~20€</td></tr>
+    <tr><td>Albania → Macedonia (Elbasan→Ohrid)</td><td>Bus + furgon</td><td>~14€</td></tr>
+    <tr><td>Macedonia — busy wewnętrzne</td><td>Busy</td><td>~15€</td></tr>
+    <tr><td>Macedonia → Kosowo (Skopje→Prisztina)</td><td>Bus</td><td>~6€</td></tr>
+    <tr><td>Kosowo — busy wewnętrzne</td><td>Busy</td><td>~10€</td></tr>
+    <tr><td>Kosowo → Czarnogóra (Peć→Podgorica)</td><td>Bus</td><td>~10€</td></tr>
+    <tr><td>Czarnogóra — busy wewnętrzne</td><td>Busy</td><td>~12€</td></tr>
+    <tr><td>Bolt i taxi miejskie łącznie</td><td>Aplikacja</td><td>~15€</td></tr>
+    <tr><td><strong>TRANSPORT RAZEM</strong></td><td></td><td><strong style="color:var(--green)">~102€</strong></td></tr>
+  </table>
+  <p class="sec-title">Całkowity kosztorys</p>
+  <table>
+    <tr><th>Kategoria</th><th>Budget</th><th>Mid</th></tr>
+    <tr><td>✈️ Loty (już kupione)</td><td colspan="2" style="color:var(--green);font-weight:700;">✓ Opłacone</td></tr>
+    <tr><td>🛏️ Noclegi — 14 nocy</td><td>~210€</td><td>~420€</td></tr>
+    <tr><td>🍽️ Jedzenie — 3 posiłki/dzień</td><td>~140€</td><td>~210€</td></tr>
+    <tr><td>🚌 Transport (busy + Bolt)</td><td>~102€</td><td>~115€</td></tr>
+    <tr><td>🎟️ Wstępy i muzea</td><td>~45€</td><td>~65€</td></tr>
+    <tr><td>☕ Kawa, drobne, pamiątki</td><td>~60€</td><td>~120€</td></tr>
+  </table>
+  <div class="total-row">
+    <div><div class="tl">Budget</div><div class="tv">~557€</div></div>
+    <div><div class="tl">Mid</div><div class="tv">~930€</div></div>
+  </div>
+  <p class="sec-title">Waluty</p>
+  <div class="curr-grid">
+    <div class="curr-card">
+      <div class="curr-head"><span class="flag">🇦🇱</span><span class="cname">Lek albański</span><br><span class="cval">1 EUR ≈ 98–100 ALL</span></div>
+      <div class="curr-body">
+        <div class="curr-row"><span class="cl">Kurs PLN</span><span class="cv">1 PLN ≈ 23–24 ALL</span></div>
+        <div class="curr-row"><span class="cl">Karty</span><span class="cv bad">Słabo</span></div>
+        <div class="curr-row"><span class="cl">Furgony</span><span class="cv bad">Tylko gotówka</span></div>
+        <div class="curr-row"><span class="cl">Espresso</span><span class="cv">50–80 ALL (~0.60€)</span></div>
+        <div class="curr-row"><span class="cl">Piwo</span><span class="cv">200–300 ALL (~2–3€)</span></div>
+        <div class="curr-row"><span class="cl">Obiad</span><span class="cv">500–800 ALL (~5–8€)</span></div>
+      </div>
+    </div>
+    <div class="curr-card">
+      <div class="curr-head"><span class="flag">🇲🇰</span><span class="cname">Denar macedoński</span><br><span class="cval">1 EUR ≈ 61–62 MKD</span></div>
+      <div class="curr-body">
+        <div class="curr-row"><span class="cl">Kurs PLN</span><span class="cv">1 PLN ≈ 14–15 MKD</span></div>
+        <div class="curr-row"><span class="cl">Karty</span><span class="cv good">OK w miastach</span></div>
+        <div class="curr-row"><span class="cl">Busy</span><span class="cv bad">Gotówka</span></div>
+        <div class="curr-row"><span class="cl">Roaming UE</span><span class="cv good">Tak</span></div>
+        <div class="curr-row"><span class="cl">Kawa</span><span class="cv">60–80 MKD (~1€)</span></div>
+        <div class="curr-row"><span class="cl">Piwo</span><span class="cv">100–150 MKD (~2€)</span></div>
+      </div>
+    </div>
+    <div class="curr-card">
+      <div class="curr-head"><span class="flag">🇽🇰</span><span class="cname">Euro — Kosowo</span><br><span class="cval">Jednostronne euro od 1999</span></div>
+      <div class="curr-body">
+        <div class="curr-row"><span class="cl">Karty</span><span class="cv good">OK, Bolt działa</span></div>
+        <div class="curr-row"><span class="cl">Busy/taxi</span><span class="cv bad">Gotówka</span></div>
+        <div class="curr-row"><span class="cl">Roaming UE</span><span class="cv bad">Nie — kup SIM ~3€</span></div>
+        <div class="curr-row"><span class="cl">Ceny</span><span class="cv good">Najtaniej na trasie</span></div>
+        <div class="curr-row"><span class="cl">Kawa</span><span class="cv">0.80–1.20€</span></div>
+        <div class="curr-row"><span class="cl">Piwo Peja</span><span class="cv">1.50–2€ 🍺</span></div>
+      </div>
+    </div>
+    <div class="curr-card">
+      <div class="curr-head"><span class="flag">🇲🇪</span><span class="cname">Euro — Czarnogóra</span><br><span class="cval">Jednostronne euro od 2002</span></div>
+      <div class="curr-body">
+        <div class="curr-row"><span class="cl">Karty</span><span class="cv good">Najlepsza akceptacja</span></div>
+        <div class="curr-row"><span class="cl">Busy</span><span class="cv bad">Gotówka</span></div>
+        <div class="curr-row"><span class="cl">Roaming UE</span><span class="cv good">Tak</span></div>
+        <div class="curr-row"><span class="cl">Ceny</span><span class="cv bad">Najdrożej na trasie</span></div>
+        <div class="curr-row"><span class="cl">Kawa</span><span class="cv">1–1.50€</span></div>
+        <div class="curr-row"><span class="cl">Piwo Nikšičko</span><span class="cv">2–3€</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="sec-title">Strategia gotówkowa</p>
+  <div class="strategy-grid">
+    <div class="strat-card"><div class="sf">🇦🇱</div><div class="sn">Tirana</div><div class="sd">Wypłać ~120–150 EUR w Lekach na całą Albanię</div></div>
+    <div class="strat-card"><div class="sf">🇲🇰</div><div class="sn">Ohrid</div><div class="sd">Wypłać ~50–70 EUR w Denarach na Macedonię</div></div>
+    <div class="strat-card"><div class="sf">🇽🇰</div><div class="sn">Prisztina</div><div class="sd">EUR — uzupełnij gotówkę w bankomacie ~50€</div></div>
+    <div class="strat-card"><div class="sf">🇲🇪</div><div class="sn">Kotor</div><div class="sd">EUR — głównie karta, miej ~40€ gotówki na busy</div></div>
+  </div>
+</div>
+}
+
+<!-- ══════════ TAB: LOKALIZACJE ══════════ -->
+@if (isTab('briefs')) {
+<div class="tab">
+  <p class="sec-title">🇦🇱 Albania</p>
+  <div class="brief-grid">
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🏙️</span><div><div class="brief-name">Tirana</div><div class="brief-sub">STOLICA · baza 2 noce · 08–10.04</div></div></div><div class="brief-body">Jedno z najbardziej zaskakujących miast Europy. 45 lat komunizmu Hodży zostawiło kraj z 170 000 bunkrami i zerową turystyką. Dziś kolorowe, energetyczne i zadziwiająco wesołe. Kontrasty co krok: pomnik bohatera obok piramidy dyktatora, modna kawiarnia w dawnej dzielnicy nomenklatury.</div><div class="brief-quote">„Kraj z 170 000 bunkrami i zakazem religii — dziś tańczy do rana w Blloku."</div></div>
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🏰</span><div><div class="brief-name">Krujë</div><div class="brief-sub">DAY TRIP · 09.04</div></div></div><div class="brief-body">Górska twierdza 32km od Tirany. Tu Skanderbeg przez ćwierć wieku odpierał osmańskie armie. Zamek, muzeum z albańskim mitem narodowym i jeden z najlepiej zachowanych bazarów osmańskich na Bałkanach.</div><div class="brief-quote">„Oblężony trzy razy, nigdy niepokonany — jak Albania."</div></div>
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🌊</span><div><div class="brief-name">Sarandë</div><div class="brief-sub">BAZA 2 NOCE · 10–12.04</div></div></div><div class="brief-body">Nadmorska baza na Jońskim z widokiem na Korfu (3km). W sezonie zatłoczona i droga — w kwietniu idealna: pusta, tania, autentyczna. Wczesnochrześcijańska synagoga z mozaiką menory leży na promenadzie.</div><div class="brief-quote">„Grecja widoczna gołym okiem, albańskie ceny."</div></div>
+    <div class="brief-card wide"><div class="brief-top"><span class="brief-icon">🏛️</span><div><div class="brief-name">Butrint</div><div class="brief-sub">DAY TRIP Z SARANDË · 11.04 · UNESCO</div></div></div><div class="brief-body">Park archeologiczny z 2700 latami historii w jednym miejscu. Jedna po drugiej: grecka świątynia, hellenistyczny teatr, romańskie łaźnie, wczesnochrześcijańska bazylika z mozaikami, weneckie mury — wszystko w lesie nad kanałem.</div><div class="brief-quote">„Pod każdą warstwą historii — kolejna warstwa historii."</div></div>
+  </div>
+  <p class="sec-title">🇲🇰 Macedonia Północna</p>
+  <div class="brief-grid">
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🏞️</span><div><div class="brief-name">Ohrid</div><div class="brief-sub">BAZA 2 NOCE · 12–14.04 · UNESCO</div></div></div><div class="brief-body">Jedno z najstarszych i najgłębszych jezior świata (289m) z miastem na klifach nad wodą. Tu w IX w. uczniowie Cyryla i Metodego stworzyli pierwszą słowiańską szkołę — stąd piśmienność słowiańska rozlała się na całą Europę Wschodnią.</div><div class="brief-quote">„Jezioro sprzed 3 milionów lat, alfabet sprzed 1100."</div></div>
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🗿</span><div><div class="brief-name">Skopje</div><div class="brief-sub">BAZA 1 NOC · 14–15.04</div></div></div><div class="brief-body">Stolica z tożsamościowym kryzysem wylanym w kamieniu. Rząd wydał 600 mln euro na Projekt 2014: setki pomników, neoklasyczne fasady przyklejone do komunistycznych bloków. Stary Bazar osmański z XV w. działa po sąsiedzku.</div><div class="brief-quote">„Aleksander Wielki na koniu za 9 mln€ — oficjalnie 'Wojownik na koniu'."</div></div>
+  </div>
+  <p class="sec-title">🇽🇰 Kosowo</p>
+  <div class="brief-grid">
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🆕</span><div><div class="brief-name">Prisztina</div><div class="brief-sub">BAZA 1 NOC · 15–16.04</div></div></div><div class="brief-body">Najmłodsza stolica Europy — niepodległość 2008. Niesamowity kontrast: osmański meczet z XV w. obok żółtego NEWBORN, ulica Clintona z 6-metrowym pomnikiem. Kosowianie są jednym z najbardziej proamerykańskich narodów w Europie.</div><div class="brief-quote">„Jedyne miejsce w Europie z ulicą Billa Clintona i sklepem 'Hillary'."</div></div>
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🌉</span><div><div class="brief-name">Prizren</div><div class="brief-sub">BAZA 2 NOCE · 16–18.04</div></div></div><div class="brief-body">Najpiękniejsze miasto Kosowa — osmański bazar, rzeka Bistrica przez centrum, restauracje z tarasami nad wodą. W 1878 tu zawiązała się Liga Prizreńska — pierwszy albański ruch narodowy.</div><div class="brief-quote">„Serbska stolica, albańskie serce, osmański charakter."</div></div>
+    <div class="brief-card wide"><div class="brief-top"><span class="brief-icon">🏔️</span><div><div class="brief-name">Peć (Peja)</div><div class="brief-sub">BAZA 1 NOC · 18–19.04</div></div></div><div class="brief-body">Miasto u wejścia do jednego z najgłębszych kanionów Europy — Kanion Rugova (25km, ściany do 1000m). Tu przez wieki chowały się albańskie klany żyjące według Kanunu. Restauracje przy kanionie serwują pstrąga prosto z rzeki.</div><div class="brief-quote">„Tam gdzie kończy się miasto, zaczyna się kanion."</div></div>
+  </div>
+  <p class="sec-title">🇲🇪 Czarnogóra</p>
+  <div class="brief-grid">
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">⛵</span><div><div class="brief-name">Perast</div><div class="brief-sub">WIECZÓR · 19.04</div></div></div><div class="brief-body">Miasteczko kilkuset mieszkańców z 16 pałacami i 19 kościołami. Na środku zatoki stoi wysepka budowana przez marynarzy przez 200 lat. W środku gobelin tkany przez 25 lat — kiedy autorka oślepła, tkała dalej własnymi włosami.</div><div class="brief-quote">„Wyspa zbudowana kamieniami, gobelin tkany włosami."</div></div>
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🏰</span><div><div class="brief-name">Kotor</div><div class="brief-sub">BAZA 2 NOCE · 19–21.04 · UNESCO</div></div></div><div class="brief-body">Średniowieczne miasto otoczone murami w najgłębszym fiordzie Europy. Wenecja rządziła tu 400 lat — zostały lwy nad bramami, gotyckie pałace i koty wszędzie.</div><div class="brief-quote">„Wenecja schowana w fiordzie — i koty dosłownie wszędzie."</div></div>
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">🏖️</span><div><div class="brief-name">Budva</div><div class="brief-sub">DAY TRIP · 21.04</div></div></div><div class="brief-body">Jedna z najstarszych osad Adriatyku. Latem czarnogórska Ibiza. W kwietniu jednak cicho: Stare Miasto na półwyspie z murami XV w., plaże Mogren puste.</div><div class="brief-quote">„Latem party capital, w kwietniu spokojny klejnot."</div></div>
+    <div class="brief-card"><div class="brief-top"><span class="brief-icon">👑</span><div><div class="brief-name">Cetinje</div><div class="brief-sub">DAY TRIP · 21.04</div></div></div><div class="brief-body">Dawna stolica jedynego bałkańskiego państwa, które nigdy w pełni nie poddało się Osmanom. Ambasady Austrii, Rosji, Włoch i Turcji stoją w 200m od siebie.</div><div class="brief-quote">„Stolica którą mocarstwa szanowały, ale nigdy nie zdobyły."</div></div>
+  </div>
+</div>
+}
+
+<!-- ══════════ COUNTRY TABS ══════════ -->
+@if (isTab('country-al')) {
+<div class="tab">
+  <div class="ctry-section">
+    <div class="ctry-header" style="background:linear-gradient(135deg,#c03a3a,#8a2020);border-radius:var(--rl) var(--rl) 0 0;">
+      <h2>🇦🇱 Albania — „Ziemia Orłów"</h2>
+      <p>45 lat komunizmu Hodży zostawiło kraj z 170 000 bunkrami i zerową turystyką. Dziś Albania to mieszanka starożytności, osmańskiej historii i postkomunistycznego chaosu — w najlepszym możliwym wydaniu.</p>
+    </div>
+    <div class="ctry-body">
+      <div class="city-block"><div class="city-name">🏙️ Tirana</div>
+        <div class="two-col">
+          <div class="info-box"><div class="ib-title">Co zobaczyć</div><ul>
+            <li><strong>Plac Skanderbega</strong> — serce miasta, pomnik bohatera</li>
+            <li><strong>BunkArt 2</strong> — bunkier pod placem, historia Sigurimi (2€)</li>
+            <li><strong>Piramida</strong> — mauzoleum Hodży, dziś centrum kulturalne</li>
+            <li><strong>Bllok</strong> — dawna dzielnica nomenklatury, galerie i kafejki</li>
+            <li><strong>Meczet Et'hem Beja</strong> — XVIII w., freski na ścianach</li>
+            <li><strong>Muzeum Narodowe</strong> — mozaika socrealistyczna (3€)</li>
+          </ul></div>
+          <div class="info-box night-box"><div class="ib-title">🌙 Życie nocne</div><ul>
+            <li><strong>Komiteti</strong> — bar z komunistycznymi pamiątkami, rakia lista jak encyklopedia</li>
+            <li><strong>Radio Bar</strong> — kultowy bar na dachu, widok na miasto</li>
+            <li><strong>Folie</strong> — bar/klub w dawnej fabryce, lokalna muzyka</li>
+            <li><strong>Kafe Cacao</strong> — tradycyjna kawiarnia, espresso i byrek od rana</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="city-block"><div class="city-name">🌊 Sarandë</div>
+        <div class="two-col">
+          <div class="info-box"><div class="ib-title">Co zobaczyć</div><ul>
+            <li><strong>Synagoga z IV–V w.</strong> — mozaika menory na promenadzie, wstęp wolny</li>
+            <li><strong>Promenada</strong> — 3km wzdłuż morza, Korfu gołym okiem</li>
+            <li><strong>Zamek Ali Paszy</strong> — ruiny osmańskie na wzgórzu</li>
+            <li><strong>Ksamil</strong> — 4 wysepki 7km na południe</li>
+            <li><strong>Butrint</strong> — 10km na południe, bus 1€</li>
+          </ul></div>
+          <div class="info-box night-box"><div class="ib-title">🌙 Życie nocne</div><ul>
+            <li><strong>Restauracje na promenadzie</strong> — ryby, owoce morza, rakia</li>
+            <li><strong>Kawiarnie przy porcie</strong> — Albańczycy grają w karty przy espresso</li>
+            <li><strong>Monastery Bar</strong> — lokalna muzyka na żywo w weekendy</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Lek (ALL).</strong> 1 EUR ≈ 98–100 ALL. Gotówka obowiązkowa. Najlepszy kurs: kantor „kambio" w centrum Tirany.</div>
+    </div>
+  </div>
+</div>
+}
+
+@if (isTab('country-mk')) {
+<div class="tab">
+  <div class="ctry-section">
+    <div class="ctry-header" style="background:linear-gradient(135deg,#c02020,#801010);border-radius:var(--rl) var(--rl) 0 0;">
+      <h2>🇲🇰 Macedonia Północna — „Kraj Aleksandra"</h2>
+      <p>Kraj ze sporem z Grecją o nazwę, sporem z Bułgarią o język i własną tożsamość budowaną między tymi napięciami. Ma jedno z najpiękniejszych jezior Europy i Skopje — miasto które musi być widziane, żeby zrozumieć co nacjonalizm robi z architekturą.</p>
+    </div>
+    <div class="ctry-body">
+      <div class="city-block"><div class="city-name">🏞️ Ohrid</div>
+        <div class="two-col">
+          <div class="info-box"><div class="ib-title">Co zobaczyć</div><ul>
+            <li><strong>Śv. Jovan Kaneo</strong> — kościółek XIII w. na klifie, ikoniczny widok</li>
+            <li><strong>Klasztor Śv. Naum</strong> — 29km busem. Kolebka słowiańskiej szkoły</li>
+            <li><strong>Teatr antyczny</strong> — III w. p.n.e., latem spektakle</li>
+            <li><strong>Zamek Cara Samuela</strong> — X w., panorama 360°, 3€</li>
+            <li><strong>Stary Bazar</strong> — filigranowa biżuteria, lokalna ceramika</li>
+          </ul></div>
+          <div class="info-box night-box"><div class="ib-title">🌙 Życie nocne</div><ul>
+            <li><strong>Chinar Bar</strong> — kultowy bar przy jeziorze</li>
+            <li><strong>Jazz Inn</strong> — live jazz w weekendy, koktajle</li>
+            <li><strong>Cafe Metropol</strong> — tradycyjna kawiarnia, lokalni grają w szachy</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="city-block"><div class="city-name">🗿 Skopje</div>
+        <div class="two-col">
+          <div class="info-box"><div class="ib-title">Co zobaczyć</div><ul>
+            <li><strong>Stary Bazar (Čaršija)</strong> — XV w., bezistan, meczet Mustafy Paszy (1492)</li>
+            <li><strong>Twierdza Kale</strong> — mury iliryjsko-osmańskie, widok, wstęp wolny</li>
+            <li><strong>Projekt 2014</strong> — Aleksander na koniu, 29 lwów, neoklasyczne fasady</li>
+            <li><strong>Muzeum Holocaustu</strong> — 7266 Żydów do Treblinki (1943), 3€</li>
+            <li><strong>Most Kamienny</strong> — XV w., nocą podświetlony</li>
+          </ul></div>
+          <div class="info-box night-box"><div class="ib-title">🌙 Życie nocne</div><ul>
+            <li><strong>Menada</strong> — kultowy bar w Bazarze, lokalna muzyka, tanie piwo</li>
+            <li><strong>Pivnica An</strong> — piwiarnia w starym domu, lokalne browary</li>
+            <li><strong>Kafana Stara Kukja</strong> — tradycyjny pub z muzyką na żywo</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Denar (MKD).</strong> 1 EUR ≈ 61–62 MKD. Roaming UE działa. Nie wymieniaj za dużo — denar bezużyteczny poza Macedonią.</div>
+    </div>
+  </div>
+</div>
+}
+
+@if (isTab('country-ko')) {
+<div class="tab">
+  <div class="ctry-section">
+    <div class="ctry-header" style="background:linear-gradient(135deg,#1e3a8a,#0e1e5a);border-radius:var(--rl) var(--rl) 0 0;">
+      <h2>🇽🇰 Kosowo — najmłodsze państwo Europy</h2>
+      <p>Niepodległość 2008 — uznana przez ~100 krajów, nieuznana przez Serbię, Rosję i Chiny. 1.8 miliona ludzi (90% Albańczycy) z bolesnymi ranami po wojnie 1998–99 i zadziwiającą pozytywną energią. Proamerykańskie jak żaden inny naród w Europie.</p>
+    </div>
+    <div class="ctry-body">
+      <div class="city-block"><div class="city-name">🆕 Prisztina</div>
+        <div class="two-col">
+          <div class="info-box"><div class="ib-title">Co zobaczyć</div><ul>
+            <li><strong>NEWBORN monument</strong> — żółte litery, zmieniane co roku przez artystów</li>
+            <li><strong>Pomnik Clintona</strong> — ulica Clintona, sklep Hillary obok</li>
+            <li><strong>Meczet Cara Sultana</strong> — XV w., najstarszy budynek w mieście</li>
+            <li><strong>Muzeum Kosowa</strong> — historia od prehistorii do 2008 (2€)</li>
+            <li><strong>Gračanica</strong> — serbski monastyr UNESCO 6km busem (0.50€)</li>
+          </ul></div>
+          <div class="info-box night-box"><div class="ib-title">🌙 Życie nocne</div><ul>
+            <li><strong>Dit' e Nat'</strong> — „Dzień i Noc", kultowy bar literacki otwarty 24h</li>
+            <li><strong>Rexhë</strong> — kafana z muzyką na żywo, piwo Peja</li>
+            <li><strong>Soma Book Station</strong> — kawiarnia-księgarnia z koktajlami</li>
+            <li><strong>Zanzi Bar</strong> — cocktail bar, młoda kosowska klasa średnia</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="city-block"><div class="city-name">🌉 Prizren</div>
+        <div class="two-col">
+          <div class="info-box"><div class="ib-title">Co zobaczyć</div><ul>
+            <li><strong>Stary Bazar</strong> — rzemieślnicy srebrnicy, filigranowa biżuteria</li>
+            <li><strong>Meczet Sinan Paszy</strong> — 1615, otwarty dla turystów</li>
+            <li><strong>Most kamienny</strong> — XVI w., klasyczna perspektywa</li>
+            <li><strong>Muzeum Ligi Prizreńskiej 1878</strong> — kolebka albańskiego ruchu (2€)</li>
+            <li><strong>Twierdza Kalaja</strong> — 20min pod górę, zachód słońca</li>
+          </ul></div>
+          <div class="info-box night-box"><div class="ib-title">🌙 Życie nocne</div><ul>
+            <li><strong>Tash Bar</strong> — koktajle wewnątrz dawnego hammamu</li>
+            <li><strong>Kafana Lidhja</strong> — muzyka albańska na żywo przy moście</li>
+            <li><strong>Hani i Prizrenit</strong> — zabytkowy han, rakia i grillowane mięso</li>
+            <li><strong>Bary przy Bistricy</strong> — tarasy nad rzeką, tłoczne do 1:00</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Euro.</strong> Najtańszy kraj na trasie. Piwo Peja ~1.50€. Kup SIM przy wjeździe (~3€) — brak roamingu UE.</div>
+    </div>
+  </div>
+</div>
+}
+
+@if (isTab('country-me')) {
+<div class="tab">
+  <div class="ctry-section">
+    <div class="ctry-header" style="background:linear-gradient(135deg,#7a5a10,#4a3800);border-radius:var(--rl) var(--rl) 0 0;">
+      <h2>🇲🇪 Czarnogóra — „Crna Gora"</h2>
+      <p>Kraj wielkości województwa z dramatycznym krajobrazem: Zatoka Kotorska, góry Prokletije. Jedyne bałkańskie państwo które nigdy w pełni nie poddało się Osmanom. Dziś kandydat do UE, z turystyką jako głównym przemysłem.</p>
+    </div>
+    <div class="ctry-body">
+      <div class="city-block"><div class="city-name">🏰 Kotor</div>
+        <div class="two-col">
+          <div class="info-box"><div class="ib-title">Co zobaczyć</div><ul>
+            <li><strong>Stare Miasto</strong> — UNESCO, Brama Morska z 1555</li>
+            <li><strong>Katedra Śv. Trypona</strong> — XII w., relikwie świętego</li>
+            <li><strong>Twierdza San Giovanni</strong> — 1350 schodów, panorama zatoki</li>
+            <li><strong>Muzeum Kotoru</strong> — wenecka i morska historia</li>
+            <li><strong>Mury miejskie</strong> — 3€, wejdź o wschodzie słońca</li>
+          </ul></div>
+          <div class="info-box night-box"><div class="ib-title">🌙 Życie nocne</div><ul>
+            <li><strong>Bokun Pub</strong> — kultowy bar w murach, lokalne piwo</li>
+            <li><strong>Forza e Mare</strong> — cocktail bar z widokiem na zatokę</li>
+            <li><strong>Merak</strong> — bar i restauracja w weneckim pałacu</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Euro.</strong> Najdroższy kraj na trasie. Karty szeroko akceptowane. Roaming UE działa.</div>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ TAB: HISTORIA ══════════ -->
+@if (isTab('history')) {
+<div class="tab">
+  <div class="vibe-banner">
+    <div class="vibe-icon">📜</div>
+    <div class="vibe-content">
+      <h2>3000 lat w 2 tygodnie</h2>
+      <p>Bałkany to skrzyżowanie cywilizacji — każdy naród który tu przechodził zostawiał ślad. Ilirowie, Grecy, Macedończycy, Rzymianie, Bizancjum, Słowianie, Turcy, Wenecja, Austria. Każde miasto na trasie to żywy przekrój tych warstw.</p>
+    </div>
+  </div>
+
+  <div class="era">Starożytność (VII w. p.n.e. – IV w. n.e.)</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>Ilirowie i kolonie greckie</h4><p>Ilirowie — przodkowie Albańczyków — zamieszkują zachodnie Bałkany od VII w. p.n.e. Grecy zakładają kolonie na wybrzeżu: Apollonia, Butrint, Epidamnos (dziś Durrës). Butrint pokazuje tę synkretyczną kulturę.</p></div>
+    <div class="h-item"><h4>Filip II i Aleksander Macedoński</h4><p>Filip II podbija Ilirów i Greków. Aleksander wyrusza stąd podbić świat. Heraklea Lincestis w Bitoli — miasto Filipa z IV w. p.n.e. — to jedno z kluczowych miejsc na trasie.</p></div>
+    <div class="h-item"><h4>Rzym i Via Egnatia</h4><p>Rzym podbija Macedonię (168 p.n.e.). Via Egnatia — główna droga imperium z Durrës do Konstantynopola — biegła przez Herakleę, Ohrid, Saloniki. Butrint i Heraklea rozkwitają jako miasta romańskie.</p></div>
+  </div>
+
+  <div class="era">Bizancjum i Słowianie (IV–IX w.)</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>Chrześcijaństwo i podział cesarstwa</h4><p>Po edykcie mediolańskim (313) region się chrystianizuje. Kościoły budowane na fundamentach świątyń — Butrint pokazuje tę wielowarstwowość najlepiej.</p></div>
+    <div class="h-item"><h4>Cyryl, Metody i Szkoła Ohrydzka</h4><p>IX w.: Bracia z Salonik tworzą alfabet głagolicki. Kliment i Naum zakładają w Ochrydzie pierwszą słowiańską szkołę — kolebkę piśmienności słowiańskiej. Cyrylica wywodzi się bezpośrednio stąd.</p></div>
+  </div>
+
+  <div class="era">Rywalizacja imperiów (X–XIV w.)</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>Car Dušan — serbskie imperium</h4><p>Stefan Dušan (1331–1355) tworzy imperium: Macedonia, Epir, Albania. Stolica w Prizrenie. Monastyry Dečani i Gračanica to jego spuścizna — dziś UNESCO.</p></div>
+    <div class="h-item"><h4>Bitwa na Kosowym Polu (1389)</h4><p>Książę Lazar vs. Sułtan Murad I — obaj giną. Serbia traci niepodległość. Kosovo Polje — centralny mit serbskiej tożsamości, żywy do dziś.</p></div>
+    <div class="h-item"><h4>Skanderbeg — albański opór (1443–1468)</h4><p>Gjergj Kastrioti odpiera 13 kampanii osmańskich. Po jego śmierci Albania traci niepodległość na 450 lat. Krujë to jego twierdza.</p></div>
+  </div>
+
+  <div class="era">Imperium Osmańskie (XV–XIX w.)</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>Islamizacja i bałkańska mozaika</h4><p>Albańczycy jako jedyni naród na Bałkanach w dużej mierze przyjmują islam. Bazary, meczety i karawan-seraje w Prizrenie, Skopje widoczne do dziś.</p></div>
+    <div class="h-item"><h4>Czarnogóra — jedyne niepodbite państwo</h4><p>Dynastia Petroviciów utrzymywała autonomię przez stulecia. Góry Prokletije były naturalną twierdzą — wyjątkowy przypadek w skali europejskiej.</p></div>
+    <div class="h-item"><h4>Liga Prizreńska 1878</h4><p>Albańczycy organizują pierwszy nowoczesny ruch narodowy. Bezpośredni prekursor albańskiej niepodległości (1912).</p></div>
+  </div>
+
+  <div class="era">XX wiek — krwawe granice</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>Albania Hodży — laboratorium izolacji</h4><p>Enver Hodża (1944–1985): zakaz religii (1967 — jedyne oficjalnie ateistyczne państwo w historii świata), 170 000 bunkrów, zerwanie z ZSRR, Jugosławią i Chinami. Najbardziej izolowane państwo w historii Europy.</p></div>
+    <div class="h-item"><h4>Kosowo — najświeższy europejski spór</h4><p>Autonomia odebrana przez Miloševicia (1989). Konflikt 1998–99. Masakra w Račaku (45 cywilów, 1999) bezpośrednio sprowokowała interwencję NATO. Niepodległość 2008. Polska uznała Kosowo.</p></div>
+  </div>
+</div>
+}
+
+<!-- ══════════ TAB: PRAKTYCZNIE ══════════ -->
+@if (isTab('practical')) {
+<div class="tab">
+  <div class="prac-grid">
+    <div class="pc"><h4>☀️ Kwiecień</h4><ul>
+      <li>Temperatura 15–22°C — idealna</li>
+      <li>Poza sezonem — mniej turystów, tańsze noclegi</li>
+      <li>Sprawdź sezonowość busów Sarandë→Ohrid!</li>
+      <li>Przełęcz Čakor może być zamknięta — trasa przez dolinę pewna</li>
+    </ul></div>
+    <div class="pc"><h4>🛂 Wizy i granice</h4><ul>
+      <li>Polska: brak wiz do wszystkich 4 krajów</li>
+      <li>Paszport lub dowód osobisty wystarczy</li>
+      <li>Kosowo uznane przez Polskę — wjazd bez problemów</li>
+      <li>Granica MK→KO: tylko stempel kosowski (Serbia nie uznaje)</li>
+    </ul></div>
+    <div class="pc"><h4>🏥 Ubezpieczenie</h4><ul>
+      <li>EKUZ: Macedonia i Czarnogóra</li>
+      <li>Albania i Kosowo: obowiązkowe ubezpieczenie prywatne!</li>
+      <li>Polisa obejmująca wszystkie 4 kraje</li>
+      <li>Numer alarmowy: 112 wszędzie</li>
+    </ul></div>
+    <div class="pc"><h4>📱 Telefon</h4><ul>
+      <li>Macedonia, Czarnogóra: roaming UE — bez dopłat</li>
+      <li>Albania, Kosowo: poza UE — kup SIM (~3–5€)</li>
+      <li>Pobierz Google Maps offline przed wyjazdem!</li>
+      <li>Bolt: Tirana, Prisztina, Skopje, Podgorica</li>
+    </ul></div>
+    <div class="pc"><h4>🍽️ Kuchnia</h4><ul>
+      <li><strong>Tavë kosi</strong> — jagnięcina w jogurcie (Albania)</li>
+      <li><strong>Byrek</strong> — ciasto filo z serem lub mięsem</li>
+      <li><strong>Flija</strong> — warstwowy naleśnik pod żarem (Kosowo)</li>
+      <li><strong>Ćevapi</strong> — grillowane kiełbaski (wszędzie)</li>
+      <li><strong>Pstrąg z rzeki</strong> w Peć — obowiązkowo</li>
+      <li><strong>Rakia</strong> — ~40%, wszechobecna</li>
+    </ul></div>
+    <div class="pc"><h4>🎒 Co zabrać</h4><ul>
+      <li>Lekka kurtka na wieczory (chłodniej niż latem)</li>
+      <li>Buty do chodzenia — zamki, bruki, klify</li>
+      <li>Chusta/szal (zakryte ramiona w meczetach)</li>
+      <li>Kserokopie paszportu</li>
+      <li>Gotówka w euro i lokalnych walutach</li>
+    </ul></div>
+  </div>
+  <div class="box box-green" style="margin-top:16px;">✓ Loty są już kupione. KRK→TIA 08.04 · TGD→KRK 22.04 ~18:00. Przypomnij sobie numer telefonu i adres każdej bazy noclegowej przed wjazdem do każdego kraju.</div>
+  <div class="box box-warn" style="margin-top:8px;">⚠️ W Albanii i Kosowie nie ma roamingu UE. Kup lokalne SIM na granicy lub w każdej większej miejscowości (~3–5€ za ~10GB).</div>
+</div>
+}
+
+  </main><!-- /main-content -->
+</div><!-- /shell-body -->
+</div><!-- /shell -->
