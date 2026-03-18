@@ -391,6 +391,31 @@
     li::before { color: #4a2a6a; }
   }
 
+  .city-desc {
+    font-size: var(--text-sm);
+    color: var(--muted);
+    line-height: 1.7;
+    margin-block-end: 14px;
+  }
+  .city-dates {
+    font-size: .68rem;
+    color: var(--muted2);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-inline-start: auto;
+    background: color-mix(in srgb, var(--white) 6%, transparent);
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+  }
+  .food-box {
+    background: color-mix(in srgb, var(--sage) 6%, var(--bg3));
+    border-color: color-mix(in srgb, var(--sage) 20%, var(--border));
+    .ib-title { color: var(--sage); }
+  }
+  .info-box + .info-box { margin-block-start: 10px; }
+
   .ctry-section { background: var(--bg2); border-radius: var(--rl); border: 1px solid var(--border); overflow: hidden; margin-block-end: 16px; box-shadow: 0 4px 20px rgba(0,0,0,.25); }
   .ctry-header { padding: 20px; h2 { font-size: var(--text-lg); font-weight: 800; color: var(--white); margin-block-end: 4px; } p { font-size: var(--text-sm); color: rgba(255,255,255,.55); line-height: 1.65; } }
   .ctry-body { padding: 0 20px 20px; }
