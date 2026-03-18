@@ -63,7 +63,12 @@ export class App {
     });
   }
 
-  showTab(id: TabId)  { this.activeTab.set(id); }
+  showTab(id: TabId)  {
+    this.activeTab.set(id);
+    const mc = document.querySelector('.main-content');
+    if (mc) mc.scrollTop = 0;
+    window.scrollTo(0, 0);
+  }
   isTab(id: TabId)    { return this.activeTab() === id; }
   toggleSidebar()     { this.sidebarOpen.update(v => !v); }
   closeSidebar()      { this.sidebarOpen.set(false); }

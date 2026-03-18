@@ -620,6 +620,70 @@
     .tc-price { font-size: .78rem; font-weight: 700; color: var(--gold); margin-block-start: 6px; }
   }
 
+  /* ── Photo Grid — city image galleries ── */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-block: 20px;
+    &.triple { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  .photo-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    background: var(--bg3);
+    transition: border-color var(--duration), box-shadow var(--duration);
+    @media (hover: hover) { &:hover { border-color: var(--terra); box-shadow: 0 8px 24px rgba(0,0,0,.3); .photo-label { opacity: 1; } } }
+    img {
+      display: block;
+      inline-size: 100%;
+      block-size: 180px;
+      object-fit: cover;
+      transition: transform 400ms var(--ease-out), filter 300ms;
+    }
+    &:hover img { transform: scale(1.03); }
+    .photo-label {
+      position: absolute;
+      inset-block-end: 0;
+      inset-inline: 0;
+      padding: 8px 12px;
+      background: linear-gradient(transparent, rgba(0,0,0,.8));
+      border-radius: 0 0 var(--r) var(--r);
+      font-size: .7rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 1px;
+      opacity: .7;
+      transition: opacity var(--duration);
+    }
+  }
+  .photo-card.wide {
+    grid-column: 1 / -1;
+    img { block-size: 240px; }
+  }
+
+  /* ── Location Image — inline in tip-cards ── */
+  .tc-img {
+    inline-size: 100%;
+    block-size: 140px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    margin-block-end: 10px;
+    transition: transform 300ms var(--ease-out);
+  }
+  .tip-card:hover .tc-img { transform: scale(1.02); }
+
+  /* ── Divider Strip — visual break between sections ── */
+  .divider-strip {
+    block-size: 2px;
+    background: linear-gradient(90deg, var(--terra), var(--gold), var(--sage), transparent);
+    margin-block: 28px;
+    border-radius: 1px;
+  }
+
   /* ── Glass Card utility ── */
   .glass-card {
     background: rgba(255, 255, 255, 0.03);
