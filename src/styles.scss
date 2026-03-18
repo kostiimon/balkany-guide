@@ -450,23 +450,6 @@
     .tv { font-size: 1.5rem; font-weight: 800; color: var(--terra); }
   }
 
-  .vibe-banner {
-    background: linear-gradient(135deg, var(--light), color-mix(in srgb, var(--terra) 4%, var(--light)));
-    border: 1px solid var(--border2);
-    border-inline-start: 4px solid var(--terra);
-    border-radius: var(--rl);
-    padding: 28px;
-    margin-block-end: 24px;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,.2);
-    .vibe-icon { font-size: 2.5rem; flex-shrink: 0; }
-    .vibe-content {
-      h2 { color: var(--text); font-size: var(--text-lg); font-weight: 800; margin-block-end: 6px; }
-      p  { color: var(--muted); font-size: var(--text-sm); line-height: 1.7; }
-    }
-  }
 }
 
 @layer utilities {
