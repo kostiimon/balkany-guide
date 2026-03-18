@@ -80,6 +80,16 @@
     <tr><td>KO → ME (Kula/Rozaje)</td><td>Bus Peć–Podgorica</td><td>19.04</td><td><span class="tag tag-gold">Sprawdź trasę</span></td></tr>
   </table>
 
+  <p class="sec-title">💰 Szacunkowy budżet osoby</p>
+  <div class="total-row">
+    <div><div class="tl">Transport (cała trasa)</div><div class="tv">~180€</div></div>
+    <div><div class="tl">Noclegi (14 nocy)</div><div class="tv">~280€</div></div>
+    <div><div class="tl">Jedzenie (avg 20€/dzień)</div><div class="tv">~280€</div></div>
+    <div><div class="tl">Wstępy + atrakcje</div><div class="tv">~80€</div></div>
+    <div><div class="tl">Razem (bez lotów)</div><div class="tv" style="color:var(--terra);font-size:2rem">~820€</div></div>
+  </div>
+  <div class="box box-gold" style="margin-top:12px">✈️ <strong>Loty:</strong> KRK→TIA i TGD→KRK zwykle 200–400€ łącznie na osobę. Rezerwuj 2-3 miesiące przed — kwiecień to początek sezonu w Albanii, ceny Wizz Air rosną w marcu.</div>
+
 </div>
 }
 
@@ -383,6 +393,10 @@
 <!-- ══════════ TAB: TRANSPORT ══════════ -->
 @if (isTab('transport')) {
 <div class="tab">
+  <div class="tab-hero">
+    <div class="th-icon">🚌</div>
+    <div class="th-text"><div class="th-title">Transport</div><div class="th-sub">Jak poruszać się między miastami na trasie</div></div>
+  </div>
 
   <p class="sec-title">🚐 Furgony (Albania)</p>
   <div class="card" style="padding:20px;margin-bottom:12px;">
@@ -420,7 +434,7 @@
       <tr><td>21.04</td><td>Budva → Cetinje</td><td>Bus</td><td>kilka dziennie</td><td>~30-45min</td><td>~4€</td></tr>
       <tr><td>21.04</td><td>Cetinje → Podgorica</td><td>Bus</td><td>kilka dziennie</td><td>~45min</td><td>~4€</td></tr>
       <tr><td>22.04</td><td>Podgorica → Lotnisko TGD</td><td>Taxi</td><td>wg potrzeby</td><td>~15min</td><td>~15€</td></tr>
-      <tr><td colspan="4"><strong>TRANSPORT RAZEM (szacunek)</strong></td><td></td><td><strong style="color:var(--green)">~102€</strong></td></tr>
+      <tr><td colspan="4"><strong>TRANSPORT RAZEM (szacunek)</strong></td><td></td><td><strong style="color:var(--green)">~104€</strong></td></tr>
     </table>
   </div>
 
@@ -931,6 +945,10 @@
 <!-- ══════════ TAB: NOCLEGI ══════════ -->
 @if (isTab('accommodation')) {
 <div class="tab">
+  <div class="tab-hero">
+    <div class="th-icon">🏨</div>
+    <div class="th-text"><div class="th-title">Noclegi</div><div class="th-sub">Gdzie spać w każdym mieście na trasie</div></div>
+  </div>
   <div class="box box-gold" style="margin-bottom:18px;">
     <h3 style="color:var(--gold2);margin-bottom:6px;">Zasady rezerwacji</h3>
     <p style="font-size:var(--text-sm);line-height:1.7;">Kwiecień to <strong>poza sezon</strong> — rezerwuj 2–4 tygodnie wcześniej. Wyjątek: <strong>Kotor</strong> (popularny cały rok) i <strong>Peć</strong> (mały wybór). Zawsze rezerwuj <strong>z opcją bezpłatnego anulowania</strong>.</p>
@@ -965,18 +983,22 @@
 <!-- ══════════ TAB: KOSZTY ══════════ -->
 @if (isTab('costs')) {
 <div class="tab">
+  <div class="tab-hero">
+    <div class="th-icon">💰</div>
+    <div class="th-text"><div class="th-title">Koszty</div><div class="th-sub">Budżet, waluty i strategia gotówkowa</div></div>
+  </div>
   <p class="sec-title">Koszty transportu</p>
   <table>
     <tr><th>Odcinek</th><th>Środek</th><th>Koszt</th></tr>
     <tr><td>Albania — furgony i busy wewnętrzne</td><td>Furgony</td><td>~20€</td></tr>
     <tr><td>Albania → Macedonia (Elbasan→Ohrid)</td><td>Bus + furgon</td><td>~14€</td></tr>
     <tr><td>Macedonia — busy wewnętrzne</td><td>Busy</td><td>~15€</td></tr>
-    <tr><td>Macedonia → Kosowo (Skopje→Prisztina)</td><td>Bus</td><td>~6€</td></tr>
+    <tr><td>Macedonia → Kosowo (Skopje→Prisztina)</td><td>Bus</td><td>~8€</td></tr>
     <tr><td>Kosowo — busy wewnętrzne</td><td>Busy</td><td>~10€</td></tr>
     <tr><td>Kosowo → Czarnogóra (Peć→Podgorica)</td><td>Bus</td><td>~10€</td></tr>
     <tr><td>Czarnogóra — busy wewnętrzne</td><td>Busy</td><td>~12€</td></tr>
     <tr><td>Bolt i taxi miejskie łącznie</td><td>Aplikacja</td><td>~15€</td></tr>
-    <tr><td><strong>TRANSPORT RAZEM</strong></td><td></td><td><strong style="color:var(--green)">~102€</strong></td></tr>
+    <tr><td><strong>TRANSPORT RAZEM</strong></td><td></td><td><strong style="color:var(--green)">~104€</strong></td></tr>
   </table>
   <p class="sec-title">Całkowity kosztorys</p>
   <table>
@@ -984,13 +1006,13 @@
     <tr><td>✈️ Loty (już kupione)</td><td colspan="2" style="color:var(--green);font-weight:700;">✓ Opłacone</td></tr>
     <tr><td>🛏️ Noclegi — 14 nocy</td><td>~210€</td><td>~420€</td></tr>
     <tr><td>🍽️ Jedzenie — 3 posiłki/dzień</td><td>~140€</td><td>~210€</td></tr>
-    <tr><td>🚌 Transport (busy + Bolt)</td><td>~102€</td><td>~115€</td></tr>
+    <tr><td>🚌 Transport (busy + Bolt)</td><td>~104€</td><td>~117€</td></tr>
     <tr><td>🎟️ Wstępy i muzea</td><td>~45€</td><td>~65€</td></tr>
     <tr><td>☕ Kawa, drobne, pamiątki</td><td>~60€</td><td>~120€</td></tr>
   </table>
   <div class="total-row">
-    <div><div class="tl">Budget</div><div class="tv">~557€</div></div>
-    <div><div class="tl">Mid</div><div class="tv">~930€</div></div>
+    <div><div class="tl">Budget</div><div class="tv">~559€</div></div>
+    <div><div class="tl">Mid</div><div class="tv">~932€</div></div>
   </div>
   <p class="sec-title">Waluty</p>
   <div class="curr-grid">
@@ -1085,425 +1107,1746 @@
 <!-- ══════════ CITY: TIRANA ══════════ -->
 @if (isTab('city-tirana')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#c03a3a,#8a2020);">
-    <div class="cph-flag">🇦🇱</div>
-    <div class="cph-info">
-      <div class="cph-country">Albania</div>
+  <div class="city-page-header cph-al">
+    <div class="cph-content">
+      <div class="cph-flag">🇦🇱</div>
+      <div class="cph-country">Albania · Stolica</div>
       <div class="cph-name">Tirana</div>
-      <div class="cph-dates">08–10 kwietnia · 2 noce</div>
+      <div class="cph-dates">08–10 kwietnia 2026 · 2 noce</div>
+      <div class="cph-badges">
+        <span class="cph-badge">🏙️ 800 000 mieszk.</span>
+        <span class="cph-badge">✈️ Hub Wizz Air</span>
+        <span class="cph-badge">🌡️ ~16°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Stolica która przeszła od komunistycznej izolacji do bałkańskiego centrum kulturalnego w ciągu jednego pokolenia. Kontrasty co krok: piramida dyktatora obok modnych kawiarni, meczet z freskami obok muralu ulicznego. Kolorowa, energetyczna i zadziwiająco tania.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Plac Skanderbega + Meczet Et'hem Beja</strong> — serce miasta; meczet z 1789 przetrwał zakaz religii Hodży dzięki freskowym ścianom — rzadkość w architekturze islamskiej</li>
-      <li><strong>BunkArt 2</strong> — bunkier pod placem, historia tajnej policji Sigurimi, bardzo klimatyczny; wstęp 9€</li>
-      <li><strong>BunkArt 1</strong> — ogromny bunkier Hodży na obrzeżach (furgon ~0.30€), pięć pięter pod ziemią; wstęp 9€</li>
-      <li><strong>Piramida Tirany</strong> — mauzoleum Hodży z 1988, przekształcone w centrum kultury i space coworkingowy; wejdź na szczyt po betonie — wstęp wolny</li>
-      <li><strong>Bllok</strong> — do 1991 ściśle strzeżona enklawa nomenklatury; dziś najbardziej modna dzielnica, kawiarnie i galerie w willach partyjnych działaczy</li>
-      <li><strong>Muzeum Narodowe</strong> — ogromna mozaika socrealistyczna na fasadzie to symbol samej Tirany; środek skromny, ale wart rzutu oka; wstęp 3€</li>
-      <li><strong>Pazari i Ri</strong> — XIX-wieczna hala targowa po renowacji, byrek z pieca po 100–200 ALL, lokalne sery i oleje</li>
-      <li><strong>Bulwar Dëshmorët e Kombit</strong> — deptak ambasad i ministerstw, spacerowy, obsadzony platanami</li>
-      <li><strong>Sztuczne Jezioro</strong> — park na północnych obrzeżach, jogging z Tirańczykami o poranku</li>
-      <li><strong>Muzeum Sztuki Współczesnej</strong> — albańska awangarda socrealistyczna i post-komunistyczna; wstęp 1€</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">800k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">110m</div><div class="si-label">n.p.m.</div></div>
+    <div class="stat-item"><div class="si-val">CET+1</div><div class="si-label">Strefa czas.</div></div>
+    <div class="stat-item"><div class="si-val">ALL</div><div class="si-label">~108 ALL = 1€</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Pazari i Ri</strong> — byrek z pieca, mleko z lokalnej farmy, espresso; śniadanie za 150–300 ALL</li>
-      <li><strong>Mullixhiu</strong> — nowoczesna interpretacja kuchni albańskiej, rezerwacja wskazana; 1500–2500 ALL/os.</li>
-      <li><strong>Oda Restaurant</strong> — tavë kosi (jagnięcina w jogurcie) i fërgesa (twarożek z papryką) w tradycyjnym domu; 800–1500 ALL</li>
-      <li><strong>Zgara e Madhe</strong> — grille i meze przy ulicy Kavajës, tłoczne, tanie i dobre; 500–800 ALL</li>
-    </ul>
+
+  <p class="city-desc">Stolica która przeszła od komunistycznej izolacji do bałkańskiego centrum kulturalnego w ciągu jednego pokolenia. Kontrasty co krok: piramida dyktatora obok modnych kawiarni, meczet z freskami figuratywnym obok muralu ulicznego. Kolorowa, energetyczna i zadziwiająco tania. Albania otworzyła się na świat dopiero w 1991 roku — lotnisko TIA jeszcze 30 lat temu obsługiwało kilka lotów tygodniowo. Tirana to miasto bez planu urbanistycznego — rozrastała się chaotycznie po upadku komunizmu, ale właśnie ten chaos jest jej urokiem.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">🔺</div>
+    <div class="tc-content">
+      <div class="tc-title">Piramida Tirany + BunkArt 2</div>
+      <div class="tc-body">Piramida (1988) to mauzoleum Envera Hodży — dyktatora rządzącego Albanią 41 lat w izolacji od świata. Dziś centrum kulturalne ze street artem na dachu — wejdź na szczyt po betonowych rampach (wolny wstęp). BunkArt 2 — bunkier pod placem, muzeum komunistycznej służby bezpieczeństwa Sigurimi z oryginalnymi celami przesłuchań. Zarezerwuj 1.5h na BunkArt 2. Zamknięte po 18:00!</div>
+      <div class="tc-price">BunkArt 2: 9€ · Piramida: wolny wstęp</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Komiteti</strong> — bar z tysiącami komunistycznych pamiątek; lista rakii jak encyklopedia; kultowe miejsce</li>
-      <li><strong>Radio Bar</strong> — kultowy bar z tarasem, widok na miasto, muzyka elektroniczna, klimatyczna publiczność</li>
-      <li><strong>Folie</strong> — bar i klub w dawnej fabryce, lokalna muzyka i DJs</li>
-      <li><strong>Kafe Cacao</strong> — tradycyjna kawiarnia, espresso od 7:00, spotkasz tu całą Tiranę</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Plac Skanderbega + Meczet Et'hem Beja</div>
+      <div class="tc-body">Największy plac na Bałkanach (250x250m), przebudowany w 2017. Pomnik Gjergja Kastriota zwanego Skanderbegiem (1405–1468) — albańskiego rycerza który przez 25 lat bronił Europy przed Osmanami. Meczet Et'hem Beja (1789–1823) — freski figuratywne przedstawiające drzewa, wodospady i mosty to absolutny wyjątek w architekturze islamskiej! Obok: Wieża Zegarowa (1822, wolny wstęp).</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Bolt NIE działa w Albanii. Użyj VrapOn lub Clust App — 3× tańsze niż taxi z ulicy. Zawsze ustal cenę przed wejściem do nieoznakowanej taksówki — kierowcy przy placu Skanderbega słyną z naciągania.</div>
+  <div class="tip-card">
+    <div class="tc-icon">🏰</div>
+    <div class="tc-content">
+      <div class="tc-title">Zamek Krujë — jednodniowa wycieczka</div>
+      <div class="tc-body">607m n.p.m., trzykrotnie oblężony przez Osmanów (1450, 1466, 1467), trzykrotnie odparty przez Skanderbega. Muzeum zaprojektowane przez córkę Hodży — Pranverę Hoxha. Stary Bazar osmański z XVII w. — sprzedają kilim, xhubleta, srebrną biżuterię. Furgon z Dworca Południowego co 30–45min (~1.5€). Wyjedź rano 7:00–8:00.</div>
+      <div class="tc-price">Zamek: 5€ · Furgon: ~1.5€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🖼️</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Narodowe</div>
+      <div class="tc-body">Fasada to gigantyczna mozaika socrealistyczna z 1981 "Albania" przedstawiająca Albańczyków przez wieki walk. W środku kolekcja od Ilirów przez Bizancjum po II wojnę światową.</div>
+      <div class="tc-price">Wstęp: 3€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏡</div>
+    <div class="tc-content">
+      <div class="tc-title">Bllok — dawna „zakazana strefa"</div>
+      <div class="tc-body">Do 1991 otoczona drutem kolczastym i strzeżona przez 30 agentów Sigurimi — tylko rodziny partyjnych bonzów miały wstęp. Dziś najmodniejsza dzielnica Tirany z restauracjami, galeriami i kawiarniami w dawnych willach aparatczyków. Symbol wolności — tu najpierw otwierały się kawiarnie po upadku komunizmu.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">📿</div>
+    <div class="tc-content">
+      <div class="tc-title">Pazari i Ri — odnowiona hala targowa</div>
+      <div class="tc-body">XIX-wieczna hala targowa po renowacji. Byrek z pieca (100–200 ALL), lokalne sery, świeże owoce, oliwa z oliwek. Idealne na śniadanie lub lunch.</div>
+      <div class="tc-price">Śniadanie: 150–300 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛲</div>
+    <div class="tc-content">
+      <div class="tc-title">Park Wielki i Sztuczne Jezioro</div>
+      <div class="tc-body">300ha zieleni na obrzeżach miasta. Idealny na poranny jogging z Tirańczykami lub wieczorny spacer. Bulwar Dëshmorët e Kombit prowadzi tu z placu Skanderbega — 2km obsadzony platanami.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏺</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Historii Naturalnej</div>
+      <div class="tc-body">Kolekcja minerałów z albańskich gór (chromit, miedź, żelazo) oraz fauna Parku Theth. Wolny wstęp, 1h. Ul. Dora d'Istria — mały, ale ciekawy budynek z epoki komunistycznej.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎨</div>
+    <div class="tc-content">
+      <div class="tc-title">Galeria Sztuki Narodowej</div>
+      <div class="tc-body">Największa kolekcja socrealistycznego malarstwa albańskiego na świecie. Prace ze wszystkich epok, fascynujący dokument propagandy artystycznej Hodży. Zamknięta w poniedziałki.</div>
+      <div class="tc-price">Wstęp: 3€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🕌</div>
+    <div class="tc-content">
+      <div class="tc-title">Meczet Murada Beja (Xhamia e Murados)</div>
+      <div class="tc-body">XVII-wieczny meczet tuż za placem Skanderbega, jeden z nielicznych ocalałych z ery Hodży gdy masowo niszczono miejsca kultu. Piękna kamienna architektura osmańska z portykiem i małym dziedzińcem.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏘️</div>
+    <div class="tc-content">
+      <div class="tc-title">Bloku Bllok — dzielnica nocna i wieczorny xhiro</div>
+      <div class="tc-body">Od 20:00 ulice zapełniają się mieszkańcami na wieczorny „xhiro" (codzienny spacer — albański rytuał). Dołącz do tłumu, kup lody lub kawę i chodź z prądem. To najlepsza metoda poznania prawdziwej Tirany — tysiące ludzi spacerujących bez celu.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎭</div>
+    <div class="tc-content">
+      <div class="tc-title">Teatr Narodowy i Amfiteatr Tirany</div>
+      <div class="tc-body">Po kontrowersyjnej rozbiórce starego Teatru Narodowego w 2020 i budowie nowego — wielkie debaty o architekturze i dziedzictwie. Stary amfiteatr w parku nadal działa latem — koncerty i przedstawienia pod gołym niebem.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏙️</div>
+    <div class="tc-content">
+      <div class="tc-title">Dzielnica Kombinat — urbex socrealizmu</div>
+      <div class="tc-body">Robotnicze osiedle z lat 50. poza centrum, pełne ogromnych mozaik sowieckich na blokach. Kontrastuje z nowoczesnym centrum — dla miłośników urbexu i fotografii. Dojazd busem miejskim 15 min.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🚁</div>
+    <div class="tc-content">
+      <div class="tc-title">Widok z wieży Tirana One</div>
+      <div class="tc-body">Najwyższy budynek Albanii (130m), restauracja/bar na 30. piętrze z widokiem 360° na miasto i góry. Rezerwacja online wskazana, koktajle 1200–2000 ALL. Wieczorem widok na oświetloną Tiranę jest magiczny.</div>
+      <div class="tc-price">Koktajle: 1200–2000 ALL</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🥘</div>
+    <div class="tc-content">
+      <div class="tc-title">Tavë Kosi — danie narodowe</div>
+      <div class="tc-body">Baranina zapiekana z jogurtem i ryżem w glinianym naczyniu. Najlepiej w Oda Restaurant — tradycyjna kuchnia albańska w starym domu.</div>
+      <div class="tc-price">800–1500 ALL (~8–15€)</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥐</div>
+    <div class="tc-content">
+      <div class="tc-title">Byrek — śniadanie Albańczyków</div>
+      <div class="tc-body">Ciasto filo z serem lub mięsem, pieczone w tradycyjnym piecu. Na bazarze Pazari i Ri lub z budki przy ulicy. Gorący, chrupiący, obowiązkowy.</div>
+      <div class="tc-price">100–200 ALL (~1–2€)</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥩</div>
+    <div class="tc-content">
+      <div class="tc-title">Fërgesë + Zgara e Madhe</div>
+      <div class="tc-body">Fërgesë to danie z wątróbką, papryką i serem twarogowym — typowy obiad. Zgara e Madhe serwuje grille i meze przy ul. Kavajës, tłoczne, tanie i dobre.</div>
+      <div class="tc-price">500–800 ALL (~5–8€)</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🐟</div>
+    <div class="tc-content">
+      <div class="tc-title">Owoce morza w Blloku</div>
+      <div class="tc-body">Albania ma 450km wybrzeża — w Tiranie w dzielnicy Bllok dostaniesz świeże ryby i kalamary. Mullixhiu — nowoczesna interpretacja kuchni albańskiej, rezerwacja wskazana.</div>
+      <div class="tc-price">Mullixhiu: 1500–2500 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍷</div>
+    <div class="tc-content">
+      <div class="tc-title">Rakia + Kafe turke</div>
+      <div class="tc-body">Rakia śliwkowa lub winogronowa — domowy destylat 40–50%, obowiązkowy „dobranoc". Kafe turke — kawa po turecku w miedzianej dżezwie, niefiltrowana, pita powoli. Espresso od 50–80 ALL.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫕</div>
+    <div class="tc-content">
+      <div class="tc-title">Sufllaqe — albański wrap</div>
+      <div class="tc-body">Albański wrap z mięsem z rożna, sałatką i sosem (kebab po albańsku). Na każdym rogu, dostępny 24/7. Szybkie, tanie i doskonałe na nocną przekąskę po barach.</div>
+      <div class="tc-price">250–400 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🧀</div>
+    <div class="tc-content">
+      <div class="tc-title">Djathë i bardhë — biały ser kozi</div>
+      <div class="tc-body">Biały ser kozi/owczy, podawany z oliwkami i pomidorami. Obowiązkowe meze do rakii. Na rynkach i w restauracjach — smak zupełnie inny niż feta grecka.</div>
+      <div class="tc-price">Na rynku: 300–500 ALL/kg</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍱</div>
+    <div class="tc-content">
+      <div class="tc-title">Restauracja Oda — tradycyjne wnętrza</div>
+      <div class="tc-body">Adres: Rruga Luigj Gurakuqi. Tradycyjne drewniane wnętrza, krosna na ścianie. Tavë kosi + rakia + deser = ~1500 ALL. Rezerwuj tydzień wcześniej — jedno z najlepszych miejsc w Tiranie!</div>
+      <div class="tc-price">Obiad: ~1500 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌿</div>
+    <div class="tc-content">
+      <div class="tc-title">Lokale w Blloku — Era, Padam Padam, Illy</div>
+      <div class="tc-body">Najlepsze opcje gastronomiczne w promieniu 200m od siebie. Era: kuchnia albańsko-włoska z fusillami i świeżym pstrągiem z gór. Padam Padam: koktajle i lekkie dania. Illy: kawa jak we Włoszech.</div>
+      <div class="tc-price">Era: 1000–2000 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍦</div>
+    <div class="tc-content">
+      <div class="tc-title">Lody w Parku Rinia</div>
+      <div class="tc-body">Letni ogród z kolorowymi straganami. Albańskie lody na patyku — ciemna czekolada, pistacja, mango. Idealne na popołudniowy odpoczynek po zwiedzaniu.</div>
+      <div class="tc-price">100 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥗</div>
+    <div class="tc-content">
+      <div class="tc-title">Mercato — modny brunch</div>
+      <div class="tc-body">Modny brunch przy Blloku. Jajka po benedyktyńsku z prosciutto, bagel z awokado, smoothie. Ceny 800–1500 ALL — „drogie" jak na Albanię, ale serwis i jakość na europejskim poziomie.</div>
+      <div class="tc-price">800–1500 ALL</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Bary i nocne życie</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍹</div>
+    <div class="tc-content">
+      <div class="tc-title">Komiteti — bar z komunistycznymi pamiątkami</div>
+      <div class="tc-body">Kultowy bar przy ul. Ismail Qemali z tysiącami komunistycznych pamiątek i największą listą rakii w Albanii (200+ pozycji). Obowiązkowy przystanek.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎵</div>
+    <div class="tc-content">
+      <div class="tc-title">Radio Bar — dach z widokiem</div>
+      <div class="tc-body">Kultowy bar na dachu z panoramą miasta. W weekendy DJ i live music. Klimatyczna publiczność, koktajle, wieczorne oświetlenie Tirany w tle.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎭</div>
+    <div class="tc-content">
+      <div class="tc-title">Bunk'Art 1 — koncerty w bunkrze</div>
+      <div class="tc-body">W piątkowe wieczory koncerty w bunkrze nuklearnym na wzgórzu Sauk (wstęp 9€). Pięć pięter pod ziemią — niesamowita akustyka i atmosfera.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍸</div>
+    <div class="tc-content">
+      <div class="tc-title">Bllok Cafe Scene</div>
+      <div class="tc-body">Pełno małych, stylowych kawiarni i barów z aperitivo w stylu włoskim. Kafe Cacao — tradycyjna kawiarnia, espresso od 7:00.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎶</div>
+    <div class="tc-content">
+      <div class="tc-title">Folie — klub w postindustrialnej fabryce</div>
+      <div class="tc-body">Klub przy Rruga Myslym Shyri. Elektronika/house, imprezy czwartek-sobota. Wielka przestrzeń, dobry sound system, młoda publiczność. Wejście 1000–1500 ALL.</div>
+      <div class="tc-price">Wejście: 1000–1500 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍺</div>
+    <div class="tc-content">
+      <div class="tc-title">Hemingway Bar — klasyczny bar literacki</div>
+      <div class="tc-body">Przy ul. Qemal Stafa. Tanie piwa (~200 ALL) i dobre burgery. Popularny wśród expatsów i studentów. Spokojna atmosfera na początek wieczoru.</div>
+      <div class="tc-price">Piwo: ~200 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌃</div>
+    <div class="tc-content">
+      <div class="tc-title">Nacht Bar — muzyka na żywo</div>
+      <div class="tc-body">Otwarty na zewnątrz ogród w centrum, muzyka na żywo we wtorek i czwartek. Jazz, folk, czasem tradycyjna muzyka izokorficzna — unikalny albański wielogłos wpisany na listę UNESCO.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Albania pod Enverem Hodżą (1944–1985) — Hodża rządził 41 lat, izolując kraj od reszty świata. Zerwał sojusze z Jugosławią (1948), ZSRR (1960) i Chinami (1978) — Albania stała się najbardziej izolowanym państwem na świecie. W 1967 ogłosił Albanię pierwszym oficjalnie ateistycznym państwem — zniszczył ponad 2000 kościołów, meczetów i synagog. Zbudował 170 000 bunkrów na obszarze 28 800 km² — jeden co 176m² — by chronić przed „imperialistyczną inwazją". Przeciętny Albańczyk nie widział obcokrajowca przez dekady. Po śmierci Hodży w 1985 i upadku komunizmu w 1991 tysiące Albańczyków uciekło do Włoch na statkach — pamiętna fala uchodźców. Kraj musiał odbudować się od zera.</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;">💡 <strong>Transport w Tiranie:</strong> Furgony (minibusy) to główny transport — odjeżdżają gdy się zapełnią, nie wg rozkładu. Dworzec Południowy = kierunek Berat, Sarandë, Gjirokastra. Dworzec Północny = Shkodër, Kosowo.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ <strong>Bolt NIE działa w Albanii</strong> (działa tylko w Kosowie). Używaj <strong>VrapOn</strong> lub <strong>Clust</strong> — 3x tańsze niż taxi z ulicy. Wypłać ALL w kantorach (kambio) — nie w bankomatach lotniskowych! Kierowcy przy placu Skanderbega słyną z naciągania.</div>
 </div>
 }
 
 <!-- ══════════ CITY: SARANDE ══════════ -->
 @if (isTab('city-sarande')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#c03a3a,#8a2020);">
-    <div class="cph-flag">🇦🇱</div>
-    <div class="cph-info">
-      <div class="cph-country">Albania</div>
+  <div class="city-page-header cph-al">
+    <div class="cph-content">
+      <div class="cph-flag">🇦🇱</div>
+      <div class="cph-country">Albania · Riwiera Jońska</div>
       <div class="cph-name">Sarandë</div>
-      <div class="cph-dates">10–12 kwietnia · 2 noce</div>
+      <div class="cph-dates">10–12 kwietnia 2026 · 2 noce</div>
+      <div class="cph-badges">
+        <span class="cph-badge">🌊 Morze Jońskie</span>
+        <span class="cph-badge">🏛️ UNESCO Butrint</span>
+        <span class="cph-badge">🇬🇷 2.7km do Korfu</span>
+        <span class="cph-badge">🌡️ ~17°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Albańska riwiera naprzeciwko Korfu — wyspa widoczna gołym okiem z promenady. W sezonie zatłoczona i droga, w kwietniu idealna: pusta, tania i autentyczna. Doskonała baza wypadowa do Butrintu i Ksamilu.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Promenada</strong> — 3km wzdłuż morza, Korfu widoczne gołym okiem, spacer obowiązkowy o każdej porze</li>
-      <li><strong>Synagoga z IV–V w.</strong> — mozaika menory pod promenadą, jeden z najlepiej zachowanych wczesnochrześcijańskich synagog na Bałkanach; wstęp wolny</li>
-      <li><strong>Butrint</strong> — 10km busem za 1.50€; UNESCO, ruiny grecko-rzymsko-weneckie w lesie nad kanałem; wstęp 10€; zarezerwuj minimum 3–4 godziny</li>
-      <li><strong>Ksamil</strong> — 7km na południe; 4 małe wysepki do przepłynięcia, w kwietniu prawie pusty, woda czysta, snorkeling możliwy</li>
-      <li><strong>Zamek Ali Paszy</strong> — ruiny osmańskie na wzgórzu nad miastem, wejście wolne, widok na zatokę</li>
-      <li><strong>Zamek Lekurësi</strong> — wyżej niż Ali Pasza; restauracja z panoramą Korfu i zatoki; taxi 5 minut z centrum</li>
-      <li><strong>Syri i Kaltër — Niebieskie Oko</strong> — naturalna wiosna o intensywnie niebieskiej wodzie, 25km; furgon z bazaru rano ok. 8€; OBOWIĄZKOWE</li>
-      <li><strong>Stara Foinike</strong> — iliryjskie miasto na wzgórzu, 10km na północ; widok na zatokę i ruiny murów</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">40k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">2.7km</div><div class="si-label">Do Korfu</div></div>
+    <div class="stat-item"><div class="si-val">18km</div><div class="si-label">Do Butrintu</div></div>
+    <div class="stat-item"><div class="si-val">5m</div><div class="si-label">n.p.m.</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Rybne restauracje na promenadzie</strong> — kefali (mulet), kalamary, langusta w sezonie; 800–1500 ALL za danie główne</li>
-      <li><strong>Kafja Zalli</strong> — śniadania z widokiem na morze, świeże produkty lokalne</li>
-      <li><strong>Taverna Niko</strong> — merak (duszone mięso z warzywami) i qofte (pulpety), bardzo lokalnie</li>
-    </ul>
+
+  <p class="city-desc">Albańska riwiera naprzeciwko Korfu — wyspa widoczna gołym okiem z promenady (2.7km!). W sezonie zatłoczona i droga, w kwietniu idealna: pusta, tania i autentyczna. Doskonała baza wypadowa do Butrintu (UNESCO) i rajskich plaż Ksamilu. Sarandë to kurorty i rybactwo — zapach grillowanej ryby unosi się nad promenadą od rana do późnej nocy, a wieczorami cała rodzinna Albania wychodzi na xhiro wzdłuż morza.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Butrint — UNESCO, 2700 lat historii</div>
+      <div class="tc-body">Jedno z najpiękniejszych stanowisk archeologicznych Śródziemnomorza. Teatr grecki (III w. p.n.e.), mozaiki baptisterium z V w., mury weneckie XV w. — wszystko w lesie nad kanałem. Wergiliusz wspomina Butrint w Eneidzie! Minimum 3 godziny. Bus z centrum ~1€.</div>
+      <div class="tc-price">Wstęp: 1000 ALL (~9€)</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Restauracje na promenadzie</strong> — otwarte do 23:00, morze o 2 metry od stolika</li>
-      <li><strong>Kawiarnie przy porcie</strong> — Albańczycy grają w karty przy espresso, lokalna atmosfera</li>
-      <li><strong>Monastery Bar</strong> — muzyka live w weekendy, popularny wśród miejscowych</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">🏖️</div>
+    <div class="tc-content">
+      <div class="tc-title">Ksamil — 4 wysepki i najpiękniejsza plaża Albanii</div>
+      <div class="tc-body">7km na południe busem (0.80€). Turecka woda, koralowy piasek, widoczność do 8m pod wodą. Najpiękniejsza plaża Albanii. W kwietniu nie ma tłoku — można wejść wszędzie za darmo. Restauracje mogą być zamknięte — zabierz prowiant. 4 małe wysepki do przepłynięcia (5 minut).</div>
+      <div class="tc-price">Bus: 0.80€ · Obiad: 800–1200 ALL</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Busy do Butrintu i Ksamilu odjeżdżają co godzinę sprzed mola. Do Niebieskiego Oka — furgon z bazaru rano (ok. 8€); powrót autostopem lub zamów taxi przez kierowcę furgonu.</div>
-  <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Lek (ALL).</strong> 1 EUR ≈ 95–98 ALL. Gotówka obowiązkowa w furgonach i bazarach. Najlepszy kurs: kantor „kambio" w centrum Tirany — nigdy na lotnisku.</div>
+  <div class="tip-card">
+    <div class="tc-icon">🌅</div>
+    <div class="tc-content">
+      <div class="tc-title">Promenada Sarandë</div>
+      <div class="tc-body">3km wzdłuż morza. Zachód słońca z widokiem na Korfu — wyspa świeci złotem w ostatnim świetle. Codziennie wieczorny spacer obowiązkowy. Kawiarnie i restauracje przy molo.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">✡️</div>
+    <div class="tc-content">
+      <div class="tc-title">Synagoga z IV–V w.</div>
+      <div class="tc-body">Mozaika menory odkryta przypadkiem w 1975, ukryta przez archeolożkę Aleksandrę Meksi przed reżimem Hodży (który niszczył zabytki religijne). Przy promenadzie, wolny wstęp.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏊</div>
+    <div class="tc-content">
+      <div class="tc-title">Plaże miejskie — trzy opcje</div>
+      <div class="tc-body">Plazha Qendrore (centralna, kamienie+piasek), Plazha Miramare (na południu, spokojniejsza), Plazha e Re (na północy, nowa). W kwietniu puste i wolne od leżaków sezonowych — cała plaża dla Ciebie.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🛥️</div>
+    <div class="tc-content">
+      <div class="tc-title">Prom Sarandë–Korfu — dzień w Grecji</div>
+      <div class="tc-body">30 minut przeprawy promem, kilka kursów dziennie. Finikas Lines lub Ionian Seaways. 15–20€ w jedną stronę. Korfu to wyspa UNESCO z weneckim Starym Miastem. Dobry plan: wyjdź rano, wróć wieczorem.</div>
+      <div class="tc-price">15–20€ w jedną stronę</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌄</div>
+    <div class="tc-content">
+      <div class="tc-title">Lekursi — ruiny zamku ottomańskiego</div>
+      <div class="tc-body">15 minut taksówką z centrum (3–4€), zamek XVI w. na wzgórzu, panorama całej zatoki Sarandë i Korfu. Restauracja na szczycie — kolacja z zachodem słońca. Jeden z najlepszych widoków w Albanii. OBOWIĄZKOWE wieczorem.</div>
+      <div class="tc-price">Taxi: 3–4€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🦭</div>
+    <div class="tc-content">
+      <div class="tc-title">Laguny i kanał Butrinti — flamingowe sanktuarium</div>
+      <div class="tc-body">Jezioro Butrinti to słonowodna laguna, schronisko dla flamingów i pelikanów (kwiecień-maj to szczyt migracji ptaków). Można przejść na piechotę ścieżką 2km między Ksamilem a Butrintem. Lornetka przydatna.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌿</div>
+    <div class="tc-content">
+      <div class="tc-title">Aleja palmowa promenady</div>
+      <div class="tc-body">1.5km promenada obsadzona palmami daktylowymi, widok na Korfu, kawiarnie, lodziarnie. Wieczorami pełna spacerujących rodzin. Idealny na xhiro (wieczorny spacer) — albański rytuał społeczny.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏊</div>
+    <div class="tc-content">
+      <div class="tc-title">Plaże Riwiery w okolicy</div>
+      <div class="tc-body">Pasqyra (Mirror Beach — 4km na południe), Long Beach, Zamek Lekurësi z restauracją-panoramą. Syri i Kaltër (Niebieskie Oko) — naturalna wiosna 25km, furgon z bazaru rano ~8€. Woda 12°C cały rok, kolor niebiański.</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🐟</div>
+    <div class="tc-content">
+      <div class="tc-title">Peshku i Ditës — ryba dnia przy molo</div>
+      <div class="tc-body">Całkowita ryba grillowana przy molo, polej cytryną, jedz z chlebem. Najlepsze miejsca: restauracje przy porcie promowym (bez nazwy — pytaj gdzie siedzą rybacy). Świeże, proste, doskonałe.</div>
+      <div class="tc-price">800–1500 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🦑</div>
+    <div class="tc-content">
+      <div class="tc-title">Grillowane kalmary (Kalamari i pjekur)</div>
+      <div class="tc-body">Świeże kalmary grillowane na węglu drzewnym, podane z czosnkiem i pietruszką. Owoce morza z Morza Jońskiego, tańsze niż w Chorwacji czy Grecji.</div>
+      <div class="tc-price">500–900 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥗</div>
+    <div class="tc-content">
+      <div class="tc-title">Sallata Shqiptare — albańska sałatka</div>
+      <div class="tc-body">Pomidory, ogórek, papryka, biały ser, oliwa. Do każdego dania, obowiązkowe. Na bazarze składniki kosztują grosze — możesz sam przygotować w hostelu.</div>
+      <div class="tc-price">200–400 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍋</div>
+    <div class="tc-content">
+      <div class="tc-title">Lemonadë me mente — domowa lemoniada</div>
+      <div class="tc-body">Domowa lemoniada z miętą, serwowana w szklanych dzbanach w każdej kawiarni na promenadzie. Orzeźwiająca i tania — idealna na upalne popołudnie.</div>
+      <div class="tc-price">100–200 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫙</div>
+    <div class="tc-content">
+      <div class="tc-title">Taven me perime — warzywa duszone</div>
+      <div class="tc-body">Warzywa duszone z mięsem w glinianym garnku, podane z chlebem kukurydzianym. Domowe, sycące danie — idealne na obiad po kąpieli w morzu.</div>
+      <div class="tc-price">400–700 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍨</div>
+    <div class="tc-content">
+      <div class="tc-title">Gelato Sarandë — lody włoskie</div>
+      <div class="tc-body">Kilka dobrych gelaterni wzdłuż promenady. Lody na gałki z włoskim kremem — pistacja, stracciatella, mango. Bliskość Włoch (prom na Korfu, potem do Brindisi) widać w jakości lodów.</div>
+      <div class="tc-price">150–200 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🦐</div>
+    <div class="tc-content">
+      <div class="tc-title">Kafja Zalli + Taverna Niko</div>
+      <div class="tc-body">Kafja Zalli — śniadania z widokiem na morze, tani espresso. Taverna Niko — merak i qofte, bardzo lokalna klientela. Owoce morza tańsze niż gdziekolwiek na Adriatyku.</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Wieczór i nocne życie</p>
+  <div class="tip-card">
+    <div class="tc-icon">🌊</div>
+    <div class="tc-content">
+      <div class="tc-title">Promenada i plaże wieczorem</div>
+      <div class="tc-body">Restauracje na promenadzie otwarte do 23:00, morze o 2m od stolika. Kawiarnie przy porcie — Albańczycy grają w karty przy espresso. Monastery Bar — muzyka live w weekendy. W kwietniu spokojnie i romantycznie.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍹</div>
+    <div class="tc-content">
+      <div class="tc-title">Bary na promenadzie — letnie koktajle</div>
+      <div class="tc-body">Kilka barów z tarasami bezpośrednio nad morzem. Koktajle z raką (albański odpowiednik rakii z winogron), piwo Korçë lub Tirana. Ceny niższe niż w Tiranie — piwo 150–200 ALL.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌄</div>
+    <div class="tc-content">
+      <div class="tc-title">Kolacja na Lekursi z zachodem słońca</div>
+      <div class="tc-body">Restauracja na zamku Lekursi — najlepsze zakończenie dnia w Sarandë. Grillowane mięso, sałatka i wino z widokiem na zachodnie niebo i Korfu. Taxi 3–4€ w jedną stronę.</div>
+      <div class="tc-price">Kolacja: 1000–2000 ALL</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Sarandë — od uzdrowiska komunistów do Riwiery Jońskiej. W epoce Hodży Sarandë była ekskluzywnym kurortem wyłącznie dla wyższych kadr partyjnych — zwykli Albańczycy nie mogli przyjechać nad morze bez specjalnych zezwoleń. Plaże były otoczone drutem kolczastym od strony morza — nie dlatego żeby uniemożliwić wpłynięcie obcym, lecz żeby uniemożliwić wypłynięcie własnym obywatelom. Korfu (Grecja) leży 2.7km od albańskiego brzegu — setki Albańczyków próbowało przepłynąć tę cieśninę wpław. Część utopiła się, część zawróciła grecka straż przybrzeżna. Dopiero po 1991 granica morska otworzyła się. Butrint, ruiny stojące 18km od centrum, przez lata nie były dostępne dla turystów.</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;">💡 <strong>Transport z Sarandë:</strong> Busy do Butrintu i Ksamilu co godzinę sprzed mola. Do Niebieskiego Oka — furgon z bazaru rano (~8€). Prom na Korfu: Finikas Lines, kilka kursów dziennie, 30 min.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ W kwietniu wiele restauracji w Ksamilu jest zamkniętych — zabierz prowiant! Gotówka obowiązkowa w furgonach i bazarach. Syri i Kaltër (Niebieskie Oko) — woda 12°C cały rok, nie skacz do wody (zakaz, niebezpieczne prądy).</div>
 </div>
 }
 
 <!-- ══════════ CITY: OHRID ══════════ -->
 @if (isTab('city-ohrid')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#c02020,#801010);">
-    <div class="cph-flag">🇲🇰</div>
-    <div class="cph-info">
-      <div class="cph-country">Macedonia Północna</div>
+  <div class="city-page-header cph-mk">
+    <div class="cph-content">
+      <div class="cph-flag">🇲🇰</div>
+      <div class="cph-country">Macedonia Północna · UNESCO</div>
       <div class="cph-name">Ohrid</div>
-      <div class="cph-dates">12–14 kwietnia · 2 noce</div>
+      <div class="cph-dates">12–14 kwietnia 2026 · 2 noce</div>
+      <div class="cph-badges">
+        <span class="cph-badge">🌊 UNESCO jezioro</span>
+        <span class="cph-badge">⛪ 365 kościołów</span>
+        <span class="cph-badge">📚 Kolebka cyrylicy</span>
+        <span class="cph-badge">🌡️ ~12°C kwiecień</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Najpiękniejsze miasto na jednym z najstarszych i najgłębszych jezior Europy — jezioro Ohrydzkie ma 3 miliony lat i 289m głębokości. Tu w IX wieku uczniowie Cyryla i Metodego stworzyli pierwszą słowiańską szkołę, a stąd piśmienność słowiańska rozlała się na całą Europę Wschodnią.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Śv. Jovan Kaneo</strong> — kościółek z XIII w. na klifie nad jeziorem; najfotografowany widok w Macedonii; wejście wolne, warto rano i o zachodzie słońca</li>
-      <li><strong>Katedra Śv. Sofia</strong> — XI w., freski bizantyjskie zachowane pod tynkami z okresu gdy służyła jako meczet; jeden z najważniejszych kościołów prawosławnych; wstęp 3€</li>
-      <li><strong>Teatr antyczny</strong> — III w. p.n.e., widok na jezioro z każdego siedzenia; latem organizowane są spektakle</li>
-      <li><strong>Zamek Cara Samuela</strong> — X w., mury i baszty na wzgórzu; panorama 360° na jezioro i miasto; wstęp 3€</li>
-      <li><strong>Klasztor Śv. Naum</strong> — 29km busem za 2€; IX w., kolebka słowiańskiej szkoły piśmienności; pawie chodzą wolno po ogrodzie; wstęp 3€</li>
-      <li><strong>Kościół Śv. Kliment i Plaoshnik</strong> — IX w., miejsce gdzie Kliment założył pierwszą słowiańską szkołę; mozaiki przy fundamentach</li>
-      <li><strong>Muzeum Ikon</strong> — ikony z XI–XVII w., jedna z najważniejszych kolekcji na świecie; wstęp 2.50€</li>
-      <li><strong>Stary Bazar</strong> — filigranowa biżuteria, lokalna ceramika i produkty z jeziora; ceny niższe niż w Skopje</li>
-      <li><strong>Rejs po jeziorze</strong> — łódki przy Starym Mieście, godzina ok. 5€; nieodłączny element Ohrydu</li>
-      <li><strong>Szlak nadjeziorem</strong> — od Kaleo do Śv. Naum pieszo; spokojnie, widoki przez całą drogę</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">348km²</div><div class="si-label">Jezioro</div></div>
+    <div class="stat-item"><div class="si-val">289m</div><div class="si-label">Głębokość</div></div>
+    <div class="stat-item"><div class="si-val">~5mln</div><div class="si-label">Lat jeziora</div></div>
+    <div class="stat-item"><div class="si-val">365</div><div class="si-label">Kościołów</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Kalina</strong> — pstrąg i krap prosto z jeziora, taras z widokiem na wodę; 400–700 MKD za danie</li>
-      <li><strong>Restaurant Antique</strong> — merak bałkański serwowany w starym domu przy Bazarze; 500–900 MKD</li>
-      <li><strong>Letna Bav'ca</strong> — ogródek przy jeziorze, tanie i bardzo lokalne; 250–500 MKD</li>
-      <li><strong>Antico</strong> — kawa i wypieki w sercu Starego Bazaru; idealne na śniadanie</li>
-    </ul>
+
+  <p class="city-desc">Najpiękniejsze miasto na jednym z najstarszych jezior świata (ok. 3–5 milionów lat!) i jednym z najgłębszych w Europie (289m). Tu w IX w. uczniowie Cyryla i Metodego stworzyli pierwszą słowiańską szkołę — stąd piśmienność cyrylicka rozlała się na całą Europę Wschodnią. UNESCO wpisało Ohrid na listę podwójnie: jako dziedzictwo kulturowe I naturalne — jedno z nielicznych miejsc na świecie z takim podwójnym wyróżnieniem. 365 kościołów i klasztorów w mieście i okolicach — stąd przydomek „Jerozolima Bałkanów".</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Śv. Jovan Kaneo — kościół na klifie</div>
+      <div class="tc-body">XIII-wieczny kościół stojący na klifie nad jeziorem — najfotografowany widok w Macedonii. Wejdź rano przed 8:00 gdy nie ma turystów — cisza, światło idealne. Freski z XIII w. częściowo zachowane. Wróć tu na zachód słońca — złote światło na wodzie to magia.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Chinar Bar</strong> — kultowy bar przy jeziorze, klasyczne miejsce spotkań wszystkich odwiedzających Ohrid</li>
-      <li><strong>Jazz Inn</strong> — live jazz w weekendy, koktajle, kameralna atmosfera</li>
-      <li><strong>Cafe Metropol</strong> — tradycyjna kawiarnia, lokalni grają tu w szachy przy espresso</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Katedra Śv. Sofia + Teatr antyczny</div>
+      <div class="tc-body">Katedra (XI w.) — freski bizantyjskie zachowane pod tynkami z okresu gdy służyła jako meczet. Teatr antyczny (III w. p.n.e.) — widok na jezioro z każdego siedzenia, latem organizowane spektakle.</div>
+      <div class="tc-price">Wstęp: 3€ każde</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Bus do Śv. Naum odjeżdża o 9:00 i 10:30 z dworca autobusowego; powrót 15:00 i 17:00; bilet 2€. Zostań na Kaneo wieczorem — zachód słońca nad jeziorem to jedno z piękniejszych widowisk na całej trasie.</div>
+  <div class="tip-card">
+    <div class="tc-icon">🏰</div>
+    <div class="tc-content">
+      <div class="tc-title">Zamek Cara Samuela</div>
+      <div class="tc-body">X-wieczne mury i baszty na wzgórzu. Panorama 360° na jezioro i miasto. Car Samuel rządził tu całym Imperium Bułgarskim. W 1014 po bitwie z Bazylim II — 15 000 bułgarskich jeńców oślepionych. Samuel zmarł z szoku widząc swoją armię.</div>
+      <div class="tc-price">Wstęp: 3€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🚢</div>
+    <div class="tc-content">
+      <div class="tc-title">Klasztor Śv. Naum — koniecznie!</div>
+      <div class="tc-body">29km na południe, bus 09:00 i 10:30 (~40min, 1.50€). Kościół z IX w., źródła rzeki Czarny Drim — łodzie po krystalicznej wodzie (100 MKD). Pawie na dziedzińcu. Granica albańska 2km dalej. Tu Naum, uczeń Cyryla i Metodego, założył drugą wielką słowiańską szkołę.</div>
+      <div class="tc-price">Bus: 1.50€ · Wstęp: 3€ · Łódka: 100 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🖼️</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Ikon + Plaoshnik + Stary Bazar</div>
+      <div class="tc-body">Muzeum Ikon — ikony z XI–XVII w., jedna z najważniejszych kolekcji na świecie (2.50€). Plaoshnik — IX w., miejsce gdzie Kliment założył pierwszą słowiańską szkołę. Stary Bazar — filigranowa biżuteria, lokalna ceramika, produkty z jeziora.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎣</div>
+    <div class="tc-content">
+      <div class="tc-title">Pstrąg ohrydzki (Pastrmka) — gatunek endemiczny</div>
+      <div class="tc-body">Unikalny gatunek pstrąga żyjący tylko w tym jeziorze od milionów lat. Połów jest regulowany — sezon zamknięty kwiecień-sierpień. Można go jeść w restauracjach (hodowlany), ale dziki jest chroniony. Symbol Ohridu.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏊</div>
+    <div class="tc-content">
+      <div class="tc-title">Kąpiel przy kościele Śv. Jovan Kaneo</div>
+      <div class="tc-body">Schody w dół klifu prowadzą do skał i małej platformy kąpielowej. W kwietniu woda 10–12°C — dla odważnych. W sezonie tłumy, teraz cisza i cały klif dla siebie.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛵</div>
+    <div class="tc-content">
+      <div class="tc-title">Przejażdżka łódką po jeziorze</div>
+      <div class="tc-body">Małe drewniane łodzie przy promenadzie, 1h wycieczka 500–800 MKD. Widok na miasto i albańskie góry po drugiej stronie jeziora. Spokojny, romantyczny sposób na popołudnie.</div>
+      <div class="tc-price">500–800 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">📖</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Robevci — życie w osmańskim Ohridzie</div>
+      <div class="tc-body">XIX-wieczna kamienica z ekspozycją o codziennym życiu w osmańskim Ohridzie. Biżuteria, stroje, dokumenty. Piękne drewniane wnętrza z rzeźbionymi sufitami.</div>
+      <div class="tc-price">150 MKD · 30 min</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Teatr starożytny (Antički teatar)</div>
+      <div class="tc-body">Odkopany w 2003 roku hellenistyczny teatr z III w. p.n.e. na stoku wzgórza, wspaniały widok na jezioro ze sceny. Wolny wstęp — jedno z lepiej zachowanych antycznych teatrów na Bałkanach.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🕌</div>
+    <div class="tc-content">
+      <div class="tc-title">Meczet Alego Paszy (XVII w.)</div>
+      <div class="tc-body">XVII-wieczny meczet na głównym placu starego miasta. Minaret 21m, w środku piękne drewniane malowane stropy. Otwarty dla turystów — symbol wieloetniczności Ohridu.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏔️</div>
+    <div class="tc-content">
+      <div class="tc-title">Galicica — park narodowy z panoramą dwóch jezior</div>
+      <div class="tc-body">Wznosi się za miastem do 2255m, po albańskiej stronie opada do Jeziora Prespa. Trasy widokowe z panoramą obu jezior jednocześnie — Ochrydzkie i Prespa. Taksówka do wjazdu 300–500 MKD, pieszo na szczyt 3–5h.</div>
+      <div class="tc-price">Taxi do wjazdu: 300–500 MKD</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🐟</div>
+    <div class="tc-content">
+      <div class="tc-title">Pastrmka ohrydzka — obowiązkowe danie</div>
+      <div class="tc-body">Całkowity pstrąg ohrydzki pieczony w glinianym garnku z cebulą, papryką i rozmarynem. Najlepiej przy brzegu jeziora — Kalina lub Letna Bav'ca. Do tego macedońskie wino Tikveš.</div>
+      <div class="tc-price">300–500 MKD (~5–8€)</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫘</div>
+    <div class="tc-content">
+      <div class="tc-title">Tavče gravče — danie narodowe Macedonii</div>
+      <div class="tc-body">Gotowana biała fasola w glinianym naczyniu z papryką i cebulą — „danie narodowe" Macedonii, bardzo sycące. Podawane na gorąco prosto z pieca. Idealne na chłodniejsze wieczory.</div>
+      <div class="tc-price">200–300 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥖</div>
+    <div class="tc-content">
+      <div class="tc-title">Zelnik — macedońska tarta</div>
+      <div class="tc-body">Macedońska tarta ze szpinakiem lub serem, podobna do böreka. Idealna na śniadanie z jogurtem. W każdej piekarni od rana — ciepła i chrupiąca.</div>
+      <div class="tc-price">80–120 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍷</div>
+    <div class="tc-content">
+      <div class="tc-title">Wino Tikveš — najsłynniejsza macedońska winnica</div>
+      <div class="tc-body">Vranec (czerwone, ciemne, taniczne) lub Temjanika (białe, aromatyczne). Kieliszek w restauracji 150–250 MKD. Macedońskie wina to jeden z najlepszych sekretów Bałkanów — jakość/cena nieporównywalna.</div>
+      <div class="tc-price">Kieliszek: 150–250 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">☕</div>
+    <div class="tc-content">
+      <div class="tc-title">Kawa na placu Śv. Kliment Ohridski</div>
+      <div class="tc-body">Główny plac ze stołkami na zewnątrz, widok na wieżę i góry. Espresso 60–80 MKD. Śniadanie na placu to najlepsza inwestycja dnia — powolne, słoneczne, bałkańskie.</div>
+      <div class="tc-price">Espresso: 60–80 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🧆</div>
+    <div class="tc-content">
+      <div class="tc-title">Kebapi — jugosłowiański „kebab"</div>
+      <div class="tc-body">Małe podłużne kiełbaski wieprzowo-wołowe z grilla, podawane w chlebie pita z cebulą. Każdy kiosk grillowy w centrum — szybkie, tanie, sycące. Doskonały lunch między zwiedzaniem.</div>
+      <div class="tc-price">150–200 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">☕</div>
+    <div class="tc-content">
+      <div class="tc-title">Antico + Restaurant Antique</div>
+      <div class="tc-body">Antico — kawa i wypieki w sercu Bazaru, idealne na śniadanie. Restaurant Antique — merak bałkański w starym domu z widokiem na jezioro.</div>
+      <div class="tc-price">500–900 MKD</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Życie nocne</p>
+  <div class="tip-card">
+    <div class="tc-icon">🎵</div>
+    <div class="tc-content">
+      <div class="tc-title">Chinar Bar + Jazz Inn</div>
+      <div class="tc-body">Chinar Bar — kultowy bar przy jeziorze, klasyczne miejsce spotkań. Lokalna muzyka chalgia wieczorami. Jazz Inn — live jazz w weekendy, koktajle. Cafe Metropol — lokalni grają szachy przy espresso.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍹</div>
+    <div class="tc-content">
+      <div class="tc-title">Bary nad jeziorem — wieczorny klimat</div>
+      <div class="tc-body">Ohrid to nie Ibiza — wieczory są spokojne i romantyczne. Kawiarnie nad jeziorem otwarte do 23:00, piwo Skopsko lub wino Tikveš, muzyka chalgia z głośników. Idealne na refleksję po dniu zwiedzania.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Ohrid — kolebka cyrylicy i centrum średniowiecznej kultury słowiańskiej. Gdy Cyryl i Metody stworzyli głagolicę (862 n.e.) dla misji morawskiej, ich uczniowie Kliment i Naum uciekli do Macedonii przed prześladowaniami. Kliment założył tu w 886 n.e. pierwszą słowiańską szkołę literacką — „Ohridska književna škola" — gdzie nauczał tysiące uczniów zmodyfikowanego pisma, które stało się cyrylicą. Tu dosłownie powstała rosyjska, serbska, bułgarska i ukraińska kultura pisana. Czterysta kościołów i klasztorów w mieście i okolicach — stąd przydomek „Jerozolima Bałkanów". Jezioro Ochrydzkie ma 3–5 milionów lat — jedno z najstarszych na Ziemi, siedlisko gatunków endemicznych (pstrąg, ślimaki).</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;">💡 <strong>Transport z Ohridu:</strong> Bus do Śv. Naum: 9:00 i 10:30, powrót 15:00 i 17:00, bilet ~1.50€. Bus do Skopje: kilka dziennie, 3h, ~500 MKD. Waluta: Denar (MKD), 1€ ≈ 61–62 MKD.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ Zostań na Kaneo wieczorem — zachód słońca to jedno z piękniejszych widowisk na trasie. Nie wymieniaj za dużo denarów — bezużyteczne poza Macedonią. Woda w jeziorze w kwietniu 10–12°C — tylko dla odważnych!</div>
 </div>
 }
 
 <!-- ══════════ CITY: SKOPJE ══════════ -->
 @if (isTab('city-skopje')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#c02020,#801010);">
-    <div class="cph-flag">🇲🇰</div>
-    <div class="cph-info">
-      <div class="cph-country">Macedonia Północna</div>
+  <div class="city-page-header cph-mk">
+    <div class="cph-content">
+      <div class="cph-flag">🇲🇰</div>
+      <div class="cph-country">Macedonia Północna · Stolica</div>
       <div class="cph-name">Skopje</div>
-      <div class="cph-dates">14–15 kwietnia · 1 noc</div>
+      <div class="cph-dates">14–15 kwietnia 2026 · 1 noc</div>
+      <div class="cph-badges">
+        <span class="cph-badge">🗿 Projekt 2014</span>
+        <span class="cph-badge">🕌 Stary Bazar</span>
+        <span class="cph-badge">🌉 Most Kamienny</span>
+        <span class="cph-badge">🌡️ ~14°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Stolica z tożsamościowym kompleksem wylanym w kamieniu i betonie. Rząd wydał ponad 600 milionów euro na Projekt 2014 — setki pomników i neoklasyczne fasady przyklejone do komunistycznych bloków. Tuż obok działa XV-wieczny osmański bazar Čaršija, jakby nieświadomy całego spektaklu.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Stary Bazar Čaršija</strong> — XV w., bezistan, meczet Mustafy Paszy z 1492, czynni rzemieślnicy; najautentyczniejsza część Skopje</li>
-      <li><strong>Twierdza Kale</strong> — mury iliryjsko-osmańskie na wzgórzu nad miastem; piękny widok na rzekę Vardar; wstęp wolny</li>
-      <li><strong>Projekt Skopje 2014</strong> — Aleksander Wielki na koniu (28m!), 29 lwów przy moście, neogotyckie fontanny; kontrowersyjne, ale obowiązkowe do zrozumienia kraju</li>
-      <li><strong>Muzeum Holocaustu</strong> — 7266 macedońskich Żydów deportowanych do Treblinki w 1943; bardzo poruszające i przemyślane; wstęp wolny</li>
-      <li><strong>Most Kamienny</strong> — XV w., nocą efektownie podświetlony; łączy Stare Miasto z centrum</li>
-      <li><strong>Muzeum Macedońskiej Walki</strong> — panoramiczne dioramy historii narodu; wstęp 3€</li>
-      <li><strong>Kanion Matka</strong> — 15km busem nr 60; jezioro zaporowe + jaskinie + kajaki; zarezerwuj 3 godziny</li>
-      <li><strong>Kościół Śv. Pantelejmona</strong> — X w., freski iluminowane naturalnym światłem; 10km od centrum</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">600k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">28m</div><div class="si-label">Posąg Aleksandra</div></div>
+    <div class="stat-item"><div class="si-val">600mln€</div><div class="si-label">Projekt 2014</div></div>
+    <div class="stat-item"><div class="si-val">52</div><div class="si-label">Narodowości</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Destan Restaurant</strong> — meze i grille w sercu Bazaru, live music wieczorami; 500–1000 MKD</li>
-      <li><strong>Pivnica An</strong> — piwiarnia w starym domu z lokalnymi browarami Macedonia i Skopsko; 300–700 MKD</li>
-      <li><strong>Pelisterka</strong> — ajvar domowy, kebap skopski, bardzo lokalne; 300–600 MKD</li>
-      <li><strong>Café Trend</strong> — centrum miasta, śniadania i kawy; popularne wśród lokalnej młodzieży</li>
-    </ul>
+
+  <p class="city-desc">Stolica z tożsamościowym kryzysem wylanym w kamieniu. Rząd wydał 600 mln euro na Projekt 2014 — setki pomników, 28-metrowy Aleksander Wielki na koniu (oficjalnie „Wojownik na Koniu" żeby nie drażnić Grecji), neoklasyczne fasady przyklejone do komunistycznych bloków. Tuż obok działa XV-wieczny osmański bazar Čaršija, jakby nieświadomy całego spektaklu. Trzęsienie ziemi z 1963 zniszczyło 80% miasta — Skopje jest jednocześnie jednym z najstarszych i najmłodszych miast na Bałkanach.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">🗿</div>
+    <div class="tc-content">
+      <div class="tc-title">Projekt Skopje 2014 — pełny spacer</div>
+      <div class="tc-body">Zaplanuj 1.5h na obejście: Aleksander Wielki na Koniu (28m), Fontanna Macedonia, łuk triumfalny Porta Macedonia, 22 pomniki różnych bohaterów historycznych, neoklasyczne fasady przyklejone do komunistycznych bloków. Nocna iluminacja (19:00+) to zupełnie inne doświadczenie niż za dnia — fontanny kolorowe, posągi podświetlone.</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Menada</strong> — kultowy bar w Bazarze, lokalna muzyka chalgia, tanie piwo</li>
-      <li><strong>Pivnica An</strong> — lokalne browary pod jednym dachem, spokojna atmosfera</li>
-      <li><strong>Kafana Stara Kukja</strong> — tradycyjny pub z muzyką na żywo, często grają starą macedońską</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">🕌</div>
+    <div class="tc-content">
+      <div class="tc-title">Stary Bazar Čaršija — obowiązkowy!</div>
+      <div class="tc-body">Największy zachowany osmański bazar po Stambule. XV w., kilkaset sklepów w kamiennych kramach. Bezistan (kryty bazar tekstylny, 1497), Meczet Mustafy Paszy (1492), Han Suli Beja (karawanseraj, XVI w.). Pełny spacer 1.5–2h. Antykwariaty, złotnicy, pracownie artystyczne.</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Z Bazaru do centrum przez Most Kamienny — 10 minut pieszo. Kanion Matka warto rano zanim przybędą wycieczki szkolne. Bus nr 60 z placu Makedonija.</div>
-  <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Denar (MKD).</strong> 1 EUR ≈ 61–62 MKD. Roaming UE działa. Nie wymieniaj za dużo — denar bezużyteczny poza Macedonią.</div>
+  <div class="tip-card">
+    <div class="tc-icon">✡️</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Holocaustu — OBOWIĄZKOWE</div>
+      <div class="tc-body">Holocaust Memorial Center for the Jews of Macedonia, wolny wstęp. Z 7500 macedońskich Żydów deportowano do Treblinki 7248 osób w marcu 1943. Przeżyło 204 osoby. Indywidualne twarze i historie każdej rodziny — jedno z najlepszych muzeów holokaustowych w Europie. 1–1.5h.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏰</div>
+    <div class="tc-content">
+      <div class="tc-title">Twierdza Kale — panorama kontrastów</div>
+      <div class="tc-body">Na wzgórzu od epoki iliryjskiej (I w. p.n.e.) po osmańską. Mury 2km, wieże, magazyny. Z murów: panorama kontrastu między Bazarem (minarety) a centrum (antyczne posągi). Wolny wstęp, idealnie rano lub wieczorem.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌉</div>
+    <div class="tc-content">
+      <div class="tc-title">Most Kamienny (Kameni Most, 1451)</div>
+      <div class="tc-body">13 łuków, długość 215m, łączy Stary Bazar z centrum. Był granicą między chrześcijańską a muzułmańską częścią miasta przez stulecia. Nocą podświetlony — piękny widok na rzekę Vardar i posągi Projektu 2014.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏞️</div>
+    <div class="tc-content">
+      <div class="tc-title">Kanion Matka — jezioro + jaskinie</div>
+      <div class="tc-body">15km busem nr 60. Jezioro zaporowe w głębokim kanionie, jaskinie (łódka ~5€), kajaki. Zarezerwuj 3 godziny. Warto rano zanim przybędą wycieczki szkolne.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎨</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Macedońskie Sztuki Współczesnej</div>
+      <div class="tc-body">Kolekcja 60 artystów z XX–XXI w. Szczególnie mocna sekcja z czasów Jugosławii — socrealizm obok abstrakcji. Zamknięte w poniedziałki.</div>
+      <div class="tc-price">150 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌺</div>
+    <div class="tc-content">
+      <div class="tc-title">Park Miasto na Wodzie (City Park)</div>
+      <div class="tc-body">Sztuczne jezioro i park, fontanny, kawiarnie nad wodą. Skopjanie joggują tu od rana — dobry punkt startowy dnia. Spokojny kontrast z pompatycznym centrum.</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍖</div>
+    <div class="tc-content">
+      <div class="tc-title">Destan + Pivnica An + Pelisterka</div>
+      <div class="tc-body">Destan — meze i grille w sercu Bazaru, live music wieczorami (500–1000 MKD). Pivnica An — lokalne browary Macedonia i Skopsko (300–700 MKD). Pelisterka — ajvar domowy, kebap skopski (300–600 MKD).</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥩</div>
+    <div class="tc-content">
+      <div class="tc-title">Turli Tava — duszone mięso z warzywami</div>
+      <div class="tc-body">Mieszanina warzyw (cukinia, papryka, bakłażan, ziemniaki) z mięsem (jagnięcina lub wieprzowina) duszona w glinianym garnku. Danie macedońskie jak się patrzy — sycące i aromatyczne.</div>
+      <div class="tc-price">300–450 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍞</div>
+    <div class="tc-content">
+      <div class="tc-title">Pastrmajlija — macedońska „pizza"</div>
+      <div class="tc-body">Płaski chleb z kawałkami mięsa wieprzowego i jajkiem. Specjalność Skopje. Piekarnia Pelister przy Ploštad: 180–280 MKD. Idealna na szybki lunch.</div>
+      <div class="tc-price">180–280 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍖</div>
+    <div class="tc-content">
+      <div class="tc-title">Kebapi przy Starej Čaršiji — śniadanie nr 1</div>
+      <div class="tc-body">W starym bazarze działają grillujące kioski od X rano. 8–10 kebapów z chlebem i cebulą 120–180 MKD. Lokalne śniadanie numer jeden — tanie, gorące, sycące.</div>
+      <div class="tc-price">120–180 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥣</div>
+    <div class="tc-content">
+      <div class="tc-title">Tarator — zimna zupa jogurtowa</div>
+      <div class="tc-body">Zimna zupa z jogurtu, ogórka, koperku i orzechów włoskich. Macedonia ją spopularyzowała w całych Bałkanach. Orzeźwiająca — idealna na cieplejsze dni.</div>
+      <div class="tc-price">80–120 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍷</div>
+    <div class="tc-content">
+      <div class="tc-title">Wino Bovin — winnica ze Skopje</div>
+      <div class="tc-body">Seria „Dissan" — wranec i cabernet. Polecane restauracje Pelister (ul. Ploštad) i Dab (Stary Bazar). Macedońskie wina to niedoceniany skarb Bałkanów.</div>
+      <div class="tc-price">Kieliszek: 150–200 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">☕</div>
+    <div class="tc-content">
+      <div class="tc-title">Kafana przy Starej Čaršiji — osmańska kawa</div>
+      <div class="tc-body">Tradycyjne kawiarnie osmańskie z dywanami na podłodze i miedzianymi naczyniami. Kava turska 60–80 MKD — serwowana z lokum i wodą. Czas się tu zatrzymuje.</div>
+      <div class="tc-price">60–80 MKD</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🧇</div>
+    <div class="tc-content">
+      <div class="tc-title">Brunch w Debar Maalo — modna dzielnica</div>
+      <div class="tc-body">Modna dzielnica za Mostem Kamiennym z kawiarniami serwującymi belgijskie gofry, jajka i smoothie. Mala Stanica, Mirador — nowoczesne Skopje w wersji brunchowej.</div>
+      <div class="tc-price">400–700 MKD</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Życie nocne</p>
+  <div class="tip-card">
+    <div class="tc-icon">🎵</div>
+    <div class="tc-content">
+      <div class="tc-title">Menada + Debar Maalo</div>
+      <div class="tc-body">Menada — kultowy bar w Bazarze, muzyka chalgia, tanie piwo. Kafana Stara Kukja — tradycyjny pub z muzyką na żywo. Nocna scena w dzielnicy Debar Maalo — więcej klubów i barów.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍺</div>
+    <div class="tc-content">
+      <div class="tc-title">Bary w Starej Čaršiji</div>
+      <div class="tc-body">Osmański bazar wieczorem zmienia się w barową ulicę — kafany serwują piwo Skopsko (100–150 MKD), live music w weekendy, studenci i turyści mieszają się z lokalnymi handlarzami. Atmosfera jak nigdzie indziej.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Skopje — miasto pięciu cywilizacji. Skopje było kolejno: iliryjskim fortem (I w. p.n.e.), Scupi (Rzym, I w. n.e.), Byzantine Skupi, osmańskim Üsküb (1392–1912) i jugosłowiańskim Skoplje. Trzęsienie ziemi z 26 lipca 1963 zabiło 1100 osób i zniszczyło 80% zabudowy — tylko Stary Bazar i Most Kamienny przetrwały. Jugosławia i ponad 70 krajów wysłało pomoc. Stary Bazar działa nieprzerowanie od XV wieku, nigdy nie był zniszczony przez żadne kataklizmy. Projekt Skopje 2014 (600 mln €) próbował stworzyć „starożytną macedońską" tożsamość przez budowę pseudoantycznych pomników — decyzja polityczna w kontekście sporu z Grecją o nazwę kraju (rozwiązanego w 2019 Porozumieniem Prespa, gdy kraj zmienił nazwę na „Macedonia Północna").</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;"><strong>💰 Waluta — Denar (MKD).</strong> 1 EUR ≈ 61–62 MKD. Roaming UE działa. Nie wymieniaj za dużo — denar bezużyteczny poza Macedonią. Kanion Matka — bus nr 60 z placu Makedonija.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ Z Bazaru do centrum przez Most Kamienny — 10 min pieszo. Muzeum Holocaustu obowiązkowe — zaplanuj 1–1.5h. Nocna iluminacja Projektu 2014 od 19:00 — zupełnie inne wrażenie niż za dnia.</div>
 </div>
 }
 
 <!-- ══════════ CITY: PRISHTINA ══════════ -->
 @if (isTab('city-prishtina')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#1e3a8a,#0e1e5a);">
-    <div class="cph-flag">🇽🇰</div>
-    <div class="cph-info">
-      <div class="cph-country">Kosowo</div>
+  <div class="city-page-header cph-ko">
+    <div class="cph-content">
+      <div class="cph-flag">🇽🇰</div>
+      <div class="cph-country">Kosowo · Stolica</div>
       <div class="cph-name">Prisztina</div>
-      <div class="cph-dates">15–16 kwietnia · 1 noc</div>
+      <div class="cph-dates">15–16 kwietnia 2026 · 1 noc</div>
+      <div class="cph-badges">
+        <span class="cph-badge">🆕 Niepodległość 2008</span>
+        <span class="cph-badge">🇺🇸 Pomnik Clintona</span>
+        <span class="cph-badge">⚽ Zagorzali kibice</span>
+        <span class="cph-badge">🌡️ ~14°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Najmłodsza stolica Europy — niepodległość 2008. Niesamowity kontrast: osmański meczet z XV w. stoi obok żółtego napisu NEWBORN, a ulica nosi imię Billa Clintona. Kosowianie są jednym z najbardziej proamerykańskich narodów na świecie i nie kryją z tego dumy.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>NEWBORN monument</strong> — żółte litery zmieniane przez artystów co roku od 2008; symbol niepodległości i ulubione miejsce do selfie</li>
-      <li><strong>Pomnik Billa Clintona</strong> — 6-metrowa figura na ulicy nazwanej jego imieniem; sklep z koszulkami "Hillary" obok; historia interwencji NATO 1999</li>
-      <li><strong>Biblioteka Narodowa 1982</strong> — betonowe kopuły i stalowe siatki, brutalizm który należy zobaczyć; architektura wzbudzająca skrajne emocje</li>
-      <li><strong>Meczet Cara Sultana</strong> — XV w., najstarszy budynek w Prisztinie; piękny dziedziniec</li>
-      <li><strong>Katedra Matki Teresy</strong> — budowana przez 20 lat, monumentalna; wstęp wolny</li>
-      <li><strong>Muzeum Kosowa</strong> — historia od prehistorii do 2008 z filmem dokumentalnym o wojnie; wstęp 2€</li>
-      <li><strong>Gračanica</strong> — serbski monastyr UNESCO z 1321, 6km busem za 0.50€; najpiękniejsze freski na trasie — Drzewo Nemanjiciów</li>
-      <li><strong>Kosovo Polje — Pole Kosowskie</strong> — miejsce bitwy 1389, monumenty serbskie i albańskie; 8km od centrum</li>
-      <li><strong>Stary Bazar przy meczecie</strong> — kawiarnie, rzemieślnicy, życie codzienne Prisztiny</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">210k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">2008</div><div class="si-label">Niepodległość</div></div>
+    <div class="stat-item"><div class="si-val">EUR</div><div class="si-label">Waluta</div></div>
+    <div class="stat-item"><div class="si-val">~25</div><div class="si-label">Śr. wiek mieszk.</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Soma Book Station</strong> — kawiarnia-bookshop-koktajl bar; kultowe centrum Prisztiny dla artystów i turystów</li>
-      <li><strong>Era Restaurant</strong> — macedońsko-kosowska kuchnia, dobre i niedrogo; 4–8€/os.</li>
-      <li><strong>Tiffany</strong> — bałkańskie meze w dużych porcjach, tanie i sycące; 3–6€/os.</li>
-      <li><strong>Street food przy NEWBORN</strong> — byrek z serem, flija (tradycyjny kosowski warstwowy naleśnik pieczony pod żarem)</li>
-    </ul>
+
+  <p class="city-desc">Najmłodsza stolica Europy — niepodległość 2008 po traumie wojny 1998–99. Niesamowity kontrast: osmański meczet z XV w. stoi obok żółtego NEWBORN, a ulica nosi imię Billa Clintona z 6-metrowym pomnikiem. Kosowianie to jeden z najbardziej proamerykańskich narodów na świecie. Średnia wieku mieszkańców — ok. 25 lat — to najmłodsza populacja w Europie. Energia tego miasta jest zaraźliwa — wszędzie budują, otwierają kawiarnie, malują murale.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">🏟️</div>
+    <div class="tc-content">
+      <div class="tc-title">NEWBORN Monument + Bulwar Matki Teresy</div>
+      <div class="tc-body">Monument z 2008, wielkie litery NEWBORN (odmalowywane co roku przez artystów — każdy rok to inna koncepcja artystyczna). Tuż obok bulwar Matki Teresy — patronki Kosowa, urodzonej w Skopje z albańskich rodziców. Bar, kawiarnie, fontanny — centrum życia towarzyskiego.</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Dit' e Nat'</strong> — „Dzień i Noc"; kultowy bar literacki otwarty 24h; spotykają się tu wszyscy</li>
-      <li><strong>Rexhë</strong> — kafana z muzyką albańską na żywo, piwo Peja</li>
-      <li><strong>Soma Book Station</strong> — koktajle i klimat do późna</li>
-      <li><strong>Zanzi Bar</strong> — cocktail bar, młoda kosowska klasa średnia</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">🇺🇸</div>
+    <div class="tc-content">
+      <div class="tc-title">Bill Clinton Blvd + pomnik</div>
+      <div class="tc-body">6-metrowa złota figura na ulicy nazwanej jego imieniem. Sklep z koszulkami "Hillary" obok. Historia interwencji NATO 1999 — Kosowianie traktują Clintona jak bohatera narodowego. To jedyne państwo na świecie gdzie flagi USA i NATO wiszą na rządowych budynkach.</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Prisztina jest mała — centrum zwiedza się pieszo w 3–4h. Gračanica to obowiązek: busem z centrum 20 minut, bilet 0.50€. Wróć na piechotę przez Pole Kosowskie jeśli masz energię.</div>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Kosowa — od neolitu po wojnę</div>
+      <div class="tc-body">Kolekcja od neolitu przez Ilirów, Bizancjum po czasy nowożytne. Szczególnie mocna sekcja o wojnie 1998–99 z pierwotnymi dokumentami, fotografiami i zeznaniami. Wstęp wolny lub symboliczny. Plac Matki Teresy.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">📚</div>
+    <div class="tc-content">
+      <div class="tc-title">Biblioteka Narodowa — architektoniczny unikat</div>
+      <div class="tc-body">99 kopuł aluminiowych + stalowa siatka. Zaprojektował Chorwat Andrija Mutnjaković (1982). Jedna z 10 „najbrzydszyh budynków na świecie" wg CNN — ale Kosowianie są z niej dumni. W środku: normalna, działająca biblioteka. Wejdź na chwilę — wnętrze jest spokojne i eleganckie, zupełnie inaczej niż fasada sugeruje.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🕌</div>
+    <div class="tc-content">
+      <div class="tc-title">Meczet Cara Sultana (XV w.) — najstarszy budynek</div>
+      <div class="tc-body">Najstarszy budynek w Prisztinie. Klasyczna osmańska architektura z tynkiem i portykiem. Piękny wewnętrzny dziedziniec z fontanną rytualnego obmycia. Sąsiedztwo: klasztor serbski i meczet w odległości 50m od siebie — symbol wieloetniczności.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Gračanica — serbski monastyr UNESCO</div>
+      <div class="tc-body">Z 1321 roku, 6km busem (0.50€). Najpiękniejsze freski na całej trasie — Drzewo Nemanjiciów to arcydzieło serbskiego malarstwa średniowiecznego. Kosovo Polje (Pole Kosowskie) 8km — miejsce bitwy 1389.</div>
+      <div class="tc-price">Bus: 0.50€ · Wstęp wolny</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🛍️</div>
+    <div class="tc-content">
+      <div class="tc-title">Bazaar starego miasta</div>
+      <div class="tc-body">Kilka ulic wokół centrum z kramami sprzedającymi wszystko od czekolady Kinder po tradycyjne czapy. Atmosfera osmańska, ceny kosowskie (czyli bardzo niskie). Kawiarnie, rzemieślnicy, życie codzienne.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏥</div>
+    <div class="tc-content">
+      <div class="tc-title">Stara Hammam (XV w.) — galeria sztuki</div>
+      <div class="tc-body">Łaźnia osmańska przekształcona w galerię sztuki współczesnej. Wystawy zmieniają się co miesiąc, wstęp symboliczny lub wolny. Sklepione sufity z otworami na światło — architektura sama w sobie jest eksponatem.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🚀</div>
+    <div class="tc-content">
+      <div class="tc-title">Prishtina Urban Art — galeria uliczna</div>
+      <div class="tc-body">Całe miasto to galeria street artu. Okolice Bazaru, ul. Agim Ramadani, okolice stacji kolejowej — murale nawiązujące do niepodległości, NATO i przyszłości. Mapa dostępna w hostelach. Doskonałe tło do zdjęć.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Katedra Matki Teresy</div>
+      <div class="tc-body">Budowana przez 20 lat, monumentalna katedra katolicka (wolny wstęp). Matka Teresa — albańskiego pochodzenia ze Skopje — jest jedną z najważniejszych postaci dla Albańczyków na całym świecie.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">📖</div>
+    <div class="tc-content">
+      <div class="tc-title">Soma Book Station + Era</div>
+      <div class="tc-body">Soma — kawiarnia-bookshop-koktajl bar, kultowe centrum Prisztiny. Era Restaurant — kuchnia kosowsko-fusion, wegańskie i bezmięsne opcje (rzadkość na Bałkanach). Lunch 4–8€.</div>
+      <div class="tc-price">4–8€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍖</div>
+    <div class="tc-content">
+      <div class="tc-title">Qofta — kosowskie „meatballs"</div>
+      <div class="tc-body">Smażone kulki z mięsa mielonego (wołowina+jagnię) z papryką, podawane z ajvarom i jogurtem. Uliczny hit — na każdym rogu, gorące i aromatyczne.</div>
+      <div class="tc-price">2–3€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥙</div>
+    <div class="tc-content">
+      <div class="tc-title">Byrek me mish — kosowskie śniadanie</div>
+      <div class="tc-body">Ciasto filo z mięsem mielonym i cebulą, wychodzi z pieca od rana. Kosowskie śniadanie numer jeden — ciepłe, chrupiące, sycące. W każdej piekarni.</div>
+      <div class="tc-price">0.80–1.20€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫕</div>
+    <div class="tc-content">
+      <div class="tc-title">Tavë me perime (Gjellë) — danie tradycyjne</div>
+      <div class="tc-body">Warzywa duszone z jagnięciną lub cielęciną w specjalnym garnku. W restauracjach rzemieślniczych koło Bazaru — domowe, aromatyczne, sycące.</div>
+      <div class="tc-price">4–7€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍹</div>
+    <div class="tc-content">
+      <div class="tc-title">Aperitivo kosowskie — włoski styl</div>
+      <div class="tc-body">Prisztina przejęła włoski aperitivo: spritz z Aperol lub wino z meze (oliwki, ser) od 18:00 w barach przy Bulwarze Matki Teresy. Tanie i eleganckie.</div>
+      <div class="tc-price">2–4€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">☕</div>
+    <div class="tc-content">
+      <div class="tc-title">Kafja e zezë — czarna kawa po turecku</div>
+      <div class="tc-body">Kawa po turecku — dno szklanki pełne fusów, pita powoli. Serwowana z lokum i wodą. W starych kafanach przy Bazarze — rytuał, nie napój.</div>
+      <div class="tc-price">0.40–0.70€</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Życie nocne</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍻</div>
+    <div class="tc-content">
+      <div class="tc-title">Dit' e Nat' + Zanzi Bar + Zona</div>
+      <div class="tc-body">Dit' e Nat' — „Dzień i Noc", kultowy bar literacki otwarty 24h, spotykają się tu wszyscy. Rexhë — kafana z muzyką albańską na żywo, piwo Peja. Zanzi Bar — cocktail bar, młoda kosowska klasa średnia. Zona — rooftop z widokiem na miasto.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎵</div>
+    <div class="tc-content">
+      <div class="tc-title">Bary przy Bulwarze Matki Teresy</div>
+      <div class="tc-body">Cały bulwar to ciąg barów i kawiarni — wieczorem pełne młodych Kosowian. Piwo Peja 1.50€, koktajle 3–5€. Atmosfera jak na południu Europy — głośna, radosna, towarzyska.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Kosowo — najmłodsze państwo Europy. 17 lutego 2008 Kosowo ogłosiło niepodległość — pierwsze nowe państwo w Europie od 1993. Kraj zamieszkuje 92% etniczni Albańczycy, 5% Serbowie i 3% inne mniejszości. Konflikt 1998–1999: serbska armia i policja przeprowadziła „czyszczenie etniczne" — ok. 10 000 Albańczyków zginęło, 850 000 zostało wypędzonych. Naloty NATO (78 dni) zmusiły Serbię do wycofania wojsk. Teraz 110 krajów uznaje niepodległość Kosowa (w tym Polska, USA, UE), Rosja i Chiny nie uznają. Serbia formalnie nie uznaje do dziś. Pomnik Billa Clintona — 6-metrowy brąz, machający ręką — stoi przy ul. Bill Clinton Blvd.</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;">💡 <strong>Bolt działa w Kosowie!</strong> Tanie i wygodne. Kup SIM przy wjeździe (~3€, IPKO lub Vala) — brak roamingu UE. Waluta: Euro (EUR) — najtańszy kraj na trasie.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ Prisztina jest mała — centrum zwiedza się pieszo w 3–4h. Gračanica obowiązkowa: bus 20 min, 0.50€. Unikaj tematu Serbii w rozmowach — rany wojenne są świeże. Kosowianie są niezwykle gościnni wobec turystów.</div>
 </div>
 }
 
 <!-- ══════════ CITY: PRIZREN ══════════ -->
 @if (isTab('city-prizren')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#1e3a8a,#0e1e5a);">
-    <div class="cph-flag">🇽🇰</div>
-    <div class="cph-info">
-      <div class="cph-country">Kosowo</div>
+  <div class="city-page-header cph-ko">
+    <div class="cph-content">
+      <div class="cph-flag">🇽🇰</div>
+      <div class="cph-country">Kosowo · Perła Bałkanów</div>
       <div class="cph-name">Prizren</div>
-      <div class="cph-dates">16–18 kwietnia · 2 noce</div>
+      <div class="cph-dates">16–18 kwietnia 2026 · 2 noce</div>
+      <div class="cph-badges">
+        <span class="cph-badge">🌉 Most z XVI w.</span>
+        <span class="cph-badge">💍 Złotnicy Filigran</span>
+        <span class="cph-badge">🎭 DOKUFEST</span>
+        <span class="cph-badge">🌡️ ~15°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Najpiękniejsze miasto Kosowa — osmański bazar, rzeka Bistrica płynąca przez centrum i twierdza na wzgórzu. W 1878 tu zawiązała się Liga Prizreńska, pierwszy albański ruch narodowy. Wieczorami całe miasto wychodzi na tarasy przy rzece.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Twierdza Kalaja</strong> — XI w., 20 minut marszu pod górę; zachód słońca nad miastem i rzeką; OBOWIĄZKOWE; wstęp wolny</li>
-      <li><strong>Stary Bazar</strong> — rzemieślnicy srebrnicy, filigranowa biżuteria; najpiękniejszy bazar Kosowa; ceny niższe niż wszędzie indziej</li>
-      <li><strong>Meczet Sinan Paszy</strong> — 1615, otwarty dla turystów; piękny wewnętrzny dziedziniec z fontanną</li>
-      <li><strong>Most kamienny XVI w.</strong> — klasyczna perspektywa fotograficzna Prizrenu; centrum wszystkiego</li>
-      <li><strong>Muzeum Ligi Prizreńskiej 1878</strong> — kolebka albańskiego ruchu narodowego; wstęp 2€</li>
-      <li><strong>Hammam osmański XVII w.</strong> — zachowane mury przy bazarze; dziś bar i przestrzeń kulturalna</li>
-      <li><strong>Rzeka Bistrica</strong> — tarasy kawiarni i restauracji wzdłuż brzegu; serce nocnego Prizrenu</li>
-      <li><strong>Kościół Śv. Spas XIV w.</strong> — uszkodzony w zamieszkach etnicznych w 2004, stopniowo odbudowywany</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">180k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">1878</div><div class="si-label">Liga Prizreńska</div></div>
+    <div class="stat-item"><div class="si-val">EUR</div><div class="si-label">Waluta</div></div>
+    <div class="stat-item"><div class="si-val">412m</div><div class="si-label">n.p.m.</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Hani i Prizrenit</strong> — zabytkowy han-restauracja przy Bazarze; rakia, grillowane mięso, lokalna atmosfera; 5–10€/os.</li>
-      <li><strong>Lidhja Restaurant</strong> — przy moście, ryby z rzeki i tradycyjne meso; 4–8€/os.</li>
-      <li><strong>Gjirafa</strong> — nowoczesna kawiarnia, popularna wśród młodej klasy Prizrenu</li>
-      <li><strong>Sujuk i ser kackavall przy bazarze</strong> — lokalne wędliny i sery na śniadanie; kupuj na wagę</li>
-    </ul>
+
+  <p class="city-desc">Najpiękniejsze miasto Kosowa — osmański bazar, rzeka Bistrica płynąca przez centrum, kamienny most z XVI w. i twierdza na wzgórzu. W 1878 tu zawiązała się Liga Prizreńska — pierwszy albański ruch narodowy. Serbska średniowieczna stolica, albańskie serce, osmański charakter. Wieczorami całe miasto wychodzi na tarasy przy rzece — to bałkański odpowiednik włoskiej passeggiaty, tyle że nad szumiącą rzeką przy dźwiękach albańskiej muzyki.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">🏰</div>
+    <div class="tc-content">
+      <div class="tc-title">Twierdza Kalaja — zachód słońca OBOWIĄZKOWY</div>
+      <div class="tc-body">Mury XI w., 20 min marszu przez osmańskie zaułki. Z wież: panorama całego Prizrenu z minaretami, dachami i górami Sharr w tle. Wejdź godzinę przed zachodem — widok jest nagrodą. OBOWIĄZKOWE.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Tash Bar</strong> — koktajle w środku dawnego osmańskiego hammamu; jedyne w swoim rodzaju</li>
-      <li><strong>Kafana Lidhja</strong> — muzyka albańska na żywo przy moście, taniec do późna</li>
-      <li><strong>Hani i Prizrenit</strong> — rakia i grille przy ognisku, zabytkowe wnętrze</li>
-      <li><strong>Bary przy Bistricy</strong> — tarasy nad rzeką, tłoczne do 1:00 w nocy</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">💍</div>
+    <div class="tc-content">
+      <div class="tc-title">Złotnicy Filigran — Bazaar</div>
+      <div class="tc-body">Prizren słynie z filigranowej biżuterii srebrnej (druciana koronka). Rzemieślnicy pracują w tych samych warsztatach od pokoleń. Możesz patrzeć jak tworzą — wyjątkowa okazja. Pierścionki 10–20€, bransolety 20–50€. Autentyczne, nie chińskie podróbki.</div>
+      <div class="tc-price">Pierścionki: 10–20€</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Na Twierdza Kalaja wejdź godzinę przed zachodem słońca — widok jest nagrodą. Wieczorami przy Bistricy jest najlepiej — całe miasto wychodzi na tarasy, gwarnie i bezpiecznie.</div>
+  <div class="tip-card">
+    <div class="tc-icon">🌉</div>
+    <div class="tc-content">
+      <div class="tc-title">Most Kamienny Ura e Gurit (XVI w.)</div>
+      <div class="tc-body">Trzy łuki nad rzeką Bistrica, najsłynniejszy widok Prizrenu. Najlepiej rano przed tłokiem, gdy słońce i domy osmańskie po obu stronach świecą w złotym świetle. Centrum wszystkiego — od mostu rozchodzą się ulice na bazar, twierdzę i meczet.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🕌</div>
+    <div class="tc-content">
+      <div class="tc-title">Meczet Sinan Paszy (1615)</div>
+      <div class="tc-body">Ottomańska architektura w doskonałym stanie. Kopuła 14m, portyk z kolumnami, dziedziniec z fontanną rytualnego obmycia. Wewnątrz cisza i chłód, freski roślinne na suficie. Otwarty dla turystów poza godzinami modlitwy.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Kościół Bogurodzicy Lewiszki (XIV w.)</div>
+      <div class="tc-body">Serbskie freski uszkodzone w zamieszkach 2004, odbudowa trwa. Unikalny przykład bizantyjskiej architektury w sercu albańskiego miasta. Wejście z szacunkiem — smutny i ważny symbol złożonej historii Kosowa.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Ligi Prizreńskiej 1878</div>
+      <div class="tc-body">W 1878 w tym budynku założono pierwszy albański ruch narodowy. Ekspozycja dokumentująca albańskie przebudzenie narodowe XIX w. Bezpośredni prekursor niepodległości 1912.</div>
+      <div class="tc-price">Wstęp: 1€ · 20 min</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎭</div>
+    <div class="tc-content">
+      <div class="tc-title">DOKUFEST — festiwal filmów dokumentalnych</div>
+      <div class="tc-body">Lipiec: jeden z najlepszych festiwali dokumentalnych w Europie. Projekcje w twierdzy i na ulicach. W kwietniu miasto jest spokojniejsze i bardziej autentyczne — ale warto wiedzieć o tym wydarzeniu.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🕍</div>
+    <div class="tc-content">
+      <div class="tc-title">Hammam osmański (XVII w.) — bar w łaźni</div>
+      <div class="tc-body">Łaźnia przekształcona w bar i przestrzeń kulturalną. Sklepione sufity z otworami na niebo, siedzi się w korytach kąpielowych na poduszkach. Kawa lub herbata 1€. Rruga Shadervan — absolutny unikat.</div>
+      <div class="tc-price">Kawa: 1€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌊</div>
+    <div class="tc-content">
+      <div class="tc-title">Rzeka Bistrica i tarasy restauracyjne</div>
+      <div class="tc-body">Cały wieczorny Prizren wychodzi na tarasy nad rzeką. Herbata w ręku, woda szumi pod mostem, muzyka albańska w tle. Siądź, nie spiesz się — to jest esencja Prizrenu.</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍖</div>
+    <div class="tc-content">
+      <div class="tc-title">Hani i Prizrenit + Lidhja</div>
+      <div class="tc-body">Hani — zabytkowy han-restauracja przy Bazarze, rakia i grillowane mięso (5–10€). Lidhja — przy moście, ryby z rzeki (4–8€). Gjirafa — nowoczesna kawiarnia.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥞</div>
+    <div class="tc-content">
+      <div class="tc-title">Flija — warstwowy naleśnik (ZAMÓW Z WYPRZEDZENIEM)</div>
+      <div class="tc-body">Warstwowy naleśnik pieczony pod żarem (saç) przez 2–3 godziny. Albańskie slow food i duma Kosowa. ZAMÓW Z WYPRZEDZENIEM — wymaga rezerwacji dzień wcześniej. Podawane z jogurtem.</div>
+      <div class="tc-price">800–1200 ALL z jogurtem</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🧆</div>
+    <div class="tc-content">
+      <div class="tc-title">Qebapi Prizreni — własny styl kebapa</div>
+      <div class="tc-body">Prizren ma własny styl kebapa: cieńsze, bardziej aromatyczne, z tymiankiem. Restauracja Pizzeria Palermo przy Bazarze. 8 kebapów + chleb + cebula + ajvar = 2€.</div>
+      <div class="tc-price">1.50–2€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫙</div>
+    <div class="tc-content">
+      <div class="tc-title">Kackavall — twardy ser kosowski</div>
+      <div class="tc-body">Twardy żółty ser kosowski, solony i leżakowany. Kupuj na targu przy meczecie (300 ALL/kg) na drogę — idealny do chleba. Sujuk i kackavall na bazarze to doskonałe śniadanie.</div>
+      <div class="tc-price">300 ALL/kg</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌶️</div>
+    <div class="tc-content">
+      <div class="tc-title">Ajvar domowy — prezent z Bałkanów</div>
+      <div class="tc-body">Pasta z pieczonej czerwonej papryki i bakłażana. W Prizrenie sprzedawany na każdym rogu w słoikach. Słodki lub pikantny. Świetny prezent do zabrania do domu.</div>
+      <div class="tc-price">2–4€/słoik</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍖</div>
+    <div class="tc-content">
+      <div class="tc-title">Ćevapi przy Bazarze — tradycyjny grill</div>
+      <div class="tc-body">Tradycyjne restauracje grill obok jubilerów. Ćevapi (8 sztuk) + pita + cebula + ajvar = 2€. Tanie, gorące, sycące — idealne na lunch między zakupami.</div>
+      <div class="tc-price">~2€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥗</div>
+    <div class="tc-content">
+      <div class="tc-title">Sallata Shirjane — wiejska sałatka</div>
+      <div class="tc-body">„Wiejska sałatka" z Prizrenu: pomidory z siekanymi ziołami, biały ser, rzodkiewka, oliwa. Lekka i orzeźwiająca — idealna do ciężkich dań mięsnych.</div>
+      <div class="tc-price">200–300 ALL</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Życie nocne</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍹</div>
+    <div class="tc-content">
+      <div class="tc-title">Tash Bar — koktajle w hammamie</div>
+      <div class="tc-body">Koktajle w środku dawnego osmańskiego hammamu — jedyne w swoim rodzaju. Sklepione sufity, poduszki, muzyka. Absolutnie unikalne doświadczenie nocnego życia.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎵</div>
+    <div class="tc-content">
+      <div class="tc-title">Kafana Lidhja — muzyka przy moście</div>
+      <div class="tc-body">Muzyka albańska na żywo przy moście kamiennym. Tarasy nad rzeką tłoczne do 1:00 — całe miasto wychodzi wieczorami. Piwo Peja 1.50€, rakia 1€.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌃</div>
+    <div class="tc-content">
+      <div class="tc-title">Tarasy nad Bistricą — wieczorny Prizren</div>
+      <div class="tc-body">Kilkanaście kawiarni i barów z tarasami bezpośrednio nad rzeką. Szum wody, muzyka z głośników, zapach grillowanego mięsa — kwintesencja bałkańskiego wieczoru. Gwarnie i bezpiecznie do późna.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Prizren — serbska średniowieczna stolica, albańskie przebudzenie narodowe. Stefan Dušan — najpotężniejszy władca serbski — uczynił Prizren jedną ze stolic swojego imperium w XIV w. Kościół Bogurodzicy Lewiszki to jego spuścizna. W 1878, gdy Imperium Osmańskie chyliło się ku upadkowi, delegaci z całej Albanii spotkali się tu i założyli Ligę Prizreńską — pierwszy albański ruch narodowy. W marcu 2004 pogromy w Prizrenie: tłum zniszczył serbskie cerkwie i domy — dramat który wciąż dzieli społeczność. Dziś miasto jest symbolem trudnego, ale koniecznego pojednania. DOKUFEST — festiwal filmowy w lipcu — przyciąga artystów z całego świata do tego malowniczego miasta.</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;">💡 <strong>Zakupy w Prizrenie:</strong> Filigranowa biżuteria srebrna (pierścionki 10–20€, bransolety 20–50€), ajvar domowy (2–4€/słoik), kackavall (ser kosowski). Kupuj bezpośrednio od rzemieślników — autentyczne i tanie.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ Na twierdzę Kalaja wejdź godzinę przed zachodem — widok jest nagrodą. Wieczorami przy Bistricy jest najlepiej — gwarnie i bezpiecznie. Flija wymaga rezerwacji dzień wcześniej — zapytaj w hostelu!</div>
 </div>
 }
 
 <!-- ══════════ CITY: PEC ══════════ -->
 @if (isTab('city-pec')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#1e3a8a,#0e1e5a);">
-    <div class="cph-flag">🇽🇰</div>
-    <div class="cph-info">
-      <div class="cph-country">Kosowo</div>
+  <div class="city-page-header cph-ko">
+    <div class="cph-content">
+      <div class="cph-flag">🇽🇰</div>
+      <div class="cph-country">Kosowo · Brama Gór</div>
       <div class="cph-name">Peć</div>
-      <div class="cph-dates">18–19 kwietnia · 1 noc</div>
+      <div class="cph-dates">18–19 kwietnia 2026 · 1 noc</div>
+      <div class="cph-badges">
+        <span class="cph-badge">⛪ UNESCO Patriarchat</span>
+        <span class="cph-badge">🏔️ Alpy Albańskie</span>
+        <span class="cph-badge">🍺 Piwo Peja</span>
+        <span class="cph-badge">🌡️ ~13°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Miasto u wejścia do jednego z najgłębszych kanionów Europy — Kanion Rugova ciągnie się przez 25km z ościennicami do 1000m wysokości. Tu przez wieki chowały się albańskie klany żyjące według Kanunu. Tutaj też warzone jest piwo Peja — najpopularniejszy trunek Kosowa.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Patriarchat Pecki</strong> — XIV w. serbski patriarchat UNESCO; 2km od centrum przez enklawę KFOR; jest otwarty dla turystów — wejdź spokojnie; niezwykłe freski z XIV w.</li>
-      <li><strong>Kanion Rugova</strong> — 25km długości, ściany do 1000m; wejście tuż za miastem — spaceruj ile zdołasz; dramatyczne widoki już po 2–3km</li>
-      <li><strong>Restauracje nad rzeką w kanionie</strong> — pstrąg prosto z rzeki Bistrica Peć; tradycja regionu; ceny 4–8€</li>
-      <li><strong>Stary Bazar Peć</strong> — handlarze, warsztaty, życie codzienne bez turystów</li>
-      <li><strong>Meczet Bajrakli XV w.</strong> — centrum miasta, piękna architektura osmańska</li>
-      <li><strong>Wodospad w Rugova</strong> — 5km w kanion pieszo; warto zejść ze szlaku</li>
-      <li><strong>Monastyr Visoki Dečani</strong> — 13km na południe, XIV w. UNESCO; najlepiej zachowane serbskie freski w regionie; wstęp wolny</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">100k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">25km</div><div class="si-label">Kanion Rugova</div></div>
+    <div class="stat-item"><div class="si-val">1000m</div><div class="si-label">Ściany kanionu</div></div>
+    <div class="stat-item"><div class="si-val">EUR</div><div class="si-label">Waluta</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Tradita Gege</strong> — restauracja przy wejściu do kanionu; pstrąg i meso na żelu (ogień pod gliniany gar); jedno z najlepszych miejsc na trasie; 6–10€</li>
-      <li><strong>Kafja Rugova</strong> — kawa z widokiem na kanion, lokalne produkty</li>
-      <li><strong>Restauracje przy Bazarze</strong> — qofte, fërgese, gibanica (placek z serem); 3–6€</li>
-    </ul>
+
+  <p class="city-desc">Miasto u wejścia do jednego z najgłębszych kanionów Europy — Kanion Rugova ciągnie się przez 25km ze ścianami do 1000m. Tu przez wieki chowały się albańskie klany żyjące według Kanunu (prawa zwyczajowego). Tu też warzone jest piwo Peja — najsłynniejszy trunek Kosowa. Patriarchat Pecki (UNESCO) to duchowe centrum Serbskiej Cerkwi Prawosławnej — odpowiednik Watykanu dla Serbów. Alpy Albańskie (Prokletije — „Przeklęte Góry") widoczne z centrum miasta, ośnieżone szczyty do 2700m.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Patriarchat Peć (UNESCO)</div>
+      <div class="tc-body">2km pieszo wzdłuż rzeki Bistrica Peć. Trzy kościoły z XIII–XIV w. połączone narteksem, freski z XIII–XV w. w doskonałym stanie. Siedziba serbskich patriarchów przez 500 lat tureckiej okupacji. KFOR przy bramie — ale wejście wolne. Zakryj ramiona i kolana. 1–1.5h.</div>
+      <div class="tc-price">Wstęp wolny</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Kafany przy Bazarze</strong> — piwo Peja warzony właśnie w tym mieście; cena ~1.50€</li>
-      <li><strong>Bary przy rzece</strong> — letnia atmosfera, lokale nad wodą</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">🏔️</div>
+    <div class="tc-content">
+      <div class="tc-title">Kanion Rugova — wędrówka</div>
+      <div class="tc-body">Wejście tuż za miastem (taxi 3€ lub pieszo 20 min). Ściany 1000m, rzeka Bistrica Peć turkusowa jak malachit. Szlak biegnie 25km do Gjakovicy. Nawet pierwsze 3–5km robi kolosalne wrażenie. Wiszące mosty, wodospady, jaskinie. NIE WCHODŹ bez butów trekkingowych i wody. W kwietniu rzeka jest pełna, spektakularna.</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Do Dečanów jedź rano — bus lub taxi ~10€ w obie strony. KFOR kontroluje dostęp do Patriarchatu, ale jest zawsze otwarty dla turystów — wejdź bez obaw, tylko spokojnie.</div>
-  <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Euro.</strong> Najtańszy kraj na trasie. Piwo Peja ~1.50€, kawa ~0.80€. Kup SIM przy wjeździe (~3€) — brak roamingu UE.</div>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Monastyr Visoki Dečani — UNESCO</div>
+      <div class="tc-body">13km na południe, XIV w. — najlepiej zachowane serbskie freski w regionie. Ponad 1000 scen biblijnych na ścianach. Chroniony przez KFOR. Wstęp wolny. Bus lub taxi ~10€ w obie strony. Jedź rano — po południu zamykają.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍺</div>
+    <div class="tc-content">
+      <div class="tc-title">Browar Birra Peja — najlepsze piwo na trasie</div>
+      <div class="tc-body">Piwo Peja warzone w tym mieście od 1971. Najlepsze piwo na całej 14-dniowej trasie — świeże bezpośrednio ze źródła. Browar nie jest otwarty dla turystów, ale pij w restauracjach przy kanionie (1.50€/0.5L). Smakuje inaczej niż w Tiranie — świeższy i lekko owocowy.</div>
+      <div class="tc-price">1.50€/0.5L</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🦅</div>
+    <div class="tc-content">
+      <div class="tc-title">Alpy Albańskie (Prokletije) — widok z miasta</div>
+      <div class="tc-body">„Przeklęte Góry" widoczne z centrum Peć — ośnieżone szczyty do 2700m. Nie masz czasu na pełną wyprawę, ale widok jest niesamowity. Peć jest bramą do najtrudniejszego terenu górskiego zachodniej Europy.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏘️</div>
+    <div class="tc-content">
+      <div class="tc-title">Stare Miasto Peć — osmański charakter</div>
+      <div class="tc-body">Centrum z osmańskim karawanserajem (han), bazarem srebrzarzy i kilkoma meczetami. Meczet Bajrakli (XV w.) — piękna architektura osmańska. Mniej turystyczne niż Prizren, bardziej autentyczne. Spacer 1h.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌊</div>
+    <div class="tc-content">
+      <div class="tc-title">Pływanie w kanionie Rugova</div>
+      <div class="tc-body">Kilka głębokich stawów nad rzeką dostępnych z drogi. Temperatura wody w połowie kanionu to tylko 8–10°C w kwietniu, ale miejscowi pływają. Widok z wody jest zupełnie inny — warto zmierzyć się z zimnem.</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🐟</div>
+    <div class="tc-content">
+      <div class="tc-title">Tradita Gege — restauracja przy kanionie</div>
+      <div class="tc-body">Pstrąg pieczony cały, hodowany w rzece Bistrica. Podany z sałatką i chlebem — jedno z najlepszych miejsc na całej trasie! Meso na żelu (ogień pod gliniany gar) dla mięsożerców.</div>
+      <div class="tc-price">5–8€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍺</div>
+    <div class="tc-content">
+      <div class="tc-title">Birra Peja — w miejscu produkcji</div>
+      <div class="tc-body">Lager jasny, piwo regionu. W każdej restauracji 1.50€. Musisz spróbować w miejscu produkcji — smakuje zupełnie inaczej niż butelkowane w innych miastach.</div>
+      <div class="tc-price">1.50€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥘</div>
+    <div class="tc-content">
+      <div class="tc-title">Supa e shpendës — zupa drobiowa</div>
+      <div class="tc-body">Zupa drobiowa z makaronem i warzywami. Albański „rosół" — regeneruje siły po długim marszu po kanionie. Gorąca, aromatyczna, domowa.</div>
+      <div class="tc-price">200–300 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🧇</div>
+    <div class="tc-content">
+      <div class="tc-title">Petulla — albańskie racuchy</div>
+      <div class="tc-body">Smażone głęboko w oleju, posypane cukrem pudrem lub polane miodem. Śniadanie rodzinne. W kafanach od 7:00 — ciepłe, słodkie, sycące. Idealne przed wędrówką.</div>
+      <div class="tc-price">150–250 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥩</div>
+    <div class="tc-content">
+      <div class="tc-title">Paça — zupa z nóżek (nie dla każdego)</div>
+      <div class="tc-body">Zupa z nóżek wołowych lub baranich, gotowana przez 4–5 godzin. Bałkańskie „hangover food" — gęste, tłuste, rozgrzewające. Nie dla każdego, ale lokalni ją uwielbiają.</div>
+      <div class="tc-price">300–400 ALL</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫙</div>
+    <div class="tc-content">
+      <div class="tc-title">Miód górski z Prokletijów — doskonały prezent</div>
+      <div class="tc-body">Sprzedawany na ulicy w małych słoikach. Pszczoły zbierają z dzikich kwiatów alpejskich. Doskonały prezent do zabrania do domu — autentyczny i aromatyczny.</div>
+      <div class="tc-price">3–5€/słoik</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Życie nocne</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍻</div>
+    <div class="tc-content">
+      <div class="tc-title">Kafany przy Bazarze + bary nad rzeką</div>
+      <div class="tc-body">Piwo Peja warzone właśnie w tym mieście — 1.50€. Kafany przy bazarze i bary nad rzeką — letnia, lokalna atmosfera. Peć nie jest imprezowym miastem — tu jest spokojnie i autentycznie.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">☕</div>
+    <div class="tc-content">
+      <div class="tc-title">Kafja Rugova — kawa z widokiem na kanion</div>
+      <div class="tc-body">Kawiarnia na wjeździe do kanionu Rugova. Espresso z widokiem na 1000-metrowe ściany — najlepsza kawa z najlepszym widokiem na trasie. Wieczorem spokojnie i magicznie.</div>
+      <div class="tc-price">0.80€</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Peć — duchowe serce Serbii w albańskim otoczeniu. Patriarchat Peć od XIII w. był siedzibą Serbskiej Cerkwi Prawosławnej — odpowiednik Watykanu dla Serbów. Gdy Osmanie podbili Serbię (1389, bitwa na Kosowym Polu, zaledwie 70km stąd), zlikwidowali patriarchat w 1766, ale przywrócono go w 1920 po I Wojnie. Przez 500 lat klasztor był jedyną instytucją podtrzymującą serbską tożsamość kulturową i narodową. Dziś miasto zamieszkuje niemal wyłącznie Albańczycy — ale klasztor stoi, strzeżony przez NATO i UNESCO. Browar Peja (Birra Peja) był jednym z pierwszych albańsko-kosowskich przedsiębiorstw po 1999 — symbolem odbudowy.</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;"><strong>💰 Najtańszy kraj na trasie.</strong> Piwo Peja ~1.50€, kawa ~0.80€, obiad 4–8€. Kup SIM (~3€) — brak roamingu UE. Do Dečanów: bus lub taxi ~10€ w obie strony.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ Kanion Rugova — NIE WCHODŹ bez butów trekkingowych i wody! W kwietniu rzeka jest pełna i spektakularna, ale szlaki mogą być śliskie. KFOR kontroluje dostęp do Patriarchatu i Dečanów — spokojnie, zawsze otwarci dla turystów.</div>
 </div>
 }
 
 <!-- ══════════ CITY: KOTOR ══════════ -->
 @if (isTab('city-kotor')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#7a5a10,#4a3800);">
-    <div class="cph-flag">🇲🇪</div>
-    <div class="cph-info">
-      <div class="cph-country">Czarnogóra</div>
+  <div class="city-page-header cph-me">
+    <div class="cph-content">
+      <div class="cph-flag">🇲🇪</div>
+      <div class="cph-country">Czarnogóra · UNESCO</div>
       <div class="cph-name">Kotor</div>
-      <div class="cph-dates">19–21 kwietnia · 2 noce</div>
+      <div class="cph-dates">19–21 kwietnia 2026 · 2 noce</div>
+      <div class="cph-badges">
+        <span class="cph-badge">🏰 UNESCO Stare Miasto</span>
+        <span class="cph-badge">⛰️ Mury 1350m</span>
+        <span class="cph-badge">🐱 Miasto kotów</span>
+        <span class="cph-badge">🌡️ ~16°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Średniowieczne miasto UNESCO schowane w najgłębszym fiordzie Adriatyku. Wenecja rządziła tu przez 400 lat zostawiając lwy nad bramami, gotyckie pałace i koty — dosłownie wszędzie. Najpiękniejsze miasto na całej trasie.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Stare Miasto UNESCO</strong> — Brama Morska z 1555 i Brama Rzeczna; koty chodzą między turystami jak właściciele tego miejsca</li>
-      <li><strong>Katedra Śv. Trypona</strong> — XII w. romańska; relikwie świętego patrona marynarzy; romańskie dzwonnice; wstęp 3€</li>
-      <li><strong>Twierdza San Giovanni</strong> — 1350 schodów, ok. 45 minut; panorama całej Zatoki Kotorskiej; wejdź o wschodzie słońca gdy jest pusto; wstęp 8€</li>
-      <li><strong>Mury miejskie</strong> — 4.5km muru weneckiego z XIV–XVIII w.; obejście zajmuje 2h; wstęp 8€</li>
-      <li><strong>Muzeum Kotoru</strong> — wenecka i morska historia regionu; wstęp 3€</li>
-      <li><strong>Perast</strong> — 12km busem; weneckie pałace w różnym stopniu ruiny; łódka na wysepkę Gospa od Škrpjela za 3€</li>
-      <li><strong>Gospa od Škrpjela</strong> — sztuczna wysepka budowana przez marynarzy przez 200 lat; wewnątrz gobelin tkany przez kobietę przez 25 lat — gdy oślepła, tkała dalej własnymi włosami</li>
-      <li><strong>Crkva Śv. Luke</strong> — XII w. romańska; centrum Starego Miasta; wstęp wolny</li>
-      <li><strong>Boka Kotorska</strong> — rejs przez całą Zatokę Kotorską taksówkami wodnymi</li>
-      <li><strong>Plaża Dobrota</strong> — na północ od Kotoru; w kwietniu cicha i bez turystów</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">13k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">1350</div><div class="si-label">Schodów na twierdzę</div></div>
+    <div class="stat-item"><div class="si-val">4.5km</div><div class="si-label">Mury weneckie</div></div>
+    <div class="stat-item"><div class="si-val">400 lat</div><div class="si-label">Wenecja tu rządziła</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Scala Santa</strong> — w murach; ryby i homarce; romantyczna atmosfera; 15–25€/os.</li>
-      <li><strong>Restaurant Stari Grad</strong> — lokalne meso i owoce morza; tańsze niż w murach; 10–18€/os.</li>
-      <li><strong>Konoba Cattaro</strong> — meze i ocukany bakalar (dorsz); typowe czarnogórskie; 8–15€/os.</li>
-      <li><strong>Forza e Mare</strong> — cocktail bar z widokiem na zatokę; dobry na aperitif przed kolacją</li>
-    </ul>
+
+  <p class="city-desc">Średniowieczne miasto UNESCO schowane w najgłębszym fiordzie Adriatyku (Boka Kotorska). Wenecja rządziła tu 400 lat zostawiając lwy weneckie nad bramami, gotyckie pałace i koty — dosłownie wszędzie (są na herbie miasta!). 1350 schodów prowadzi na twierdzę Św. Jana z panoramą całej zatoki. Najpiękniejsze miasto na całej trasie. Po trzęsieniu ziemi w 1979 UNESCO i cały świat odbudowały Stare Miasto — jeden z największych projektów renowacji w historii.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">🏰</div>
+    <div class="tc-content">
+      <div class="tc-title">Mury miejskie i Twierdza Śv. Ivan — 1350 schodów</div>
+      <div class="tc-body">UNESCO. 4.5km murów, wysokość do 20m, szerokość do 9m. Twierdza Śv. Ivan na szczycie 260m — 1350 schodów, 45–60 minut wspinaczki. RUSZAJ WCZEŚNIE RANO (7:00) — po 10:00 słońce i tłumy. Widok: cały Zatokę Kotorską jak z lotu ptaka. Wejście przez Bramę Morską — bilet 8€.</div>
+      <div class="tc-price">Wstęp: 8€ (tylko gotówka!)</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Bokun Pub</strong> — kultowy bar w murach; lokalne piwo Nikšičko; stały punkt każdej wizyty</li>
-      <li><strong>Forza e Mare</strong> — zachód słońca nad zatoką; koktajle i widoki</li>
-      <li><strong>Merak</strong> — bar w weneckim pałacu, klimatyczne wnętrze</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Katedra Śv. Tripuna (Triphona) — XII w.</div>
+      <div class="tc-body">XII w., dwie romańskie wieże, wnętrze z mozaikami z XVI w. i skarbiec ze złotymi relikwiarzami średniowiecznymi. Patron rybaków i żeglarzy. Czynna od 8:00. Jedna z najstarszych katedr na Adriatyku.</div>
+      <div class="tc-price">Wstęp: 3€</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Wejście na twierdzę — tylko gotówka. Rano (7:00–8:00) jest spokojnie i światło idealne. Perast to obowiązek. W promieniu 30km: Cetinje (dawna stolica, 40min), Budva (latem tłum, w kwietniu spokojnie).</div>
+  <div class="tip-card">
+    <div class="tc-icon">🐱</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Kotorskich Kotów + koty wszędzie</div>
+      <div class="tc-body">Kotor to „Miasto Kotów" — setki kotów siedzą na murach, w kawiarniach, na schodach. Muzeum Kotów (Mačji Muzej) na piętrze kamienicy przy bazarze — 2€, zabawna ekspozycja zdjęć i legend o kotach strzegących Kotoru przed plagami. Legendy mówią że Wenecjanie przywieźli koty by chronić magazyny od szczurów.</div>
+      <div class="tc-price">Muzeum: 2€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Stare Miasto — labirynt 3km²</div>
+      <div class="tc-body">Brama Morska z 1555, Brama Rzeczna. Labirynt wąskich ulic, placów i kościołów. Plac Broni z fontanną, Plac Mąki z XVI-wieczną loggią. 13 kościołów w obrębie murów — każdy z historią. Kościół Śv. Luke (XII w.) z ikonostasem — wolny wstęp.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛵</div>
+    <div class="tc-content">
+      <div class="tc-title">Perast + Wyspa Matki Bożej na Skale</div>
+      <div class="tc-body">12km busem — weneckie pałace w różnym stopniu ruiny. Łódka na wysepkę Gospa od Škrpjela (5€) — sztuczna wysepka budowana przez marynarzy 200 lat. Wewnątrz gobelin tkany 25 lat — gdy autorka oślepła, tkała dalej własnymi włosami. OBOWIĄZKOWY przystanek.</div>
+      <div class="tc-price">Łódka: 5€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛵</div>
+    <div class="tc-content">
+      <div class="tc-title">Rejs po Zatoce Kotorskiej</div>
+      <div class="tc-body">Jedyna naturalna zatoka w Europie Wschodniej (fjord tektoniczny). Łodzie taksówki do Perasta (15€) gdzie widać Wyspę Matki Bożej na Skale. Kotor → Perast → Budva łodzią: 1.5h. Widoki na góry i średniowieczne miasteczka z wody.</div>
+      <div class="tc-price">Taxi wodny: ~15€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏖️</div>
+    <div class="tc-content">
+      <div class="tc-title">Plaże w okolicy</div>
+      <div class="tc-body">Plaża Dobrota (2km), Plaża Ljuta (5km), lub godzinę jazdy do plaży Jaz w Budvie (22km, bus 2€). Kotor nie ma własnej plaży (jest miastem portowym), ale wybrzeże dookoła zatoki jest piękne.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🌅</div>
+    <div class="tc-content">
+      <div class="tc-title">Wschód słońca z murów — magiczne doświadczenie</div>
+      <div class="tc-body">Ustaw alarm na 6:00. Wschód słońca nad Zatoką Kotorską z poziomu murów — woda złota, zatoka w ciszy, statki odzwierciedlone w wodzie. Doświadczenie które trudno opisać — jedno z najpiękniejszych na trasie.</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🦞</div>
+    <div class="tc-content">
+      <div class="tc-title">Scala Santa + Konoba Cattaro</div>
+      <div class="tc-body">Scala Santa — w murach, ryby i homarce, romantycznie (15–25€). Konoba Cattaro — meze i bakalar (8–15€). Restaurant Stari Grad — tańsze niż w murach (10–18€). Forza e Mare — aperitif z widokiem na zatokę.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🐟</div>
+    <div class="tc-content">
+      <div class="tc-title">Peka — czarnogórskie slow food</div>
+      <div class="tc-body">Duszone mięso/warzywa pod specjalną pokrywą z żarem na wierzchu. Wymaga zamówienia 24h wcześniej — zapytaj w hotelu. Konoba Stari Mlini (Ljuta) to najlepsze miejsce. Warte czekania.</div>
+      <div class="tc-price">8–15€/osoba</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🦐</div>
+    <div class="tc-content">
+      <div class="tc-title">Kamenice (ostrygi) — z Zatoki Kotorskiej</div>
+      <div class="tc-body">Zatoka Kotorska słynie z ostryg. Bar Galion przy promenadzie — tuzin świeżych ostryg z cytryną i winem prosecco. Luksus w przystępnej cenie.</div>
+      <div class="tc-price">12–18€/tuzin</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍖</div>
+    <div class="tc-content">
+      <div class="tc-title">Ćevapi Kotorski + sałatka</div>
+      <div class="tc-body">Mięsne kiełbasy z grilla — tu dodają tymianek i majeranek, co odróżnia je od bośniackich i kosowskich. Crnogorska salata — pieczonych paprzyczek z fetą. Plac Oružja.</div>
+      <div class="tc-price">Ćevapi: 2.50–4€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍷</div>
+    <div class="tc-content">
+      <div class="tc-title">Vranac czarnogórski — lokalne czerwone wino</div>
+      <div class="tc-body">Lokalne czerwone wino z winorośli Vranac. Głębokie, taniczne, bardzo bałkańskie. Kieliszek 2–4€. Konoba Cattaro przy murach — najlepsze miejsce na degustację.</div>
+      <div class="tc-price">Kieliszek: 2–4€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">☕</div>
+    <div class="tc-content">
+      <div class="tc-title">Espresso z widokiem na mury</div>
+      <div class="tc-body">Kawiarnie przy Placu Broni oferują espresso (1.50€) z widokiem na XII-wieczną katedrę i mury weneckie. Czas zwalnia — idealne na poranny start dnia.</div>
+      <div class="tc-price">Espresso: 1.50€</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Życie nocne</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍺</div>
+    <div class="tc-content">
+      <div class="tc-title">Bokun Pub + Merak</div>
+      <div class="tc-body">Bokun — kultowy bar w murach, piwo Nikšičko, stały punkt każdej wizyty. Merak — bar w weneckim pałacu, klimatyczne wnętrze. Letnja Bašta — ogródek pod gwiazdami.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍹</div>
+    <div class="tc-content">
+      <div class="tc-title">Forza e Mare — zachód słońca i koktajle</div>
+      <div class="tc-body">Koktajle z widokiem na zatokę — najlepsze miejsce na wieczornego drinka w Kotorze. Zachód słońca nad wodą, muzyka w tle, wenecka architektura dookoła.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🎵</div>
+    <div class="tc-content">
+      <div class="tc-title">Bary w Starym Mieście — wieczorny klimat</div>
+      <div class="tc-body">Kilka barów ukrytych w zaułkach Starego Miasta — odkrywasz je przypadkiem idąc wąskimi uliczkami. Piwo Nikšičko 2–3€, koktajle 5–8€. Atmosfera kameralna i romantyczna.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Kotor — 2000 lat na przecięciu imperiów. Rimski Ascrivium, Bizancjum, Serbia (Nemanjidzi, XII–XIV w.), Bośnia, Wenecja (1420–1797, najdłużej), Habsburgowie, Napoleon, Austria, Jugosławia, Czarnogóra. Każde imperium rozbudowywało mury i zostawiło swój stempel. Wenecja jest wszechobecna: herb Wenecji na Bramie Morskiej (1555), lwy śv. Marka na murach, loggie architektoniczne. Po trzęsieniu ziemi 1979 (7.0 w skali Richtera, 100 ofiar, 90% budynków uszkodzonych) UNESCO i cały świat odbudowały Stare Miasto — do 1982 przywrócono je do stanu sprzed katastrofy. To jeden z największych projektów renowacji w historii UNESCO.</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;">💡 <strong>Transport z Kotoru:</strong> Perast — bus 12km (2€) lub taxi wodny (15€). Budva — bus 22km (2€). Cetinje (dawna stolica) — 40 min. Podgorica — 2h busem.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ Twierdza — tylko gotówka (8€). Rano 7:00–8:00 pusto i idealne światło — RUSZAJ WCZEŚNIE. Peka wymaga zamówienia 24h wcześniej. Kotor jest najdroższy na trasie — karty akceptowane szerzej niż w innych krajach.</div>
 </div>
 }
 
 <!-- ══════════ CITY: PODGORICA ══════════ -->
 @if (isTab('city-podgorica')) {
 <div class="tab">
-  <div class="city-page-header" style="background:linear-gradient(135deg,#7a5a10,#4a3800);">
-    <div class="cph-flag">🇲🇪</div>
-    <div class="cph-info">
-      <div class="cph-country">Czarnogóra</div>
+  <div class="city-page-header cph-me">
+    <div class="cph-content">
+      <div class="cph-flag">🇲🇪</div>
+      <div class="cph-country">Czarnogóra · Stolica</div>
       <div class="cph-name">Podgorica</div>
-      <div class="cph-dates">21–22 kwietnia · 1 noc (lot powrotny)</div>
+      <div class="cph-dates">21–22 kwietnia 2026 · 1 noc (lot powrotny)</div>
+      <div class="cph-badges">
+        <span class="cph-badge">👑 Stolica Czarnogóry</span>
+        <span class="cph-badge">🌊 Rzeka Morača</span>
+        <span class="cph-badge">🛫 Powrót KRK</span>
+        <span class="cph-badge">🌡️ ~17°C</span>
+      </div>
     </div>
   </div>
-  <p class="city-desc">Stolica Czarnogóry — nowoczesne miasto na rzece Morači z osmańską dzielnicą Stara Varoš. Na zwiedzanie masz pół dnia — lot TGD→KRK 22.04 ok. 18:00, na lotnisko wyjdź ok. 15:30. Spokojne zakończenie bałkańskiej przygody.</p>
-  <div class="info-box">
-    <div class="ib-title">👁 Co zobaczyć</div>
-    <ul>
-      <li><strong>Twierdza Ribnica</strong> — XV w. osmańska nad rzeką; centrum miasta; piękne mury i widok na Moračę; wstęp wolny</li>
-      <li><strong>Stara Varoš</strong> — osmańska dzielnica z meczetem Osmanagić i kawiarniami; autentyczna i spokojna</li>
-      <li><strong>Most Milenijny</strong> — nowoczesny most widokowy nad rzeką Morača; dobry na poranny spacer</li>
-      <li><strong>Katedra Chrystusa Zmartwychwstałego</strong> — na wzgórzu nad miastem; panorama Podgoricy i gór w tle; wstęp wolny</li>
-      <li><strong>Most Dziurdziewa</strong> — osmański XVI w.; starszy most na Morači; przy Starej Varoš</li>
-      <li><strong>Muzeum Czarnogóry</strong> — historia i kultura; wstęp 2€; dobrze opisane po angielsku</li>
-    </ul>
+
+  <div class="stat-row">
+    <div class="stat-item"><div class="si-val">190k</div><div class="si-label">Populacja</div></div>
+    <div class="stat-item"><div class="si-val">EUR</div><div class="si-label">Waluta</div></div>
+    <div class="stat-item"><div class="si-val">15min</div><div class="si-label">Na lotnisko</div></div>
+    <div class="stat-item"><div class="si-val">18:00</div><div class="si-label">Lot TGD→KRK</div></div>
   </div>
-  <div class="info-box food-box">
-    <div class="ib-title">🍽 Gdzie zjeść</div>
-    <ul>
-      <li><strong>Pod Volat</strong> — tradycyjna czarnogórska; jagniętina ispod sača (pod dzwonem żarowym); 10–18€/os.</li>
-      <li><strong>Sitnica</strong> — ryby z jeziora Skadar; pstrąg i krap; 8–14€/os.</li>
-      <li><strong>Kafana Stara Varoš</strong> — w osmańskiej dzielnicy; autentyczne i tanie; 5–10€/os.</li>
-    </ul>
+
+  <p class="city-desc">Stolica Czarnogóry — nowoczesne miasto na rzece Morači z osmańską dzielnicą Stara Varoš. Na zwiedzanie masz pół dnia — lot TGD→KRK 22.04 ok. 18:00, na lotnisko wyjdź ok. 15:30. Spokojne zakończenie 14-dniowej bałkańskiej przygody. Podgorica jest tańsza niż nadmorski Kotor. Miasto zostało zbombardowane 72 razy w II wojnie i odbudowane od zera w stylu jugosłowiańskiego modernizmu — stąd tak unikalny charakter architektoniczny.</p>
+
+  <p class="sec-title">👁 Atrakcje</p>
+  <div class="tip-card">
+    <div class="tc-icon">🌊</div>
+    <div class="tc-content">
+      <div class="tc-title">Rzeka Morača i Most Milenijny</div>
+      <div class="tc-body">Rzeka Morača przepływa przez centrum (z kanionu w górach prosto do miasta). Most Milenijny (2005) to 135m łuk z pieszym chodnikiem 40m nad wodą. Wieczorny spacer wzdłuż rzeki — idealnie o zachodzie słońca.</div>
+    </div>
   </div>
-  <div class="info-box night-box">
-    <div class="ib-title">🌙 Życie nocne</div>
-    <ul>
-      <li><strong>Kafany przy Moście Milenijnym</strong> — ostatni wieczór na Bałkanach nad rzeką</li>
-    </ul>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Stare Miasto Podgorica (Stara Varoš)</div>
+      <div class="tc-body">Dzielnica osmańska z XVI w. w centrum: meczet Osmana Paszy (1870), wieża zegarowa (1667) i ruiny fortu Ribnica. Malutka, ale autentyczna — kontrast z nowoczesnym centrum. Kawiarnie i spokój.</div>
+    </div>
   </div>
-  <div class="box box-warn" style="margin-top:10px;">⚡ Lotnisko Podgorica — 15 min i 5€ taksówką z centrum. Bus nr 10 odjeżdża z głównego dworca co 30 min. TGD→KRK 22.04 ~18:00 — wyjdź z hotelu ok. 15:00–15:30. Check-out do 12:00.</div>
-  <div class="box box-gold" style="margin-top:20px;"><strong>💰 Waluta — Euro.</strong> Najdroższy kraj na trasie. Karty szeroko akceptowane w Kotorze i Podgoricy. Roaming UE działa.</div>
+  <div class="tip-card">
+    <div class="tc-icon">🏛️</div>
+    <div class="tc-content">
+      <div class="tc-title">Muzeum Czarnogóry</div>
+      <div class="tc-body">Kolekcja od neolitu, Ilirów, Słowian, przez czasy osmańskie i jugosłowiańskie po nowoczesność. Dobrze opisane po angielsku. Doskonałe na poranne zwiedzanie przed wylotem.</div>
+      <div class="tc-price">Wstęp: 3€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">⛪</div>
+    <div class="tc-content">
+      <div class="tc-title">Katedra Zmartwychwstania Pańskiego</div>
+      <div class="tc-body">Nowa katedra prawosławna (1993) wzorowana na serbskiej architekturze średniowiecznej. Zewnątrz: bogata rzeźba kamienia, złote kopuły. Wewnątrz: freski nowoczesnych ikonografów w tradycyjnym stylu. Jedna z piękniejszych nowych katedr Europy.</div>
+      <div class="tc-price">Wolny wstęp</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🏙️</div>
+    <div class="tc-content">
+      <div class="tc-title">Centrum — kontrast architektoniczny</div>
+      <div class="tc-body">Miasto odbudowane po wojnie stało się jugosłowiańskim centrum planowania urbanistycznego. Szerokie bulwary (Bulwar Jovana Tomaševića), modernistyczne gmachy, fontanny. Bardzo różni się od reszty trasy — tutaj widać jugosłowiańską modernistyczną wizję miasta.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🚁</div>
+    <div class="tc-content">
+      <div class="tc-title">Widok z wzgórza Gorica</div>
+      <div class="tc-body">Wzgórze Gorica nad miastem, parking i taras widokowy (15 min taxi 5€). Panorama Podgoricy + góry Bjelasica w tle. Wieczorny widok piękny — jeśli masz czas przed lotem.</div>
+      <div class="tc-price">Taxi: 5€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🛫</div>
+    <div class="tc-content">
+      <div class="tc-title">Lotnisko Podgorica — powrót do domu</div>
+      <div class="tc-body">Taxi z centrum 15€ (30 min). Zaplanuj 2.5–3h przed odlotem. Sprawdź terminal i odprawę online 24h wcześniej. Ostatni punkt 14-dniowej przygody.</div>
+      <div class="tc-price">Taxi: 15€ · Bolt: 4–6€</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🍽 Gdzie zjeść</p>
+  <div class="tip-card">
+    <div class="tc-icon">🍖</div>
+    <div class="tc-content">
+      <div class="tc-title">Pod Volat + Sitnica + Kafana</div>
+      <div class="tc-body">Pod Volat — jagniętina ispod sača (pod dzwonem żarowym), tradycyjna (10–18€). Sitnica — ryby z jeziora Skadar (8–14€). Kafana Stara Varoš — w osmańskiej dzielnicy, autentyczne i tanie (5–10€).</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥩</div>
+    <div class="tc-content">
+      <div class="tc-title">Roštilj — grille czarnogórskie</div>
+      <div class="tc-body">Meso sa ražnja (mięso z rożna), ćevapi, pljeskavica (wielki hamburger z mięsa mielonego). Restauracja Lanterna — najlepsza grillarnia w mieście. Sycące i tanie.</div>
+      <div class="tc-price">5–10€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍷</div>
+    <div class="tc-content">
+      <div class="tc-title">Vranac Pro Corde — czarnogórskie wino klasy extra</div>
+      <div class="tc-body">Wytwórnia Plantaže w okolicach Podgoricy hoduje największą winnicę jednej odmiany (Vranac) na świecie — 2300 ha. Butelka w sklepie 8–12€. Kieliszek w restauracji 3–5€.</div>
+      <div class="tc-price">Butelka: 8–12€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫕</div>
+    <div class="tc-content">
+      <div class="tc-title">Cicvara — comfort food Czarnogóry</div>
+      <div class="tc-body">Kleik kukurydziany z serem i masłem. Czarnogórskie comfort food, śniadanie lub obiad. W kawiarniach starszego typu w Starej Varoš — proste, sycące, domowe.</div>
+      <div class="tc-price">200–300 CEN</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🥙</div>
+    <div class="tc-content">
+      <div class="tc-title">Burek Podgorički — lokalny wariant</div>
+      <div class="tc-body">Grubsze ciasto filo, więcej mięsa, mniej sera niż albański. Piekarnie otwarte od 6:00, ciepłe do 10:00. Idealne szybkie śniadanie przed wyjściem z hotelu.</div>
+      <div class="tc-price">1–2€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🫧</div>
+    <div class="tc-content">
+      <div class="tc-title">Nik Nikola — kuchnia czarnogórska</div>
+      <div class="tc-body">Bulevar Sv. Petra Cetinjskog. Janjeće pečenje (pieczone jagnię) — zamawiane dzień wcześniej. Na miejscu: čorbica (gęsta zupa), pasulj (fasolka), kuvano vino (grzane wino).</div>
+      <div class="tc-price">Lunch: 6–12€</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">☕</div>
+    <div class="tc-content">
+      <div class="tc-title">Espresso przy promenadzie — bijela kafa</div>
+      <div class="tc-body">Podgorica przejęła kulturę kawiarniową Włoch. Kawa 1–1.50€, serwowana z lodem i wodą. Koniecznie „bijela kafa" (kawa z mlekiem po czarnogórsku, długa, mleczna) — na pożegnanie z Bałkanami.</div>
+      <div class="tc-price">1–1.50€</div>
+    </div>
+  </div>
+
+  <p class="sec-title">🌙 Ostatni wieczór</p>
+  <div class="tip-card">
+    <div class="tc-icon">🥂</div>
+    <div class="tc-content">
+      <div class="tc-title">Kafany przy Moście Milenijnym</div>
+      <div class="tc-body">Ostatni wieczór na Bałkanach — nad rzeką, piwo Nikšičko, wspomnienia 14 dni, 4 krajów i setek kilometrów. Spokojne pożegnanie z regionem.</div>
+    </div>
+  </div>
+  <div class="tip-card">
+    <div class="tc-icon">🍺</div>
+    <div class="tc-content">
+      <div class="tc-title">Bary nad Moračą — ostatni drink</div>
+      <div class="tc-body">Kilka barów z tarasami nad rzeką. Piwo Nikšičko 2–3€, wino Vranac 3–5€. Spokojny, nostalgiczny wieczór — idealne zakończenie 14-dniowej podróży przez cztery kraje.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="hb-title">📜 Kontekst historyczny</div>
+    <p style="font-size:var(--text-sm);color:var(--muted);line-height:1.7">Podgorica (pod rządami jugosłowiańskimi nosiła nazwę Titograd, 1946–1992) była bombardowana 72 razy w II wojnie przez Niemcy i Włochy, a potem przez aliantów. Zniszczona prawie całkowicie. Odbudowana od zera w stylu jugosłowiańskiego modernizmu — świadomy wybór Tity: zamiast odbudowywać zabytki, budować nowe, nowoczesne „socjalistyczne miasto". Stąd tak mało starej architektury — ale też tak niepowtarzalny charakter. Czarnogóra ogłosiła niepodległość 3 czerwca 2006 — w referendum 55.5% głosowało za (minimalny próg 55% przekroczony o 0.5%). Dziś Czarnogóra jest w NATO (2017) i w procesie akcesji do UE — jedynym państwem na trasie wyraźnie zmierzającym do Europy Zachodniej.</p>
+  </div>
+
+  <div class="box box-gold" style="margin-top:12px;"><strong>💰 Najdroższy kraj na trasie.</strong> Karty szeroko akceptowane. Roaming UE działa. Bolt 4–6€ z centrum na lotnisko. Wino Vranac w sklepie 8–12€ — doskonały prezent.</div>
+
+  <div class="box box-warn" style="margin-top:10px;">⚡ Lotnisko Podgorica — 15 min, taxi 15€ lub Bolt 4–6€. <strong>TGD→KRK 22.04 ~18:00</strong> — wyjdź z hotelu ok. 15:00–15:30. Check-out do 12:00. Sprawdź odprawę online 24h wcześniej. Bus nr 10 co 30 min jako alternatywa.</div>
 </div>
 }
 
 <!-- ══════════ TAB: HISTORIA ══════════ -->
 @if (isTab('history')) {
 <div class="tab">
+  <div class="tab-hero">
+    <div class="th-icon">📜</div>
+    <div class="th-text"><div class="th-title">Historia</div><div class="th-sub">Od Ilirów po niepodległość Kosowa</div></div>
+  </div>
   <div class="era">Starożytność (VII w. p.n.e. – IV w. n.e.)</div>
   <div class="hist-tl">
     <div class="h-item"><h4>Ilirowie i kolonie greckie</h4><p>Ilirowie — przodkowie Albańczyków — zamieszkują zachodnie Bałkany od VII w. p.n.e. Grecy zakładają kolonie na wybrzeżu: Apollonia, Butrint, Epidamnos (dziś Durrës). Butrint pokazuje tę synkretyczną kulturę.</p></div>
@@ -1542,6 +2885,10 @@
 <!-- ══════════ TAB: PRAKTYCZNIE ══════════ -->
 @if (isTab('practical')) {
 <div class="tab">
+  <div class="tab-hero">
+    <div class="th-icon">🧭</div>
+    <div class="th-text"><div class="th-title">Praktycznie</div><div class="th-sub">Waluty, SIM, zdrowie, pakowanie i etykieta</div></div>
+  </div>
 
   <p class="sec-title">💰 Pieniądze i waluty</p>
   <div class="prac-grid">
@@ -1607,6 +2954,14 @@
   </div>
   <div class="box box-warn" style="margin-top:8px;">⚠️ Pobierz <strong>Google Maps offline</strong> dla wszystkich 4 krajów PRZED wyjazdem. W Albanii i Kosowie bez SIM będziesz bez mapy. Mapy: Ustawienia → Mapy offline → Pobierz region.</div>
 
+  <p class="sec-title">📱 Aplikacje na wyjazd</p>
+  <div class="grid-2">
+    <div class="tip-card"><div class="tc-icon">🗺️</div><div class="tc-content"><div class="tc-title">Maps.me (offline)</div><div class="tc-body">Pobierz mapy offline Albanii, Macedonii, Kosowa i Czarnogóry przed wyjazdem. Działa bez internetu — niezastąpione w górach i na trasach furgonami.</div></div></div>
+    <div class="tip-card"><div class="tc-icon">📱</div><div class="tc-content"><div class="tc-title">Bolt (Prisztina only!)</div><div class="tc-body">Taxi app Bolt działa WYŁĄCZNIE w Prisztinie na całej trasie. Albania: VrapOn/Clust. Montenegro: TeslaGo lub zwykłe taxi.</div></div></div>
+    <div class="tip-card"><div class="tc-icon">💱</div><div class="tc-content"><div class="tc-title">Wise / Revolut</div><div class="tc-body">Karta Wise lub Revolut — darmowe przewalutowanie w 4 różnych walutach. Płać kartą wszędzie tam, gdzie akceptują. Dla gotówki: kantory (kambio) — lepszy kurs niż bankomaty.</div></div></div>
+    <div class="tip-card"><div class="tc-icon">📶</div><div class="tc-content"><div class="tc-title">SIM karty</div><div class="tc-body">Albania: Vodafone AL (lotnisko TIA, 15€/10GB). Macedonia: T-Mobile MK. Kosovo: IPKO lub Vala. Czarnogóra: Telenor CG. Każdy kraj = osobna karta, bo sieci się nie dzielą.</div></div></div>
+  </div>
+
   <p class="sec-title">🏥 Zdrowie i bezpieczeństwo</p>
   <div class="prac-grid">
     <div class="pc"><h4>🛡️ Ubezpieczenie</h4><ul>
@@ -1636,6 +2991,12 @@
       <li>Zabierz z Polski: leki na które masz receptę, krem z filtrem SPF50, plastry na odciski</li>
       <li>Słońce w kwietniu na Bałkanach jest silne — smaruj się kremem nawet przy pochmurnym niebie</li>
     </ul></div>
+  </div>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="tip-card"><div class="tc-icon">💊</div><div class="tc-content"><div class="tc-title">EKUZ (Europejska Karta Ubezpieczenia)</div><div class="tc-body">Działa w Macedonii, Czarnogórze i Kosowie (umowy z NFZ). W Albanii — brak umowy, musisz mieć ubezpieczenie turystyczne. Weź ubezpieczenie na całą trasę (10–20€) — koszt leczenia w Albanii może być wysoki.</div></div></div>
+    <div class="tip-card"><div class="tc-icon">💧</div><div class="tc-content"><div class="tc-title">Woda pitna</div><div class="tc-body">Albania i Kosowo — pij wyłącznie wodę butelkowaną. Macedonia i Czarnogóra — woda z kranu pitna w miastach. W górach (Rugova, Galicica) źródła są czyste — możesz pić ze strumienia powyżej 1500m.</div></div></div>
+    <div class="tip-card"><div class="tc-icon">☀️</div><div class="tc-content"><div class="tc-title">Słońce i temperatura</div><div class="tc-body">Kwiecień: 10–20°C dziennie, wieczorami 5–12°C. Na wybrzeżu (Sarandë, Kotor) cieplej. W górach i Skopje chłodniej. Krem SPF30+ — słońce albańskie nawet w kwiecień jest mocne. Weź warstwę termoaktywną na wieczory.</div></div></div>
+    <div class="tip-card"><div class="tc-icon">🦟</div><div class="tc-content"><div class="tc-title">Komary i środki ochrony</div><div class="tc-body">Kwiecień to jeszcze nie sezon komarów, ale w Butrincie (mokradła) i przy jeziorach możliwe pierwsze. Zabierz repelent DEET 20%+. Żadnych szczepionek nie wymagają w tej strefie — ale zaktualizuj DTP i tężec.</div></div></div>
   </div>
 
   <p class="sec-title">🗣️ Język — przydatne zwroty</p>

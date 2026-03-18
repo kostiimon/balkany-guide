@@ -18,7 +18,7 @@
   gap: 16px;
   padding-inline: 16px;
   block-size: 56px;
-  background: color-mix(in srgb, var(--bg2) 95%, transparent);
+  background: linear-gradient(to right, color-mix(in srgb, var(--bg2) 95%, transparent), color-mix(in srgb, var(--bg3) 95%, transparent));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-block-end: 1px solid var(--border2);
@@ -54,7 +54,14 @@
   font-size: var(--text-base);
   color: var(--text);
   white-space: nowrap;
-  .tb-dot { color: var(--terra); font-size: 1rem; }
+  .tb-dot {
+    background: linear-gradient(135deg, var(--terra), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 6px rgba(72, 184, 126, 0.4));
+  }
 }
 
 .tb-meta {
@@ -67,6 +74,7 @@
   font-size: 1.05rem;
   letter-spacing: 3px;
   opacity: .85;
+  animation: float 4s ease-in-out infinite;
 }
 
 /* ── Shell body ── */
@@ -96,6 +104,10 @@
   gap: 2px;
   scrollbar-width: thin;
   scrollbar-color: var(--border2) transparent;
+
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
 }
 
 .nav-group {
@@ -123,7 +135,7 @@
   font-size: var(--text-sm);
   font-weight: 500;
   text-align: start;
-  transition: background 150ms, color 150ms, border-color 150ms;
+  transition: background 150ms, color 150ms, border-color 150ms, box-shadow 150ms, text-shadow 150ms;
 
   @media (hover: hover) {
     &:hover {
@@ -137,6 +149,8 @@
     border-color: color-mix(in srgb, var(--terra) 25%, transparent);
     color: var(--terra);
     font-weight: 700;
+    box-shadow: inset 3px 0 0 var(--terra);
+    text-shadow: 0 0 8px rgba(72, 184, 126, 0.4);
   }
 }
 
@@ -174,10 +188,23 @@
   margin-block-end: 32px;
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse at 5% 70%,  color-mix(in srgb, var(--terra) 30%, transparent) 0%, transparent 55%),
-    radial-gradient(ellipse at 95% 10%, color-mix(in srgb, var(--gold)  20%, transparent) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 110%, color-mix(in srgb, var(--sage) 12%, transparent) 0%, transparent 55%);
+    radial-gradient(ellipse at 5% 70%,  color-mix(in srgb, var(--terra) 25%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse at 95% 10%, color-mix(in srgb, var(--gold)  15%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 110%, color-mix(in srgb, var(--sage) 10%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse at 30% 0%,  color-mix(in srgb, var(--terra) 10%, transparent) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 80%, color-mix(in srgb, var(--gold)  8%, transparent) 0%, transparent 45%);
   border: 1px solid var(--border2);
+
+  // Subtle noise texture
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+    pointer-events: none;
+  }
 
   &::after {
     content: '';
@@ -195,6 +222,7 @@
     color: var(--terra);
     margin-block-end: 12px;
     font-weight: 600;
+    position: relative;
   }
 
   .mh-title {
@@ -204,6 +232,7 @@
     color: var(--white);
     line-height: 1;
     margin-block-end: 6px;
+    position: relative;
   }
 
   .mh-dates {
@@ -212,12 +241,14 @@
     color: var(--gold);
     font-style: italic;
     margin-block-end: 12px;
+    position: relative;
   }
 
   .mh-sub {
     color: var(--muted);
     font-size: var(--text-sm);
     margin-block-end: 18px;
+    position: relative;
   }
 
   .mh-badge {
@@ -231,6 +262,7 @@
     font-size: var(--text-xs);
     color: var(--sand);
     backdrop-filter: blur(4px);
+    position: relative;
   }
 
   .mh-flags {
@@ -238,6 +270,7 @@
     letter-spacing: 5px;
     margin-block-start: 14px;
     opacity: .75;
+    position: relative;
   }
 }
 
@@ -265,10 +298,10 @@
   .dy { font-size: var(--text-xs); color: var(--muted2); }
   .dt { font-size: calc(var(--text-xs) * .9); color: var(--muted2); opacity: .7; }
 }
-.rs-al .cn { color: #e07070; }
-.rs-mk .cn { color: #e06060; }
-.rs-ko .cn { color: #6080d0; }
-.rs-me .cn { color: #c0a030; }
+.rs-al .cn { color: #d96060; }
+.rs-mk .cn { color: #c8903a; }
+.rs-ko .cn { color: #4878d0; }
+.rs-me .cn { color: #52a870; }
 .rs-tr .cn { color: var(--muted2); }
 
 /* ══════════════════════════════════════════
@@ -306,10 +339,10 @@
   font-weight: 600;
   padding: 3px 10px;
   border-radius: 20px;
-  &.al { background: rgba(224,112,112,.12); color: #e07070; border: 1px solid rgba(224,112,112,.25); }
-  &.mk { background: rgba(208, 80, 80,.12); color: #d05050; border: 1px solid rgba(208, 80, 80,.25); }
-  &.ko { background: rgba( 96,128,208,.12); color: #6080d0; border: 1px solid rgba( 96,128,208,.25); }
-  &.me { background: rgba(192,160, 48,.12); color: #c0a030; border: 1px solid rgba(192,160, 48,.25); }
+  &.al { background: rgba(217,96,96,.12); color: #d96060; border: 1px solid rgba(217,96,96,.25); }
+  &.mk { background: rgba(200,144,58,.12); color: #c8903a; border: 1px solid rgba(200,144,58,.25); }
+  &.ko { background: rgba(72,120,208,.12); color: #4878d0; border: 1px solid rgba(72,120,208,.25); }
+  &.me { background: rgba(82,168,112,.12); color: #52a870; border: 1px solid rgba(82,168,112,.25); }
 }
 
 /* ══════════════════════════════════════════
@@ -341,10 +374,10 @@
   display: flex; align-items: center; justify-content: center;
   font-weight: 800; font-size: var(--text-xs); flex-shrink: 0;
   color: #fff;
-  &.al { background: linear-gradient(135deg, #c85050, #952828); box-shadow: 0 2px 8px rgba(200,80,80,.35); }
-  &.mk { background: linear-gradient(135deg, #b03030, #801010); box-shadow: 0 2px 8px rgba(176,48,48,.35); }
-  &.ko { background: linear-gradient(135deg, #3050a8, #183070); box-shadow: 0 2px 8px rgba(48,80,168,.35); }
-  &.me { background: linear-gradient(135deg, #a08020, #706010); box-shadow: 0 2px 8px rgba(160,128,32,.35); }
+  &.al { background: linear-gradient(135deg, #b84040, #882020); box-shadow: 0 2px 8px rgba(184,64,64,.35); }
+  &.mk { background: linear-gradient(135deg, #a87030, #785010); box-shadow: 0 2px 8px rgba(168,112,48,.35); }
+  &.ko { background: linear-gradient(135deg, #3050a0, #203078); box-shadow: 0 2px 8px rgba(48,80,160,.35); }
+  &.me { background: linear-gradient(135deg, #2a8050, #1a5835); box-shadow: 0 2px 8px rgba(42,128,80,.35); }
 }
 
 .dmc-date {
@@ -444,10 +477,10 @@
   .meta { margin-inline-start: auto; font-size: var(--text-xs); font-weight: 400; opacity: .8; }
   .chev { font-size: .7rem; transition: transform 250ms cubic-bezier(.16,1,.3,1); &.open { transform: rotate(180deg); } }
 }
-.ch-al { background: linear-gradient(135deg,#1e0a0a,#120505); border: 1px solid rgba(224,112,112,.18); border-inline-start: 4px solid #e07070; .meta,.chev { color: #e07070; } }
-.ch-mk { background: linear-gradient(135deg,#1c0808,#100404); border: 1px solid rgba(208,80,80,.18);  border-inline-start: 4px solid #d05050; .meta,.chev { color: #d05050; } }
-.ch-ko { background: linear-gradient(135deg,#06101e,#030a16); border: 1px solid rgba(96,128,208,.18); border-inline-start: 4px solid #6080d0; .meta,.chev { color: #6080d0; } }
-.ch-me { background: linear-gradient(135deg,#1a1400,#100e00); border: 1px solid rgba(192,160,48,.18);  border-inline-start: 4px solid #c0a030; .meta,.chev { color: #c0a030; } }
+.ch-al { background: linear-gradient(135deg,#1e0808,#100404); border: 1px solid rgba(217,96,96,.18); border-inline-start: 4px solid #d96060; .meta,.chev { color: #d96060; } }
+.ch-mk { background: linear-gradient(135deg,#1a1000,#100a00); border: 1px solid rgba(200,144,58,.18); border-inline-start: 4px solid #c8903a; .meta,.chev { color: #c8903a; } }
+.ch-ko { background: linear-gradient(135deg,#060e20,#030a14); border: 1px solid rgba(72,120,208,.18); border-inline-start: 4px solid #4878d0; .meta,.chev { color: #4878d0; } }
+.ch-me { background: linear-gradient(135deg,#06140a,#040e06); border: 1px solid rgba(82,168,112,.18); border-inline-start: 4px solid #52a870; .meta,.chev { color: #52a870; } }
 
 /* ══════════════════════════════════════════
    GRID COLLAPSE (accordion animation)

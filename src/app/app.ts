@@ -109,11 +109,11 @@ export class App {
     ];
 
     const colors: Record<string, string> = {
-      al: '#e07070', mk: '#d05050', ko: '#6080d0', me: '#c0a030'
+      al: '#d96060', mk: '#c8903a', ko: '#4878d0', me: '#52a870'
     };
 
     L.polyline(stops.map(s => [s.lat, s.lng] as [number, number]), {
-      color: '#e06535', weight: 2.5, opacity: .65, dashArray: '8 5'
+      color: '#48b87e', weight: 2.5, opacity: .65, dashArray: '8 5'
     }).addTo(map);
 
     stops.forEach(s => {
