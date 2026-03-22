@@ -543,6 +543,47 @@
 }
 
 /* ══════════════════════════════════════════
+   SUB-NAV items (okolice)
+   ══════════════════════════════════════════ */
+.nav-btn.sub {
+  padding-inline-start: 26px;
+  font-size: calc(var(--text-sm) * .92);
+  color: var(--muted2);
+  opacity: .85;
+  &.active {
+    opacity: 1;
+    color: var(--terra);
+    box-shadow: inset 3px 0 0 var(--terra);
+    background: rgba(72,184,126,.06);
+  }
+  @media (hover: hover) {
+    &:hover { background: var(--bg2); color: var(--muted); opacity: 1; }
+  }
+}
+
+/* ══════════════════════════════════════════
+   CITY MAP
+   ══════════════════════════════════════════ */
+.city-map-wrap {
+  margin-block-end: 20px;
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--border2);
+}
+.city-map {
+  block-size: 300px;
+  background: var(--bg3);
+}
+.cmap-caption {
+  font-size: var(--text-xs);
+  color: var(--muted2);
+  padding: 6px 12px;
+  background: var(--bg2);
+  border-block-start: 1px solid var(--border);
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
    RESPONSIVE — mobile sidebar drawer
    ══════════════════════════════════════════ */
 @media (width <= 768px) {

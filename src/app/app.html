@@ -1,5 +1,13 @@
 <div class="shell">
 
+<!-- ══ LIGHTBOX ══ -->
+@if (lightboxSrc()) {
+<div class="lightbox" (click)="closeLightbox()">
+  <button class="lb-close" (click)="closeLightbox()" aria-label="Zamknij">✕</button>
+  <img [src]="lightboxSrc()!" (click)="$event.stopPropagation()" loading="eager" alt="">
+</div>
+}
+
 <!-- ══ TOPBAR ══ -->
 <header class="topbar">
   <button class="hamburger" (click)="toggleSidebar()" aria-label="Menu">
@@ -24,7 +32,7 @@
       <div class="nav-group">
         <div class="nav-section-label">{{ group.label }}</div>
         @for (item of group.items; track item.id) {
-          <button class="nav-btn" [class.active]="isTab(item.id)" (click)="showTab(item.id); closeSidebar()">
+          <button class="nav-btn" [class.active]="isTab(item.id)" [class.sub]="item.sub" (click)="showTab(item.id); closeSidebar()">
             {{ item.label }}
           </button>
         }
@@ -37,7 +45,7 @@
   </nav>
 
   <!-- ══ MAIN CONTENT ══ -->
-  <main class="main-content">
+  <main class="main-content" (click)="onMainClick($event)">
 
 <!-- ══════════ TAB: TRASA ══════════ -->
 @if (isTab('overview')) {
@@ -1134,6 +1142,11 @@
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1705317851713-eac87f36c8cc?w=800&h=400&fit=crop" alt="Meczet Et'hem Beja i pomnik Skanderbega" loading="lazy"><div class="photo-label">Meczet Et'hem Beja</div></div>
   </div>
 
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-tirana"></div>
+    <div class="cmap-caption">📍 Centrum Tirany — kliknij znacznik po więcej info</div>
+  </div>
+
   <p class="city-desc">Stolica która przeszła od komunistycznej izolacji do bałkańskiego centrum kulturalnego w ciągu jednego pokolenia. Kontrasty co krok: piramida dyktatora obok modnych kawiarni, meczet z freskami figuratywnym obok muralu ulicznego. Kolorowa, energetyczna i zadziwiająco tania. Albania otworzyła się na świat dopiero w 1991 roku — lotnisko TIA jeszcze 30 lat temu obsługiwało kilka lotów tygodniowo. Tirana to miasto bez planu urbanistycznego — rozrastała się chaotycznie po upadku komunizmu, ale właśnie ten chaos jest jej urokiem.</p>
 
   <p class="sec-title">👁 Atrakcje</p>
@@ -1437,6 +1450,11 @@
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1741267087681-ef9c2f8cb675?w=800&h=400&fit=crop" alt="Ruiny Butrintu z lotu ptaka" loading="lazy"><div class="photo-label">Butrint UNESCO</div></div>
   </div>
 
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-sarande"></div>
+    <div class="cmap-caption">📍 Centrum Sarandë — kliknij znacznik po więcej info</div>
+  </div>
+
   <p class="city-desc">Albańska riwiera naprzeciwko Korfu — wyspa widoczna gołym okiem z promenady (2.7km!). W sezonie zatłoczona i droga, w kwietniu idealna: pusta, tania i autentyczna. Doskonała baza wypadowa do Butrintu (UNESCO) i rajskich plaż Ksamilu. Sarandë to kurorty i rybactwo — zapach grillowanej ryby unosi się nad promenadą od rana do późnej nocy, a wieczorami cała rodzinna Albania wychodzi na xhiro wzdłuż morza.</p>
 
   <p class="sec-title">👁 Atrakcje</p>
@@ -1642,6 +1660,11 @@
     <div class="photo-card wide"><img src="https://images.unsplash.com/photo-1587992412113-123411d3858a?w=800&h=400&fit=crop" alt="Kościół Św. Jana w Kaneo nad Jeziorem Ohrydzkim" loading="lazy"><div class="photo-label">Sv. Jovan Kaneo</div></div>
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1597831134299-cec67c5cfd7e?w=800&h=400&fit=crop" alt="Jezioro Ohrydzkie" loading="lazy"><div class="photo-label">Jezioro Ohrydzkie</div></div>
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1537113799915-0a24165b3f72?w=800&h=400&fit=crop" alt="Stare Miasto Ohrid nad jeziorem" loading="lazy"><div class="photo-label">Stare Miasto</div></div>
+  </div>
+
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-ohrid"></div>
+    <div class="cmap-caption">📍 Centrum Ohridu — kliknij znacznik po więcej info</div>
   </div>
 
   <p class="city-desc">Najpiękniejsze miasto na jednym z najstarszych jezior świata (ok. 3–5 milionów lat!) i jednym z najgłębszych w Europie (289m). Tu w IX w. uczniowie Cyryla i Metodego stworzyli pierwszą słowiańską szkołę — stąd piśmienność cyrylicka rozlała się na całą Europę Wschodnią. UNESCO wpisało Ohrid na listę podwójnie: jako dziedzictwo kulturowe I naturalne — jedno z nielicznych miejsc na świecie z takim podwójnym wyróżnieniem. 365 kościołów i klasztorów w mieście i okolicach — stąd przydomek „Jerozolima Bałkanów".</p>
@@ -1863,6 +1886,11 @@
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1630489525594-0c6e9786ee3c?w=800&h=400&fit=crop" alt="Stary Bazar w Skopje" loading="lazy"><div class="photo-label">Stary Bazar</div></div>
   </div>
 
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-skopje"></div>
+    <div class="cmap-caption">📍 Centrum Skopje — kliknij znacznik po więcej info</div>
+  </div>
+
   <p class="city-desc">Stolica z tożsamościowym kryzysem wylanym w kamieniu. Rząd wydał 600 mln euro na Projekt 2014 — setki pomników, 28-metrowy Aleksander Wielki na koniu (oficjalnie „Wojownik na Koniu" żeby nie drażnić Grecji), neoklasyczne fasady przyklejone do komunistycznych bloków. Tuż obok działa XV-wieczny osmański bazar Čaršija, jakby nieświadomy całego spektaklu. Trzęsienie ziemi z 1963 zniszczyło 80% miasta — Skopje jest jednocześnie jednym z najstarszych i najmłodszych miast na Bałkanach.</p>
 
   <p class="sec-title">👁 Atrakcje</p>
@@ -2055,6 +2083,11 @@
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1725274962074-92e73459f96f?w=800&h=400&fit=crop" alt="Nocne życie Prisztiny" loading="lazy"><div class="photo-label">Prisztina nocą</div></div>
   </div>
 
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-prishtina"></div>
+    <div class="cmap-caption">📍 Centrum Prisztiny — kliknij znacznik po więcej info</div>
+  </div>
+
   <p class="city-desc">Najmłodsza stolica Europy — niepodległość 2008 po traumie wojny 1998–99. Niesamowity kontrast: osmański meczet z XV w. stoi obok żółtego NEWBORN, a ulica nosi imię Billa Clintona z 6-metrowym pomnikiem. Kosowianie to jeden z najbardziej proamerykańskich narodów na świecie. Średnia wieku mieszkańców — ok. 25 lat — to najmłodsza populacja w Europie. Energia tego miasta jest zaraźliwa — wszędzie budują, otwierają kawiarnie, malują murale.</p>
 
   <p class="sec-title">👁 Atrakcje</p>
@@ -2245,6 +2278,11 @@
     <div class="photo-card wide"><img src="https://images.unsplash.com/photo-1622400456695-951f80571268?w=800&h=400&fit=crop" alt="Prizren z lotu ptaka" loading="lazy"><div class="photo-label">Panorama Prizren</div></div>
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1770291691618-c42becb6f750?w=800&h=400&fit=crop" alt="Meczet Sinan Paszy w Prizrenie" loading="lazy"><div class="photo-label">Meczet Sinan Paszy</div></div>
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1650240430719-261b362f9308?w=800&h=400&fit=crop" alt="Rzeka Bistrica w Prizrenie" loading="lazy"><div class="photo-label">Rzeka Bistrica</div></div>
+  </div>
+
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-prizren"></div>
+    <div class="cmap-caption">📍 Centrum Prizrenu — kliknij znacznik po więcej info</div>
   </div>
 
   <p class="city-desc">Najpiękniejsze miasto Kosowa — osmański bazar, rzeka Bistrica płynąca przez centrum, kamienny most z XVI w. i twierdza na wzgórzu. W 1878 tu zawiązała się Liga Prizreńska — pierwszy albański ruch narodowy. Serbska średniowieczna stolica, albańskie serce, osmański charakter. Wieczorami całe miasto wychodzi na tarasy przy rzece — to bałkański odpowiednik włoskiej passeggiaty, tyle że nad szumiącą rzeką przy dźwiękach albańskiej muzyki.</p>
@@ -2446,6 +2484,11 @@
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1666003234286-23a749573804?w=800&h=400&fit=crop" alt="Kanion Rugova" loading="lazy"><div class="photo-label">Kanion Rugova</div></div>
   </div>
 
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-pec"></div>
+    <div class="cmap-caption">📍 Centrum Peć — kliknij znacznik po więcej info</div>
+  </div>
+
   <p class="city-desc">Miasto u wejścia do jednego z najgłębszych kanionów Europy — Kanion Rugova ciągnie się przez 25km ze ścianami do 1000m. Tu przez wieki chowały się albańskie klany żyjące według Kanunu (prawa zwyczajowego). Tu też warzone jest piwo Peja — najsłynniejszy trunek Kosowa. Patriarchat Pecki (UNESCO) to duchowe centrum Serbskiej Cerkwi Prawosławnej — odpowiednik Watykanu dla Serbów. Alpy Albańskie (Prokletije — „Przeklęte Góry") widoczne z centrum miasta, ośnieżone szczyty do 2700m.</p>
 
   <p class="sec-title">👁 Atrakcje</p>
@@ -2611,6 +2654,11 @@
     <div class="photo-card wide"><img src="https://images.unsplash.com/photo-1600519658446-6a090233e5b4?w=800&h=400&fit=crop" alt="Zatoka Kotorska" loading="lazy"><div class="photo-label">Zatoka Kotorska</div></div>
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1564386389132-f090e8b8be4c?w=800&h=400&fit=crop" alt="Stare Miasto Kotor z lotu ptaka" loading="lazy"><div class="photo-label">Stare Miasto</div></div>
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1686134573158-7d6561642f4e?w=800&h=400&fit=crop" alt="Twierdza Kotor" loading="lazy"><div class="photo-label">Twierdza św. Jana</div></div>
+  </div>
+
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-kotor"></div>
+    <div class="cmap-caption">📍 Centrum Kotoru — kliknij znacznik po więcej info</div>
   </div>
 
   <p class="city-desc">Średniowieczne miasto UNESCO schowane w najgłębszym fiordzie Adriatyku (Boka Kotorska). Wenecja rządziła tu 400 lat zostawiając lwy weneckie nad bramami, gotyckie pałace i koty — dosłownie wszędzie (są na herbie miasta!). 1350 schodów prowadzi na twierdzę Św. Jana z panoramą całej zatoki. Najpiękniejsze miasto na całej trasie. Po trzęsieniu ziemi w 1979 UNESCO i cały świat odbudowały Stare Miasto — jeden z największych projektów renowacji w historii.</p>
@@ -2797,6 +2845,11 @@
     <div class="photo-card"><img src="https://images.unsplash.com/photo-1694953175572-cfdd839239fd?w=800&h=400&fit=crop" alt="Rzeka Morača" loading="lazy"><div class="photo-label">Rzeka Morača</div></div>
   </div>
 
+  <div class="city-map-wrap">
+    <div class="city-map" id="cmap-podgorica"></div>
+    <div class="cmap-caption">📍 Centrum Podgoricy — kliknij znacznik po więcej info</div>
+  </div>
+
   <p class="city-desc">Stolica Czarnogóry — nowoczesne miasto na rzece Morači z osmańską dzielnicą Stara Varoš. Na zwiedzanie masz pół dnia — lot TGD→KRK 22.04 ok. 18:00, na lotnisko wyjdź ok. 15:30. Spokojne zakończenie 14-dniowej bałkańskiej przygody. Podgorica jest tańsza niż nadmorski Kotor. Miasto zostało zbombardowane 72 razy w II wojnie i odbudowane od zera w stylu jugosłowiańskiego modernizmu — stąd tak unikalny charakter architektoniczny.</p>
 
   <p class="sec-title">👁 Atrakcje</p>
@@ -2974,10 +3027,34 @@
     <div class="h-item"><h4>Liga Prizreńska 1878</h4><p>Albańczycy organizują pierwszy nowoczesny ruch narodowy. Bezpośredni prekursor albańskiej niepodległości (1912).</p></div>
   </div>
 
-  <div class="era">XX wiek — krwawe granice</div>
+  <div class="era">XX wiek — krwawe granice (1912–1945)</div>
   <div class="hist-tl">
-    <div class="h-item"><h4>Albania Hodży — laboratorium izolacji</h4><p>Enver Hodża (1944–1985): zakaz religii (1967 — jedyne oficjalnie ateistyczne państwo w historii świata), 170 000 bunkrów, zerwanie z ZSRR, Jugosławią i Chinami. Najbardziej izolowane państwo w historii Europy.</p></div>
-    <div class="h-item"><h4>Kosowo — najświeższy europejski spór</h4><p>Autonomia odebrana przez Miloševicia (1989). Konflikt 1998–99. Masakra w Račaku (45 cywilów, 1999) bezpośrednio sprowokowała interwencję NATO. Niepodległość 2008. Polska uznała Kosowo.</p></div>
+    <div class="h-item"><h4>Bałkańskie masakry 1912–1913</h4><p>Pierwsza Wojna Bałkańska (1912) — Serbia, Bułgaria, Grecja i Czarnogóra wyrzucają Osmanów z Europy. Kosowo przechodzi pod Serbię — większość albańska rządzona przez mniejszość serbską. Carnegie Commission (1913) dokumentuje masowe morderstwa cywilów przez wszystkie strony. Wzory etnicznych czystek które powtórzą się 85 lat później.</p></div>
+    <div class="h-item"><h4>II Wojna Światowa — Albania i Jugosławia</h4><p>Włochy zajmują Albanię w 1939 — bez oporu rządu, z oporem komunistycznej partyzantki Hodży. 1943: Niemcy przejmują kontrolę po kapitulacji Włoch. Serbska SS „Prinz Eugen" i albańska SS „Skanderbeg" (zrekrutowana z kosowskich Albańczyków) dokonują zbrodni na ludności cywilnej. Macedonia pod Bułgarią — kolaboracja z Niemcami, deportacja 7000 Żydów macedońskich do Treblinki (1943). <strong>97% macedońskich Żydów zamordowanych</strong> — jeden z najwyższych wskaźników w Europie.</p></div>
+    <div class="h-item"><h4>Czarnogóra — Pierwsze Powstanie (1941)</h4><p>Lipiec 1941: Czarnogórcy jako jedni z pierwszych w Europie podnoszą powstanie zbrojne przeciw Włochom (jedyne prowincja IV armii włoskiej gdzie doszło do powstania). Pierwsze miesiące sukcesów, potem Włosi ściągają posiłki. Tito integruje oddziały w ogólnojugosłowiańską partyzantkę. Do końca WWII Jugosławia traci 1 milion ludności — proporcjonalnie jedna z największych ofiar kontynentu.</p></div>
+  </div>
+
+  <div class="era">Jugosławia Tity i zimnowojenne Bałkany (1945–1980)</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>Federalna Jugosławia — model i mit</h4><p>Josip Broz Tito tworzy Federalną Jugosławię (SFRJ): 6 republik (Słowenia, Chorwacja, Bośnia, Serbia, Macedona, Czarnogóra) + 2 prowincje autonomiczne (Kosowo, Wojwodina). „Braterstwo i jedność" — jugosłowiańska tożsamość nad etniczną. 1948: Tito zrywa z Stalinem — Jugosławia nie wchodzi do Bloku Wschodniego. Własna droga: samozarządzanie zakładami, paszporty, otwarcie na Zachód. Porównywany ze wszystkimi sąsiadami: wyższy standard życia, wolność poruszania się.</p></div>
+    <div class="h-item"><h4>Albania Hodży — laboratorium izolacji</h4><p>Enver Hodża (1944–1985): 1967 — zakaz wszelkich religii, <strong>jedyne oficjalnie ateistyczne państwo w historii świata</strong>. 170 000 bunkrów na 28 000 km² — jeden na każde 4 rodziny. Zerwanie z Jugosławią (1948), ZSRR (1960), Chinami (1978). Albania całkowicie odcięta. Obóz pracy Burrel, więzienie Spaç — tysiące politycznych więźniów. Kiedy Hodża umarł w 1985, Albania miała 3 komputery i jeden samochód na 100 mieszkańców.</p></div>
+    <div class="h-item"><h4>Kosowo — tlący ogień</h4><p>1974: Tito nadaje Kosowu szerszą autonomię (własna konstytucja, sądy, policja). Ale Albańczycy są nadal niedoreprezentowani w strukturach federalnych. 1981: masowe protesty w Prisztinie po śmierci Tity — żądanie statusu republiki. Brutalne stłumienie. Napięcia etniczne rosną.</p></div>
+  </div>
+
+  <div class="era">Rozpad Jugosławii i Wojny (1989–2001)</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>1989 — Milošević i cofnięcie autonomii Kosowa</h4><p>28 czerwca 1989: Slobodan Milošević przemawia na Gazimestanie przed milionem Serbów w 600. rocznicę bitwy kosowskiej. Miesięcy wcześniej serbski parlament cofnął konstytucyjną autonomię Kosowa. Kosowscy Albańczycy (90% populacji) tracą własną policję, sądy, szkoły w języku albańskim. Masowe zwolnienia z pracy. Działalność równoległa Rugovy — „Republika Kosowa" nieoficjalnie.</p></div>
+    <div class="h-item"><h4>1991–1995 — Rozpad i pierwsze wojny</h4><p>Czerwiec 1991: Słowenia i Chorwacja ogłaszają niepodległość — „Wojna 10-dniowa" w Słowenii, krwawa „Vojna za domovinu" w Chorwacji (200 000 Serbów wypędzonych z Krajiny 1995). Bośnia 1992–1995: największa tragedia — <strong>Oblężenie Sarajewa (1425 dni, najdłuższe w historii XX w.)</strong>, Srebrenica lipiec 1995 — 8372 muzułmańskich mężczyzn i chłopców wymordowanych przez wojsko Republiki Serbskiej. Sąd w Hadze zakwalifikował to jako ludobójstwo. Macedonia i Czarnogóra na razie spokojne.</p></div>
+    <div class="h-item"><h4>1998–1999 — Wojna w Kosowie</h4><p>1998: UCK (Armia Wyzwolenia Kosowa) zaczyna ataki na serbską policję. Serbia odpowiada masowymi represjami wobec cywilów. <strong>Masakra w Račaku (15 stycznia 1999)</strong> — 45 kosowskich Albańczyków zamordowanych przez serbskie siły — szef misji OBWE William Walker nazwał to „zbrodnią przeciwko ludzkości". Negocjacje w Rambouillet — Serbia odrzuca. 24 marca 1999: NATO rozpoczyna 78-dniowe bombardowania Jugosławii bez autoryzacji ONZ. Operacja Allied Force. Podczas bombardowań serbskie siły i paramilitarne przeprowadzają <strong>Operację Podkowa</strong> — systematyczne wypędzanie Albańczyków: ok. 850 000 uciekło do Albanii i Macedonii, setki wiosek spalone, kilka tysięcy cywilnych ofiar. Zbrodnie udokumentowane przez Trybunał w Hadze.</p></div>
+    <div class="h-item"><h4>1999–2008 — Protektorat i Niepodległość</h4><p>Czerwiec 1999: Serbskie siły wycofują się, wchodzi KFOR (60 000 żołnierzy NATO). Wielu Serbów ucieka do Serbii lub żyje w enklawach (Gračanica, Patriarchat Peć, Dečani). Czerwiec–sierpień 1999: ataki odwetowe na Serbów i Romów — kościoły palone, domy niszczone. Przemoc nie była jednostronna. Marzec 2004: <strong>pogromy serbskie</strong> w całym Kosowie — 19 ofiar, 35 kościołów zniszczonych. 17 lutego 2008: Kosowo ogłasza niepodległość. Do 2024 roku 101 krajów uznało Kosowo. Serbia i Rosja nigdy.</p></div>
+  </div>
+
+  <div class="era">Miejsca na trasie — kontekst wojenny</div>
+  <div class="hist-tl">
+    <div class="h-item"><h4>🏛️ Muzeum Holocaustu, Skopje</h4><p>7000 macedońskich Żydów deportowanych do Treblinki w marcu 1943 przez bułgarskiego sojusznika Niemiec. 97% wymordowanych — jeden z najwyższych wskaźników w Europie. Muzeum dokumentuje każdą rodzinę z imienia i nazwiska. Wstęp wolny.</p></div>
+    <div class="h-item"><h4>⛪ Patriarchat Peć i Dečani, Kosowo</h4><p>Miejsca serbskiej tożsamości duchowej — chronione przez KFOR nieprzerwanie od 1999. Ataki w 1999 i 2004. Klasztory jako żywy symbol nierozwiązanego konfliktu między serbską historią a albańską rzeczywistością demograficzną.</p></div>
+    <div class="h-item"><h4>🔥 Gjakova / Stary Bazar, Kosowo</h4><p>Stary Bazar osmański spalony przez serbskie siły w 1999 — symbolicznie i dosłownie. Odbudowany z pomocą międzynarodową, ale blizny w pamięci zbiorowej.</p></div>
+    <div class="h-item"><h4>🏰 Piramida i BunkArt, Tirana</h4><p>Fizyczne pozostałości komunistycznej dyktatury Hodży — 170 000 bunkrów w całej Albanii, obozy pracy, Sigurimi (tajne służby). Albania otworzyła się na świat 30 lat temu — pokolenie które wychowało się w izolacji nadal żyje.</p></div>
   </div>
 </div>
 }
@@ -3218,6 +3295,490 @@
 
   <div class="box box-green" style="margin-top:16px;">✓ <strong>Loty już kupione.</strong> KRK→TIA 08.04 · TGD→KRK 22.04 ~18:00. Zapisz numery telefonów i adresy noclegów offline — w Albanii i Kosowie możesz być bez internetu.</div>
   <div class="box box-warn" style="margin-top:8px;">⚠️ <strong>Top 3 do zapamiętania:</strong> 1) Kup SIM w Albanii i Kosowie (brak roamingu UE). 2) Gotówka na busy i furgony WSZĘDZIE. 3) Transfer 12.04 Sarandë→Ohrid: wstań o 05:00, furgon jedzie RAZ dziennie!</div>
+</div>
+}
+
+
+<!-- ══════════ OKOLICE: TIRANA ══════════ -->
+@if (isTab('city-tirana-area')) {
+<div class="tab">
+  <div class="area-hero area-al">
+    <div class="ah-back" (click)="showTab('city-tirana')">← Tirana</div>
+    <div class="ah-title">Okolice Tirany</div>
+    <div class="ah-sub">Albania · wycieczki jednodniowe</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">30 min · bus 1.5€</span>
+      <div class="ac-name">Durrës — Amfiteatr i plaże</div>
+      <div class="ac-tags"><span>🏛️ Rzym</span><span>🏖️ Morze Adriatyckie</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Durrës (Dyrrachium w czasach rzymskich) to drugie miasto Albanii i jeden z najważniejszych portów starożytnego świata — tu Via Egnatia wychodziła z morza i biegła do Konstantynopola. Amfiteatr z I–II w. n.e. to <strong>największy odkryty amfiteatr na Bałkanach</strong> (15 000 miejsc) — wbudowany w dzielnicę mieszkalną, odkryty przypadkowo w 1966 roku. Wewnątrz kaplica paleochrześcijańska z V w. i mozaiki. Wstęp 2€. <strong>Muzeum Archeologiczne</strong> przy porcie: figurki iliryjskie, greckie amfory, romańskie rzeźby. Plaże Durrës — szerokie, piaszczyste, w kwietniu puste.</p>
+      <p class="ac-hist">⚔️ W 1081 roku Normanowie pod wodzą Roberta Guiscarda zdobyli Dyrrachium po 6-miesięcznym oblężeniu — bitwa była jedną z pierwszych w historii z udziałem Varangian Guard (wikińskiej gwardii cesarza Bizancjum). Julius Cezar wylądował tu podczas wojny domowej z Pompejuszem.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">2.5h · bus 5€</span>
+      <div class="ac-name">Berat — Miasto Tysiąca Okien</div>
+      <div class="ac-tags"><span>🏰 UNESCO</span><span>🏡 Domy osmańskie</span><span>🎨 Onufri</span></div>
+    </div>
+    <div class="ac-body">
+      <p>UNESCO od 2008. „Miasto Tysiąca Okien" — osmańskie domy z XVIII–XIX w. na zboczu wzgórza z niezliczonymi oknami skierowanymi ku rzece Osum. Trzy odrębne dzielnice historyczne: <strong>Mangalem</strong> (muzułmańska), <strong>Gorica</strong> (chrześcijańska, za rzeką) i <strong>Kalaja</strong> (zamek XIII w., zamieszkany do dziś przez kilka rodzin!). W zamku: kościół Śv. Trójcy z ikonostasem Onufri'ego — XVI-wiecznego malarza który tworzył ikony o wyjątkowym czerwonym kolorze (własna receptura farby). Muzeum Onufri (2€) wewnątrz kościoła Wniebowzięcia NMP. Wybitnie fotogeniczne miasto.</p>
+      <p class="ac-hist">⚔️ Berat był jednym z niewielu miast albańskich które nie poddały się Turkom bez walki. Oblężenie 1455 — Skanderbeg bronił miasta. Przez wieki był ważnym centrum handlu i rzemiosła dzięki rzece Osum.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">2h · bus ~4€</span>
+      <div class="ac-name">Apollonia — Ruiny Greckiej Kolonii</div>
+      <div class="ac-tags"><span>🏛️ V w. p.n.e.</span><span>🏺 Muzeum</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Apollonia (V w. p.n.e.) była jednym z ważniejszych greckich miast w Illyrii — do 60 000 mieszkańców, własna szkoła filozofii, szkoła retoryki w której studiował Oktawian August przed przejęciem władzy nad Rzymem. Bouleuterion (budynek rady miejskiej, III w. p.n.e.) z kolumnadą zachowaną niemal w całości. Amfiteatr z widokiem na dolinę. Muzeum z lokalnymi znaleziskami. Klasztor Ardenica na wzgórzu — tu w 1444 roku Skanderbeg wziął ślub z Donikią Arianiti. Bus do Fier, stamtąd taxi (5€) do stanowiska, 5km.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">3h · bus ~8€</span>
+      <div class="ac-name">Gjirokastër — Miasto z Kamienia</div>
+      <div class="ac-tags"><span>🏰 UNESCO</span><span>🏛️ Dom Hodży</span><span>⛩️ Muzeum Broni</span></div>
+    </div>
+    <div class="ac-body">
+      <p>UNESCO. „Miasto z Kamienia" — kamienne dachy, kamienne ulice, kamienne domy. Zamek Gjirokastra (XIII–XX w.) na wzgórzu dominuje nad miastem — w środku Muzeum Broni z rozbombardowanym samolotem szpiegowskim U-2 zestrzelonym przez Albanię w 1957 i schwytanym pilotem CIA. <strong>Dom urodzin Envera Hodży</strong> w starej dzielnicy (dziś Muzeum Etnograficzne) — tu w 1908 urodził się dyktator który przez 41 lat zamknął Albanię. WWII: Włosi i Niemcy stacjonowali tu kolejno. Ali Pasza z Joaniny (XVIII/XIX w.) rządził regionem z Gjirokastry — jego legendy i okrucieństwa do dziś żywe.</p>
+      <p class="ac-hist">⚔️ Gjirokastër jest historycznie sporny — Grecy mówią o nim „Argyrokastro" i przez wieki żyli tu zarówno Albańczycy jak i Grecy. W WWII Włosi ogłosili tu „Wielką Grecję" — po czym Niemcy ich wyparli. Enver Hodża urodził się tu, zrobiłby ze wszystkiego symbol narodowy — a stało się symbolem komunistycznych zbrodni.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: SARANDË ══════════ -->
+@if (isTab('city-sarande-area')) {
+<div class="tab">
+  <div class="area-hero area-al">
+    <div class="ah-back" (click)="showTab('city-sarande')">← Sarandë</div>
+    <div class="ah-title">Okolice Sarandë</div>
+    <div class="ah-sub">Albania Południowa · Jonia · UNESCO</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">30 min · bus 1.5€</span>
+      <div class="ac-name">Syri i Kaltër — Błękitne Oko</div>
+      <div class="ac-tags"><span>💧 Krasowe źródło</span><span>🌿 Przyroda</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Jedno z najpiękniejszych zjawisk przyrodniczych Albanii — krasowe źródło z wodą o temperaturze 18°C przez cały rok i <strong>kolorze intensywnego turkusu</strong> przechodzącym w czarny w centrum (głębokość nieznana — nurkowie dotarli do 50m, dno nieosięgnięte). Woda bije spod ziemi z taką siłą, że nie da się zanurzyć. Rezerwat przyrody — restauracja przy wejściu. Taxi z Sarandë: 10-12€ lub bus (rzadziej). Obowiązkowe.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · furgon + pieszo</span>
+      <div class="ac-name">Porto Palermo — Zamek Ali Paszy</div>
+      <div class="ac-tags"><span>🏰 XVIII w.</span><span>🚢 Baza okrętów podwodnych</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Trójkątny zamek z XVIII w. stoi na skalistej wysepce połączonej groblą z lądem — na tle turkusowej zatoki Portomarmurai. Zbudowany przez <strong>Ali Paszę z Joaniny</strong> (1740–1822) — władcę który rządził Epirem przez 40 lat, bił własną monetę, prowadził politykę zagraniczną, przyjmował Byrona (1809) i buczał na Sułtana aż ten go kazał ściąć. W WWII Włosi, potem Niemcy, potem Hodża urządził tu <strong>tajną bazę okrętów podwodnych</strong> — tunele w skale, wejścia pod wodą. Wstęp wolny, niewyremontowane, autentyczne.</p>
+      <p class="ac-hist">⚔️ Ali Pasza z Joaniny był jednym z ostatnich niezależnych władców Bałkanów w dobie osmanów. Jego historia posłużyła Dumas jako inspiracja dla hrabiego Monte Christo. Byron odwiedził go i opisał jako „despotę o arystokratycznych manierach".</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">15 min · bus 0.5€</span>
+      <div class="ac-name">Ksamil — Wyspy i Plaże</div>
+      <div class="ac-tags"><span>🏖️ Plaże</span><span>🏝️ 4 wysepki</span><span>🐠 Snorkeling</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Wioska rybacka 8km na południe od Sarandë — 4 małe wysepki przy brzegu, do bliższej dopłyniesz w 5 minut. W kwietniu plaże puste (sezon zaczyna się od maja), woda krystaliczna (widoczność do 5m), temperatura ok. 16°C dla odważnych. Restauracje grillują kalmary i ośmiornicę na plaży. Idealne po zwiedzaniu Butrintu — 2km od wejścia do parku.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">1.5h · bus ~4€</span>
+      <div class="ac-name">Gjirokastër — Miasto z Kamienia</div>
+      <div class="ac-tags"><span>🏰 UNESCO</span><span>🏛️ Dom Hodży</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Ta sama destynacja co z Tirany, ale z Sarandë dużo bliżej — bus przez Delvinë, ok. 1.5h (~4€). Warto połączyć: rano Gjirokastër, po południu Syri i Kaltër, wieczór w Sarandë. Zamek z Muzeum Broni, osmańskie stare miasto, dom urodzin Hodży jako Muzeum Etnograficzne.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: OHRID ══════════ -->
+@if (isTab('city-ohrid-area')) {
+<div class="tab">
+  <div class="area-hero area-mk">
+    <div class="ah-back" (click)="showTab('city-ohrid')">← Ohrid</div>
+    <div class="ah-title">Okolice Ohridu</div>
+    <div class="ah-sub">Macedonia Płn. · jezioro · góry</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · bus 1.5€</span>
+      <div class="ac-name">Sveti Naum — Klasztor przy Źródłach</div>
+      <div class="ac-tags"><span>⛪ IX w.</span><span>🚢 Rejs łódką</span><span>🦚 Pawie</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Klasztor Sveti Naum (893) — tu uczeń Cyryla i Metodego założył pierwszą słowiańską szkołę pisarską. Krypta z relikwiami Nauma — przyłożenie ucha do kamiennej podłogi podobno pozwala słyszeć jego bicie serca (legenda, ale działa na wyobraźnię). <strong>Źródła rzeki Czarny Drim</strong> (Crni Drim) wypływają tuż przy klasztorze — łódki po krystalicznej wodzie (100 MKD). Pawie wolno spacerują po ogrodzie. Bus 09:00 lub 10:30 z dworca, powrót 15:00/17:00. 29km wzdłuż jeziora.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">15 min · bus 0.5€</span>
+      <div class="ac-name">Struga — Miasto na Wypływie Jeziora</div>
+      <div class="ac-tags"><span>🌊 Czarny Drim</span><span>📝 Festiwal Poezji</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Struga leży 15km od Ohridu, dokładnie tam gdzie rzeka Czarny Drim wypływa z jeziora Ohryckiego — szeroka, spokojna, błękit wody wyjątkowy. Muzeum Narodowe w starym budynku celnym. <strong>Festiwal Poezji „Struga Poetry Evenings"</strong> — od 1961, jeden z najważniejszych festiwali poetyckich na świecie, laureatami byli m.in. Pablo Neruda, Allen Ginsberg, Wisława Szymborska. Rybacy sprzedają pastrmkę (pstrąga) prosto z łódki. Idealne na spokojne pół dnia.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">1h · bus 3€</span>
+      <div class="ac-name">Bitola + Heraklea Lincestis</div>
+      <div class="ac-tags"><span>🏺 IV w. p.n.e.</span><span>🐟 Mozaiki in situ</span><span>☕ Bulwar Konsulów</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Heraklea Lincestis (IV w. p.n.e.) — miasto Filipa II Macedońskiego, ojca Aleksandra Wielkiego. Mozaiki posadzkowe z IV–VI w. zachowane <strong>in situ</strong> w kolorach — sceny myśliwskie, ryby, ptaki. Teatr z kompletną cavea. Wstęp ~2.50€, 1–1.5h. Potem Sirok Sokak (Szeroka Ulica) w Bitoli — elegancki XIX-wieczny bulwar z kawiarniami pod akacjami, zwany „Bulwarem Konsulów" (13 konsulatów tu stacjonowało). Turli tava w lokalnej kafanie. Bus do Bitoli ok. 40min–1h (kilka kursów dziennie).</p>
+      <p class="ac-hist">⚔️ Bitola była w XIX w. centrum administracyjnym Imperium Osmańskiego na zachodzie Bałkanów. Atatürk uczył się tu w szkole wojskowej w latach 1896–1899 — jest muzeum w jego domu z pamiątkami z tego okresu.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">2.5h · bus do Kičeva + taxi</span>
+      <div class="ac-name">Mavrovo — Klasztor Sv. Jovan Bigorski</div>
+      <div class="ac-tags"><span>⛪ XII w.</span><span>🏔️ Park Narodowy</span><span>🌊 Jezioro zaporowe</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Park Narodowy Mavrovo z jeziorem zaporowym i widokiem na Korab (2764m — najwyższy szczyt Macedonii i Albanii zarazem). Klasztor Sv. Jovan Bigorski (1020) — uważany za jeden z najpiękniejszych klasztorów na Bałkanach Zachodnich: ikonostas z drewna orzechowego (1835, 700 figurek!) wyrzeźbiony przez braci Filipowski przez 5 lat. Relikwia ręki Jana Chrzciciela. Bus do Kičeva (2h) + taxi 20km do Mavrovo.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: SKOPJE ══════════ -->
+@if (isTab('city-skopje-area')) {
+<div class="tab">
+  <div class="area-hero area-mk">
+    <div class="ah-back" (click)="showTab('city-skopje')">← Skopje</div>
+    <div class="ah-title">Okolice Skopje</div>
+    <div class="ah-sub">Macedonia Płn. · kaniony · historia</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">25 min · bus linia 60 lub taxi</span>
+      <div class="ac-name">Kanion Matka — Jaskinie i Jeziora</div>
+      <div class="ac-tags"><span>🚣 Kajaki</span><span>🕳️ Jaskinia Vrelo</span><span>🦅 Orły i rysie</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Kanion rzeki Treska — jezioro zaporowe w kanionie, łódki i kajaki między urwiskami. <strong>Jaskinia Vrelo</strong> — 264m zbadanej długości, podwodna część szacowana na 11km (jedna z najgłębszych podwodnych jaskiń Europy). Stalaktyty i stalagmity, łódka wewnątrz (150 MKD). Kilka klasztorów skalnych z XII–XIV w. widocznych ze ścieżki nad jeziorem. Orły, sokoły, rysie i niedźwiedzie w parku (spotkania rzadkie ale możliwe). Doskonale oznakowane szlaki piesze, restauracje przy wodzie ze świeżymi rybami.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">45 min · bus ~2€</span>
+      <div class="ac-name">Tetowo — Malowany Meczet</div>
+      <div class="ac-tags"><span>🕌 1438 r.</span><span>🎨 Unikalne freski</span></div>
+    </div>
+    <div class="ac-body">
+      <p><strong>Šarena Džamija</strong> (Malowany Meczet) z 1438 roku — jedyny meczet w Europie z kolorowymi freskami i ornamentami na zewnętrznych ścianach (czerwone, niebieskie, złote wzory geometryczne). Fenomen architektoniczny. Baba Arabati Bektashi Tekke — świątynia suficka z XVIII w. z sarkofagami. Tetowo jest centrum albańskiej mniejszości w Macedonii — klimat inne niż w Skopje. Wewnątrz meczetu można wejść poza czasem modlitwy.</p>
+      <p class="ac-hist">⚔️ Tetowo w 2001 roku było centrum <strong>albańskiego powstania</strong> (NLA vs armia macedońska). Po 6 miesiącach walk wynegocjowano Porozumienie Ochrydskie dające większe prawa mniejszościom albańskim. Miasto nadal jest zdominowane przez Albańczyków — tu kontrowersje etniczne są wyczuwalne.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">2h · bus do Kumanovo + taxi 20km</span>
+      <div class="ac-name">Kokino — Obserwatorium z 3800 r. p.n.e.</div>
+      <div class="ac-tags"><span>🌟 Megalityczne</span><span>🔭 NASA Top 5</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Megalityczne obserwatorium na wzgórzu Tatićev Kamen (1013m n.p.m.) z epoki brązu (ok. 1800 r. p.n.e., najstarsze warstwy 3800 p.n.e.). <strong>NASA umieściła Kokino na liście 4 najstarszych obserwatoriów świata</strong>. Kamienne markery wyznaczają pozycje wschodu słońca i księżyca w punktach solstice — ekwipunksu. Ołtarze ofiarne, tron rytualny. Niewielu turystów, surowy krajobraz górski. Bus do Kumanovo, taxi 20km.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">1.5h · bus ~3€</span>
+      <div class="ac-name">Veles — Miasto Ceramiki</div>
+      <div class="ac-tags"><span>🏺 Ceramika</span><span>⛪ Kościoły freskowe</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Veles (Stary Veles) — osmańskie miasto nad rzeką Vardar z ceramiczną tradycją sięgającą starożytności. Kościół Sv. Panteleimon z XIV-wiecznymi freskami. Stare domy osmańskie na zboczu. Muzeum Ceramiki. Piękne widoki na przełom rzeki. Miasto urodzeń Goce Delčeva — macedońskiego rewolucjonisty z przełomu XIX/XX w., ojca macedońskiej idei narodowej.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: PRISZTINA ══════════ -->
+@if (isTab('city-prishtina-area')) {
+<div class="tab">
+  <div class="area-hero area-ko">
+    <div class="ah-back" (click)="showTab('city-prishtina')">← Prisztina</div>
+    <div class="ah-title">Okolice Prisztiny</div>
+    <div class="ah-sub">Kosowo · historia 1389–1999</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">30 min · bus ~0.5€</span>
+      <div class="ac-name">Gazimestan — Pole Bitwy Kosowskiej 1389</div>
+      <div class="ac-tags"><span>⚔️ 1389</span><span>🏛️ Pomnik-wieża</span><span>🧨 Przemowa Miloševicia</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Kosovo Polje — tu 28 czerwca 1389 starły się armie serbskie i osmańskie. Obaj wodzowie zginęli: Sułtan Murad I (podobno zabity przez Miloša Obilicia w jego namiocie) i Książę Lazar Hrebeljanović. Wynik: <strong>Serbia traci niepodległość na 500 lat</strong>, ale mit bitwy staje się fundamentem serbskiej tożsamości narodowej. Wieża-pomnik z XIX w. Tablica z fragmentem przemowy Slobodana Miloševicia z 28 czerwca 1989 (600. rocznica) — tu zapowiedział „rewolucję" i rewokację autonomii Kosowa. Wstęp wolny.</p>
+      <p class="ac-hist">⚔️ Przemowa Miloševicia w 1989 roku przed milionem Serbów zebranymi na Gazimestanie jest uważana za punkt startowy rozpadu Jugosławii. Padły słowa: „nigdy więcej nikomu nie będziecie zależni" — ale dla Albańczyków brzmiało to jak zapowiedź prześladowań. W ciągu roku Milošević cofnął autonomię Kosowa — to wywołało łańcuch zdarzeń prowadzący do wars 1998-99.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">20 min · bus linia 5 ~0.5€</span>
+      <div class="ac-name">Gračanica — Klasztor XIV w. UNESCO</div>
+      <div class="ac-tags"><span>⛪ 1321</span><span>🎨 Freski serbskie</span><span>🪖 KFOR</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Klasztor Gračanica (1321) — arcydzieło serbskiej architektury sakralnej, pięć kopuł. Freski: „Drzewo Nemanjiciów" (drzewo genealogiczne dynastii serbskiej), Sąd Ostateczny, życie Chrystusa. Najlepiej zachowane serbskie freski na świecie. Stoi w serbskiej enklawie chronionej przez KFOR — biały pojazd przy wejściu normalny. Wejście otwarte dla turystów.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · bus + taxi</span>
+      <div class="ac-name">Novobërdë / Novo Brdo — Srebro i Ruiny</div>
+      <div class="ac-tags"><span>🏰 XIV w.</span><span>⛏️ Kopalnia srebra</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Novo Brdo (XIV–XV w.) było <strong>największym centrum wydobycia srebra na Bałkanach</strong> — stąd Konstantynopol i Wenecja czerpały kruszec. Twierdza na wzgórzu z panoramą Kosowa. Osmanie zdobyli ją 1455 po długim oblężeniu — Stefan Branković negocjował tu kapitulację. Muzeum ze znaleziskami z kopalni. Mało turystów, surowe zbocza, wielka historia.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">30 min · taxi ~8€</span>
+      <div class="ac-name">Janjevo — Chorwacka Wioska w Kosowie</div>
+      <div class="ac-tags"><span>🇭🇷 Janjewcy</span><span>🏺 Rzemiosło</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Janjevo (Janjevë) — jedna z ostatnich żywych chorwackich wspólnot poza Chorwacją. Janjewcy (katoliccy Chorwaci) mieszkają tu od XIV w., kiedy przybyli jako kupcy i rzemieślnicy za węgierskim zaproszeniem. Bazary, stara architektura katolicka, unikalny lokalny dialekt. Jan Paweł II odwiedził Janjevo w 1994 roku. Dziś ok. 100 rodzin — liczba spada, ale wspólnota trwa.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: PRIZREN ══════════ -->
+@if (isTab('city-prizren-area')) {
+<div class="tab">
+  <div class="area-hero area-ko">
+    <div class="ah-back" (click)="showTab('city-prizren')">← Prizren</div>
+    <div class="ah-title">Okolice Prizrenu</div>
+    <div class="ah-sub">Kosowo · góry Sharri · historia</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · bus 2€</span>
+      <div class="ac-name">Gjakova / Đakovica — Bazar i 1999</div>
+      <div class="ac-tags"><span>🕌 Osmański bazar</span><span>🔥 Zbrodnie 1999</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Gjakova (alb.) / Đakovica (serb.) — drugie miasto Kosowa z jednym z najlepszych osmańskich bazarów na Bałkanach. Stary Bazar (XVII w.) z setkami sklepów-kramów w kamiennych budynkach. Meczet Hadum (1594) z oryginalnymi freskami roślinno-geometrycznymi. Muzeum Tradycyjnej Architektury.</p>
+      <p class="ac-hist">⚔️ <strong>Zbrodnie w Gjakowie (kwiecień 1999)</strong>: po rozpoczęciu bombardowań NATO serbskie siły policyjne i paramilitarne spaliły znaczną część starego miasta i zabiły setki cywilów albańskich. Stary Bazar był niemal całkowicie spalony — obecny bazar jest odbudowany. Muzeum Pamięci 1999 dokumentuje ofiary. Rany są świeże — mieszkańcy pamiętają.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">1h · bus lub taxi</span>
+      <div class="ac-name">Dragash — Góry Sharri i Gorani</div>
+      <div class="ac-tags"><span>🏔️ 2500m</span><span>🐑 Pasterze</span><span>🌿 Gorani</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Dragash (Dragaš) leży w górach Sharri na pograniczu Kosowa, Macedonii i Serbii — ośnieżone szczyty do 2500m widoczne od centrum. Gorani (słowiańscy muzułmanie — nie Albańczycy) — unikalna społeczność z własnym dialektem i kulturą. Wsie pasterskie niezmienione od wieków — sery, jagnięcina, miód. Szlaki piesze, cisza. Idealne dla trekkerów. W zimie jedyne narciarstwo w Kosowie.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · taxi</span>
+      <div class="ac-name">Klasztor Zočište — Zniszczony i Odbudowany</div>
+      <div class="ac-tags"><span>⛪ XIV w.</span><span>🔥 Zniszczony 1999</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Klasztor serbski Zočište z XIV w. — zniszczony przez albańskich ekstremistów w czerwcu 1999 roku (po wycofaniu serbskich sił i wejściu KFOR). Odbudowany z pomocą UNESCO i rządu serbskiego. Freski z XIV w. częściowo ocalały. KFOR stacjonował tu przez lata. Przykład jak po zakończeniu etnicznej przemocy ofiary zmieniają się w sprawców — trudna historia. Wstęp wolny.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: PEĆ ══════════ -->
+@if (isTab('city-pec-area')) {
+<div class="tab">
+  <div class="area-hero area-ko">
+    <div class="ah-back" (click)="showTab('city-pec')">← Peć</div>
+    <div class="ah-title">Okolice Peć</div>
+    <div class="ah-sub">Kosowo · Prokletije · UNESCO</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">30 min · bus ~1.5€</span>
+      <div class="ac-name">Visoki Dečani — 1000 Fresków XIII w.</div>
+      <div class="ac-tags"><span>⛪ UNESCO 1327</span><span>🎨 Największy zbiór</span><span>🪖 NATO 1999</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Klasztor Visoki Dečani (1327–1335) — <strong>największy zbiór fresków byzantyjskich zachowanych na świecie</strong> w jednym budynku (ok. 1000 fresków na 1200m²). Marmurowa fasada romańsko-gotycka wykonana przez mistrza Wita z Kotoru. Król Stefan Dečanski fundował klasztor — jego relikwie w srebrnym sarkofagu. Cmentarz z grobami serbskich mnichów pomordowanych w WWII i w 1999. UNESCO od 2006.</p>
+      <p class="ac-hist">⚔️ <strong>1999: KLA (Armia Wyzwolenia Kosowa) próbowała zniszczyć klasztor</strong> — kilka ataków, raz rakiety, raz snajperzy. Mnisi nie ewakuowali się. Włoski kontyngent KFOR stacjonuje tu nieprzerwanie do dziś. Kontrast: mnisi serbscy otoczeni przez albańskich współobywateli — wzajemny szacunek, codzienne życie obok siebie, ale historia ciąży.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">przy mieście</span>
+      <div class="ac-name">Kanion Rugova — Via Ferrata i Szlaki</div>
+      <div class="ac-tags"><span>🏔️ 25km kanionu</span><span>🧗 Via Ferrata</span><span>💧 Wodospady</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Kanion Rugova (25km, ściany do 1000m) — jednym z najgłębszych kanionów Europy. Asfaltem pierwsze 8km — łatwe, otwarte na kajaki i rowery. Głębiej: Via Ferrata Peć z ubezpieczeniem linowym nad rzeką. Szlak pieszym na wodospad Drini i dalej do wiosek pasterskich ponad 2000m. Restauracje przy wejściu z pstrągiem z rzeki Bistrica Peć.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">1.5h · taxi</span>
+      <div class="ac-name">Przełęcz Čakor — Serbska Golgota 1916</div>
+      <div class="ac-tags"><span>🏔️ 1849m</span><span>⚔️ WWI 1916</span><span>🌨️ Tylko latem</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Przełęcz Čakor (1849m) na granicy Kosowa i Czarnogóry — w kwietniu może być jeszcze zaśnieżona, sprawdź pogodę. <strong>W zimie 1915–1916 tędy przeszła resztka serbskiej armii</strong> (ok. 150 000 żołnierzy i cywilów) uciekając przed austro-węgiersko-bułgarską inwazją. Droga przez góry, minus 20°C, głód — zginęło 40-60 000 ludzi. Nazwano to „Serbską Golgatą". Pamiątkowe pomniki przy drodze. Panorama obu stron granicy.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: KOTOR ══════════ -->
+@if (isTab('city-kotor-area')) {
+<div class="tab">
+  <div class="area-hero area-me">
+    <div class="ah-back" (click)="showTab('city-kotor')">← Kotor</div>
+    <div class="ah-title">Okolice Kotoru</div>
+    <div class="ah-sub">Czarnogóra · Boka Kotorska · Riviera</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">35 min · bus 2€</span>
+      <div class="ac-name">Perast — Wysepka z Gobelinem z Włosów</div>
+      <div class="ac-tags"><span>⛵ Łódka 5€</span><span>🏛️ 17 kościołów</span><span>🧵 Gobelin z włosów</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Perast (300 mieszkańców, 17 kościołów, 16 weneckich pałaców — w różnym stopniu ruin). Wysepka <strong>Gospa od Škrpjela</strong> — sztuczna, budowana przez marynarzy przez 200 lat (rzucali kamień przy każdym powrocie z morza). Kościół z XVIII w.: gobelin tkany przez Jacintę Kunić przez 25 lat — gdy oślepła, tkała dalej dotykiem. Włosy połyskują srebrzyście. Na ścianach: srebrne wota marynarzy ocalałych z burz.</p>
+      <p class="ac-hist">⚔️ Peraścianie jako ostatni złożyli wenecki sztandar gdy Napoleon zlikwidował Republikę (1797) — ze łzami i ceremonią. Przez wieki peraska marynarka walczyła pod flagą Wenecji na całym Śródziemnomorzu.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · bus 1.5€</span>
+      <div class="ac-name">Budva — Najstarsze Stare Miasto Czarnogóry</div>
+      <div class="ac-tags"><span>🏖️ Plaże Mogren</span><span>🏰 Cytadela</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Budva — stare miasto na półwyspie sięga V w. p.n.e. (grecki Bouthoe). Mury weneckie, cytadela (3€), plaże Mogren za murem — turkusowa woda, skały, w kwietniu puste. Museo della Citta z eksponatami od Greka do Wenecji. Centrum nocnego życia latem — w kwietniu spokojnie i autentycznie. Cerkiew Sv. Ivana z IX w. z freskami. Wybitnie fotogeniczne.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">1h · taxi lub bus przez Budvę</span>
+      <div class="ac-name">Lovćen NP — Wioska Njeguši i Mauzoleum</div>
+      <div class="ac-tags"><span>🏔️ 1657m</span><span>🍖 Pršut i Njeguški sir</span><span>👑 Mauzoleum</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Wioska <strong>Njeguši</strong> (klasa obowiązkowa) — tu wędzona szynka Njeguški pršut (próbuj!) i twardy ser Njeguški sir, produkowane od wieków w górskim klimacie. Droga przez Njeguši na szczyt Lovćen (serpentyny, 25 ostrych zakrętów — widoki na zatokę i Adriatyk). Na szczycie Štirovnik (1657m): <strong>mauzoleum Petara II Petrovića Njegoša</strong> (1813–1851) — poety-biskupa-władcy, twórcy eposu „Wieniec Górski". 461 schodów, widok 360°.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · bus 2€</span>
+      <div class="ac-name">Herceg Novi — Miasto Kwiatów i Twierdz</div>
+      <div class="ac-tags"><span>🌺 Mimozy</span><span>🏰 Kanli Kula</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Herceg Novi leży na wejściu do Zatoki Kotorskiej — twierdza Kanli Kula (Krwawa Wieża, XV w., osmańska) z panoramą zatoki i Chorwacji naprzeciwko. Stare Miasto z weneckimi loggias, sahat-kulą (wieżą zegarową). Fortress Arza (XVII w.) na klifie nad morzem. Miasto słynne z mimoz (marzec) — w kwietniu jeszcze kwitną. Plaże przy drodze do centrum. Ceny niższe niż w Kotorze.</p>
+    </div>
+  </div>
+</div>
+}
+
+<!-- ══════════ OKOLICE: PODGORICA ══════════ -->
+@if (isTab('city-podgorica-area')) {
+<div class="tab">
+  <div class="area-hero area-me">
+    <div class="ah-back" (click)="showTab('city-podgorica')">← Podgorica</div>
+    <div class="ah-title">Okolice Podgoricy</div>
+    <div class="ah-sub">Czarnogóra · jeziora · cuda</div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">1.5h · bus + taxi</span>
+      <div class="ac-name">Klasztor Ostrog — Cud Wbudowany w Skałę</div>
+      <div class="ac-tags"><span>⛪ 1665</span><span>🧗 900m n.p.m.</span><span>🕊️ Pielgrzymki</span></div>
+    </div>
+    <div class="ac-body">
+      <p><strong>Jeden z najbardziej zdumiewających klasztorów na świecie</strong> — wbudowany dosłownie w pionową skałę na wysokości 900m n.p.m. Dwa poziomy: Dolny Klasztor (XVII w.) i Górny (bezpośrednio w jaskini skalnej). Relikwie biskupa Vasilija Ostroškog (1610–1671) uważane za cudotwórcze — pielgrzymują tu chrześcijanie, muzułmanie i Żydzi z całych Bałkanów. W Wielkanoc kolejki wielogodzinne. Bus do Nikšicia + taxi, albo zorganizowana wycieczka z Podgoricy (~15€).</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">30 min · bus do Virpazaru 2€</span>
+      <div class="ac-name">Jezioro Skaderskie — Pelicany i Wino</div>
+      <div class="ac-tags"><span>🦩 Pelicany</span><span>🐟 Krap i Sum</span><span>🍷 Vranac</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Jezioro Skaderskie (Škodersko jezero) — <strong>największe jezioro na Bałkanach</strong> (370–530km² zależnie od sezonu), UNESCO, shared z Albanią. Pelicany, czaple, perełki, łyski — raj ornitologiczny. Łódki z Virpazaru: rejs między groblami i między wyspami z klasztorami. Restauracje na wodzie z karpiem (šaran) i sumem w winie. Wina z winnic nad jeziorem: Vranac (czerwone, lokalne, wybitne). Bus do Virpazaru, stamtąd łódka.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">45 min · bus 3€</span>
+      <div class="ac-name">Stari Bar — Ruiny i 2000-letnia Oliwa</div>
+      <div class="ac-tags"><span>🏰 IX w.</span><span>🫒 Najstarsze drzewo</span><span>⛴️ Prom do Włoch</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Stari Bar (Stary Bar) — twierdza-miasto na wzgórzu, zamieszkane od IX w., zniszczone przez Austriaków w 1878 artylerią. Terasowe ruiny kościołów, meczetów, pałaców zarośnięte drzewami figowymi i cytrusami. Wejście 3€. W sadzie przy wejściu: <strong>drzewo oliwne szacowane na 2000 lat</strong> — jedno z najstarszych w Europie, nadal owocuje. Bar port niżej: promy do Bari i Ankony.</p>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="ac-header">
+      <span class="ac-dist">40 min · taxi</span>
+      <div class="ac-name">Rijeka Crnojevića — Historyczny Port</div>
+      <div class="ac-tags"><span>🏛️ XV w.</span><span>📖 Pierwsza drukarnia</span></div>
+    </div>
+    <div class="ac-body">
+      <p>Mała wioska (ok. 1000 mieszkańców) u ujścia rzeki Crnojevića do jeziora Skaderskiego. Wenecki most kamienny (XVI w.) — jeden z najpiękniejszych w regionie. Tu w 1494 roku Ivan Crnojević założył <strong>pierwszą drukarnię na Bałkanach</strong> — 3 lata po Gutenbergu. Klasztor Kom na wysepce widoczny z brzegu. Restauracje z karpiem ze Skaderskiego.</p>
+    </div>
+  </div>
 </div>
 }
 
